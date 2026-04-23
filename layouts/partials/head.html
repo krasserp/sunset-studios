@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+<title>Sunset Studios – Creative Music Retreat in Gran Canaria</title>
+<meta name="description" content="Escape the city and create at Sunset Studios. A focused, inspiring music retreat in Gran Canaria for artists, bands and producers.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sunset-studios.one/">
+
+<meta property="og:title" content="Sunset Studios – Creative Retreat for Musicians">
+<meta property="og:description" content="Record, write and reset in a focused studio environment in Gran Canaria. Built for artists who want to go deep.">
+<meta property="og:image" content="https://sunset-studios.one/images/hero1.webp">
+<meta property="og:url" content="https://sunset-studios.one/">
+<meta property="og:type" content="website">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sunset Studios – Music Retreat in Gran Canaria">
+<meta name="twitter:description" content="A space to focus, create and finish your music. Escape distractions and go deep.">
+<meta name="twitter:image" content="https://sunset-studios.one/images/hero1.webp">
+
+{{ $styles := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+
+<link rel="preload" as="image" href="/images/hero1.webp" media="(min-width: 641px)">
+<link rel="preload" as="image" href="/images/hero1-m.webp" media="(max-width: 640px)">
+
+<link rel="preload" as="image" href="/images/hero2.webp" media="(min-width: 641px)">
+<link rel="preload" as="image" href="/images/hero2-m.webp" media="(max-width: 640px)">
+
+<link rel="preload" as="image" href="/images/hero3.webp" media="(min-width: 641px)">
+<link rel="preload" as="image" href="/images/hero3-m.webp" media="(max-width: 640px)">
+
+<link rel="preload" as="image" href="/images/hero4.webp" media="(min-width: 641px)">
+<link rel="preload" as="image" href="/images/hero4-m.webp" media="(max-width: 640px)">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicRecordingStudio",
+  "name": "Sunset Studios",
+  "url": "https://sunset-studios.one",
+  "image": "https://sunset-studios.one/images/hero1.webp",
+  "description": "A creative music retreat in Gran Canaria offering recording, writing and production in a focused environment.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gran Canaria",
+    "addressCountry": "ES"
+  }
+}
+</script>
+{{ hugo.Generator }}

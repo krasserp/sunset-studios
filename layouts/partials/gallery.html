@@ -1,0 +1,99 @@
+<section class="section gallery">
+  <div class="container">
+    <h2>Gallery</h2>
+
+    <div class="gallery-grid">
+
+      <!-- repeat this block -->
+      <img
+        src="/images/gallery01-800.webp"
+        srcset="/images/gallery01-600.webp 600w, /images/gallery01-800.webp 800w, /images/gallery01-1200.webp 1200w"
+        sizes="(max-width: 640px) 50vw, 33vw"
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        onclick="openLightbox(this)"
+        data-full="/images/gallery01-1200.webp"
+      >
+      <!-- repeat this block -->
+      <img
+        src="/images/gallery02-800.webp"
+        srcset="/images/gallery02-600.webp 600w, /images/gallery02-800.webp 800w, /images/gallery02-1200.webp 1200w"
+        sizes="(max-width: 640px) 50vw, 33vw"
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        onclick="openLightbox(this)"
+        data-full="/images/gallery02-1200.webp"
+      >
+            <!-- repeat this block -->
+      <img
+        src="/images/gallery03-800.webp"
+        srcset="/images/gallery03-600.webp 600w, /images/gallery03-800.webp 800w, /images/gallery03-1200.webp 1200w"
+        sizes="(max-width: 640px) 50vw, 33vw"
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        onclick="openLightbox(this)"
+        data-full="/images/gallery03-1200.webp"
+      >
+            <!-- repeat this block -->
+      <img
+        src="/images/gallery04-800.webp"
+        srcset="/images/gallery04-600.webp 600w, /images/gallery04-800.webp 800w, /images/gallery04-1200.webp 1200w"
+        sizes="(max-width: 640px) 50vw, 33vw"
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        onclick="openLightbox(this)"
+        data-full="/images/gallery04-1200.webp"
+      >
+            <!-- repeat this block -->
+      <img
+        src="/images/gallery05-800.webp"
+        srcset="/images/gallery05-600.webp 600w, /images/gallery05-800.webp 800w, /images/gallery05-1200.webp 1200w"
+        sizes="(max-width: 640px) 50vw, 33vw"
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        onclick="openLightbox(this)"
+        data-full="/images/gallery05-1200.webp"
+      >
+            <!-- repeat this block -->
+      <img
+        src="/images/gallery06-800.webp"
+        srcset="/images/gallery06-600.webp 600w, /images/gallery06-800.webp 800w, /images/gallery06-1200.webp 1200w"
+        sizes="(max-width: 640px) 50vw, 33vw"
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        onclick="openLightbox(this)"
+        data-full="/images/gallery06-1200.webp"
+      >
+      <!-- copy for other images -->
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-nav left" onclick="prevImage()">‹</button>
+
+  <img id="lightbox-img" src="" alt="">
+
+  <button class="lightbox-nav right" onclick="nextImage()">›</button>
+</div>

@@ -1,0 +1,13 @@
+<section class="section section-alt">
+  <div class="container">
+    <h2>{{ .Params.testimonials.heading }}</h2>
+    <div class="card-grid">
+      {{ range .Params.testimonials.items }}
+      <div class="card">
+        <p>"{{ .text }}"</p>
+        <p><strong>{{ .name }}</strong></p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

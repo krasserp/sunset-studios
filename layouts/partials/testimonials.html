@@ -1,0 +1,45 @@
+<section id="testimonials" class="section">
+  <div class="container">
+    {{ with .Params.testimonials }}
+      {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
+
+      {{ with .items }}
+        <div class="card-grid">
+          {{ range . }}
+            {{ $name := .name }}
+            {{ $role := .role }}
+            {{ $instagram := .instagram }}
+
+            <article class="card testimonial-card">
+              {{ with .quote }}
+                <p class="testimonial-quote">“{{ . }}”</p>
+              {{ end }}
+
+              <div class="testimonial-person">
+                {{ with .image }}
+                  <img class="testimonial-image" src="{{ . }}" alt="{{ $name }}">
+                {{ end }}
+
+                <div class="testimonial-meta">
+                  {{ with $name }}
+                    <p class="testimonial-name">
+                      {{ if $instagram }}
+                        <a href="{{ $instagram }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
+                      {{ else }}
+                        {{ . }}
+                      {{ end }}
+                    </p>
+                  {{ end }}
+
+                  {{ with $role }}
+                    <p class="testimonial-role">{{ . }}</p>
+                  {{ end }}
+                </div>
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

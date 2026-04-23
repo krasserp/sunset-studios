@@ -1,0 +1,16 @@
+<section id="included" class="section">
+  <div class="container narrow">
+    {{ with .Params.included }}
+      {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
+      {{ with .text }}<p>{{ . }}</p>{{ end }}
+
+      {{ with .items }}
+        <ul class="feature-list">
+          {{ range . }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

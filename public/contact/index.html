@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contact · Sunset Studios</title>
+<meta name="description" content="Get in touch with Sunset Studios.">
+
+<title>Sunset Studios – Creative Music Retreat in Gran Canaria</title>
+<meta name="description" content="Escape the city and create at Sunset Studios. A focused, inspiring music retreat in Gran Canaria for artists, bands and producers.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sunset-studios.one/">
+
+<meta property="og:title" content="Sunset Studios – Creative Retreat for Musicians">
+<meta property="og:description" content="Record, write and reset in a focused studio environment in Gran Canaria. Built for artists who want to go deep.">
+<meta property="og:image" content="https://sunset-studios.one/images/hero1.webp">
+<meta property="og:url" content="https://sunset-studios.one/">
+<meta property="og:type" content="website">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sunset Studios – Music Retreat in Gran Canaria">
+<meta name="twitter:description" content="A space to focus, create and finish your music. Escape distractions and go deep.">
+<meta name="twitter:image" content="https://sunset-studios.one/images/hero1.webp">
+
+
+<link rel="stylesheet" href="/scss/main.min.e740e9b77c1aca5382ac98eb56454d78b21251644087bd607422d0b5da778c4b.css" integrity="sha256-50Dpt3waylOCrJjrVkVNeLISUWRAh71gdCLQtdp3jEs=">
+
+<link rel="preload" as="image" href="/images/hero1.webp" media="(min-width: 641px)">
+<link rel="preload" as="image" href="/images/hero1-m.webp" media="(max-width: 640px)">
+
+<link rel="preload" as="image" href="/images/hero2.webp" media="(min-width: 641px)">
+<link rel="preload" as="image" href="/images/hero2-m.webp" media="(max-width: 640px)">
+
+<link rel="preload" as="image" href="/images/hero3.webp" media="(min-width: 641px)">
+<link rel="preload" as="image" href="/images/hero3-m.webp" media="(max-width: 640px)">
+
+<link rel="preload" as="image" href="/images/hero4.webp" media="(min-width: 641px)">
+<link rel="preload" as="image" href="/images/hero4-m.webp" media="(max-width: 640px)">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicRecordingStudio",
+  "name": "Sunset Studios",
+  "url": "https://sunset-studios.one",
+  "image": "https://sunset-studios.one/images/hero1.webp",
+  "description": "A creative music retreat in Gran Canaria offering recording, writing and production in a focused environment.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gran Canaria",
+    "addressCountry": "ES"
+  }
+}
+</script>
+<meta name="generator" content="Hugo 0.160.1">
+
+  </head>
+  <body>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/"><img src="/images/Sunset-Studios-logo.png" alt="Sunset Studios"/></a>
+    <nav class="nav">
+      <a href="/#packages">Stay</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+    <main id="main">
+      
+<section class="section">
+  <div class="container narrow">
+    <h1>Contact</h1>
+    <h2 id="contact">Contact</h2>
+<p>To book your stay or ask about availability, get in touch by email or Instagram.</p>
+<ul>
+<li>Email: <a href="mailto:phil@sunset-studios.one">phil@sunset-studios.one</a></li>
+<li>Instagram: @sunsetstudios.one</li>
+</ul>
+
+  </div>
+</section>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 Sunset Studios</p>
+    <p>Gran Canaria · Creative retreat for artists, songwriters and producers</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener("load", function () {
+    document.querySelector(".hero").classList.add("loaded");
+  });
+</script>
+
+<script>
+let currentIndex = 0;
+let images = [];
+
+function initGallery() {
+  images = Array.from(document.querySelectorAll(".gallery-grid img"));
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => openLightbox(index));
+  });
+}
+
+function openLightbox(index) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  currentIndex = index;
+
+  const img = images[index];
+  lightboxImg.src = img.dataset.full || img.src;
+
+  lightbox.classList.add("active");
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("active");
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateImage();
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateImage();
+}
+
+function updateImage() {
+  const img = images[currentIndex];
+  document.getElementById("lightbox-img").src = img.dataset.full || img.src;
+}
+
+ 
+document.getElementById("lightbox").addEventListener("click", (e) => {
+  if (e.target.id === "lightbox") {
+    closeLightbox();
+  }
+});
+
+ 
+document.addEventListener("keydown", (e) => {
+  if (!document.getElementById("lightbox").classList.contains("active")) return;
+
+  if (e.key === "ArrowRight") nextImage();
+  if (e.key === "ArrowLeft") prevImage();
+  if (e.key === "Escape") closeLightbox();
+});
+
+ 
+let startX = 0;
+
+document.getElementById("lightbox").addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+  let diff = startX - endX;
+
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) nextImage(); 
+    else prevImage(); 
+  }
+});
+
+ 
+window.addEventListener("DOMContentLoaded", initGallery);
+</script>
+  </body>
+</html>

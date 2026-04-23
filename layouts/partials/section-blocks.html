@@ -1,0 +1,19 @@
+{{ range .Params.sections }}
+<section id="{{ .id }}" class="section">
+  <div class="container section-grid">
+    <div class="section-heading">
+      <h2>{{ .heading }}</h2>
+    </div>
+    <div class="section-content">
+      <p>{{ .text }}</p>
+      {{ with .bullets }}
+      <ul class="feature-list">
+        {{ range . }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

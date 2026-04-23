@@ -1,0 +1,62 @@
+collections_config:
+  pages:
+    path: content
+    output: true
+
+paths:
+  data: data
+  static: static
+  uploads: static/uploads
+
+_editables:
+  text:
+    remove_format: true
+    bold: true
+    italic: true
+    link: true
+
+_inputs:
+  sections:
+    type: array
+    options:
+      structures: _structures.section
+  packages.items:
+    type: array
+    options:
+      structures: _structures.package
+  faq.items:
+    type: array
+    options:
+      structures: _structures.faq
+
+_structures:
+  section:
+    values:
+      - label: New section
+        icon: article
+        value:
+          id: ""
+          heading: ""
+          text: ""
+          bullets: []
+  package:
+    values:
+      - label: New package
+        icon: sell
+        value:
+          title: ""
+          intro: ""
+          text: ""
+          includes: []
+  faq:
+    values:
+      - label: New FAQ
+        icon: question_answer
+        value:
+          question: ""
+          answer: ""
+
+collection_groups:
+  - heading: Website Content
+    collections:
+      - pages

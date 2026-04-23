@@ -1,0 +1,9 @@
+<section id="extra-guests" class="section section-alt">
+  <div class="container narrow">
+    {{ with .Params.extra_guests }}
+      {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
+      {{ with .text }}<p>{{ . }}</p>{{ end }}
+      {{ with .price }}<p class="card-price">{{ . }}</p>{{ end }}
+    {{ end }}
+  </div>
+</section>

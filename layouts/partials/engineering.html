@@ -1,0 +1,16 @@
+<section id="engineering" class="section">
+  <div class="container narrow">
+    {{ with .Params.engineering }}
+      {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
+      {{ with .text }}<p>{{ . }}</p>{{ end }}
+
+      {{ with .pricing }}
+        <ul class="feature-list">
+          {{ range . }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

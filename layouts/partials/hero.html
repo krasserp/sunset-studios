@@ -1,0 +1,41 @@
+<section class="hero">
+  <div class="hero-bg">
+    <span class="slide slide-1"></span>
+    <span class="slide slide-2"></span>
+    <span class="slide slide-3"></span>
+    <span class="slide slide-4"></span>
+  </div>
+
+  <div class="container hero-grid hero-content">
+    <!-- existing hero content stays exactly the same -->
+    <div class="hero-copy">
+      <p class="eyebrow">Creative retreat in Gran Canaria</p>
+      <h1>{{ .Params.hero.headline }}</h1>
+      <p class="hero-subheadline">{{ .Params.hero.subheadline }}</p>
+
+      <ul class="hero-proof">
+        <li>✔ Finish songs faster</li>
+        <li>✔ No distractions, no commuting</li>
+        <li>✔ Studio + stay in one place</li>
+      </ul>
+
+      <div class="button-row">
+        <a class="button button-primary" href="{{ .Params.hero.primary_cta.link }}">
+          {{ .Params.hero.primary_cta.text }}
+        </a>
+        <a class="button button-secondary" href="{{ .Params.hero.secondary_cta.link }}">
+          {{ .Params.hero.secondary_cta.text }}
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-panel">
+      <div class="hero-card">
+        <p>Soundproof fully equipped studio</p>
+        <p>Guest apartment for up to 3 people</p>
+        <p>Near 7 beaches</p>
+        <p>Write, record, reset</p>
+      </div>
+    </div>
+  </div>
+</section>

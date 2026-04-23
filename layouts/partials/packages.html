@@ -1,0 +1,23 @@
+<section id="packages" class="section section-alt">
+  <div class="container">
+    {{ with .Params.packages }}
+      {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
+      {{ with .intro }}<p class="section-intro">{{ . }}</p>{{ end }}
+      {{ with .text }}<p class="section-text">{{ . }}</p>{{ end }}
+
+      {{ with .items }}
+        <div class="card-grid">
+          {{ range . }}
+<article class="card">
+  {{ with .title }}<h3>{{ . }}</h3>{{ end }}
+  {{ with .price }}<p class="card-price">{{ . }}</p>{{ end }}
+  {{ with .intro }}<p class="card-intro">{{ . }}</p>{{ end }}
+  {{ with .text }}<p>{{ . }}</p>{{ end }}
+</article>
+
+          {{ end }}
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

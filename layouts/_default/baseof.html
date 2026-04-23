@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <main id="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+<script>
+  window.addEventListener("load", function () {
+    document.querySelector(".hero").classList.add("loaded");
+  });
+</script>
+
+<script>
+let currentIndex = 0;
+let images = [];
+
+function initGallery() {
+  images = Array.from(document.querySelectorAll(".gallery-grid img"));
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => openLightbox(index));
+  });
+}
+
+function openLightbox(index) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  currentIndex = index;
+
+  const img = images[index];
+  lightboxImg.src = img.dataset.full || img.src;
+
+  lightbox.classList.add("active");
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("active");
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateImage();
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateImage();
+}
+
+function updateImage() {
+  const img = images[currentIndex];
+  document.getElementById("lightbox-img").src = img.dataset.full || img.src;
+}
+
+/* CLICK OUTSIDE TO CLOSE */
+document.getElementById("lightbox").addEventListener("click", (e) => {
+  if (e.target.id === "lightbox") {
+    closeLightbox();
+  }
+});
+
+/* KEYBOARD NAV */
+document.addEventListener("keydown", (e) => {
+  if (!document.getElementById("lightbox").classList.contains("active")) return;
+
+  if (e.key === "ArrowRight") nextImage();
+  if (e.key === "ArrowLeft") prevImage();
+  if (e.key === "Escape") closeLightbox();
+});
+
+/* SWIPE SUPPORT */
+let startX = 0;
+
+document.getElementById("lightbox").addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+  let diff = startX - endX;
+
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) nextImage(); // swipe left
+    else prevImage(); // swipe right
+  }
+});
+
+/* INIT */
+window.addEventListener("DOMContentLoaded", initGallery);
+</script>
+  </body>
+</html>
