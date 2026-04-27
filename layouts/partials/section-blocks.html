@@ -1,11 +1,14 @@
 {{ range .Params.sections }}
 <section id="{{ .id }}" class="section">
-  <div class="container section-grid">
+  <div class="container section-grid {{ if .image }}section-grid--with-image{{ end }}">
+
     <div class="section-heading">
       <h2>{{ .heading }}</h2>
     </div>
+
     <div class="section-content">
       <p>{{ .text }}</p>
+
       {{ with .bullets }}
       <ul class="feature-list">
         {{ range . }}
@@ -14,6 +17,13 @@
       </ul>
       {{ end }}
     </div>
+
+    {{ if .image }}
+    <div class="section-image">
+      <img src="{{ .image }}" alt="{{ .heading }}">
+    </div>
+    {{ end }}
+
   </div>
 </section>
 {{ end }}

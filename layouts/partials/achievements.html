@@ -1,0 +1,19 @@
+{{ with .Params.achievements }}
+<section class="achievements">
+  <div class="container">
+
+    {{ if .heading }}
+      <h2 class="achievements__heading">{{ .heading }}</h2>
+    {{ end }}
+
+    <div class="achievements__grid">
+      {{ range .items }}
+        <div class="achievement-card">
+          <p class="achievement-card__text">{{ . }}</p>
+        </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}

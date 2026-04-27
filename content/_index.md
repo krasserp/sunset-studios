@@ -20,6 +20,7 @@ intro:
 
 sections:
   - id: "studio"
+    image: "/images/sections/studio-drums.webp"
     heading: "Your studio in the sun"
     text: "At the heart of Sunset Studios is a soundproof, fully equipped recording studio made for serious creative work without pressure or distractions. Whether you’re starting from scratch, finishing songs, cutting vocals, building production, or hosting an intensive writing trip, the space is set up to help ideas come through easily."
     bullets:
@@ -32,6 +33,7 @@ sections:
   - id: "stay"
     heading: "Stay where you create"
     text: "Sunset Studios includes a guest apartment for up to 3 people, making it easy to turn a studio booking into a proper creative retreat. No commuting across a city. No lost momentum. No breaking the mood just when things are getting good."
+    image: "/images/gallery01-1200.webp"
     bullets:
       - "Guest apartment for up to 3 guests"
       - "Apartment with direct access to the studio"
@@ -40,6 +42,7 @@ sections:
 
   - id: "location"
     heading: "Gran Canaria helps you hear differently"
+    image: "/images/sections/sunset.webp"
     text: "There’s something about leaving the city that changes the work. Your head gets quieter. Your ideas get sharper. You stop rushing. Sunset Studios is based in Gran Canaria, close to 7 beaches, with easy ways to enjoy the island when you step out of the studio."
     bullets:
       - "Near 7 beaches"
@@ -83,57 +86,67 @@ testimonials:
       instagram: "https://yesmen.bandcamp.com/"
 
 packages_intro:
-  title: "Studio + Stay"
-  intro: "For artists, songwriters and producers who want the full Sunset Studios experience."
-  text: "Choose the stay length that fits your project — from a focused 7-day writing trip to a 14-day production retreat or a full 1-month creative residency. Every package includes the same Studio + Stay setup, with the difference being how long you stay and how much space you give the work to develop."
+  title: "Creative Retreats at Sunset Studios"
+  intro: "For artists who want to step away, focus deeply and actually finish their music."
+  text: "Choose the level of immersion that fits your project — from a focused 7-day reset to a 14-day deep work retreat or a full 1-month residency. Every option is designed to help you move from ideas to finished music in a distraction-free environment."
 
 packages:
-  heading: "Studio + Stay"
-  intro: "For artists, songwriters and producers who want the full Sunset Studios experience."
-  text: "Choose the stay length that fits your project — from a focused 7-day retreat to a 14-day stay with more room to develop ideas, or a full 1-month residency for deeper work."
+  heading: "Choose Your Retreat"
+  intro: "Each retreat is built around one goal: helping you make real progress on your music."
+  text: "The difference is not just time — it’s how far you want to take your project while you’re here."
   items:
-    - title: "7-Day Retreat"
-      intro: "A short, focused creative reset."
-      text: "Best for artists, songwriters and producers who want one solid week away to write, record, finish ideas and step out of everyday routine."
+    - title: "7-Day Creative Reset"
+      intro: "Break routine and regain momentum."
+      text: "A focused week to step out of your everyday environment and reconnect with your creative flow. Ideal if you feel stuck or want to finally finish ideas that have been sitting unfinished.\n\nOutcome: Leave with 1–3 strong, finished pieces or a clear direction for your next release."
       price: "€1,490"
+      cta_text: "Get started"
 
-    - title: "14-Day Retreat"
-      intro: "More time to go deeper into the work."
-      text: "Ideal for artists and small teams who want two full weeks to write, refine, record and build momentum around a project."
+    - title: "14-Day Deep Work Retreat"
+      intro: "Build and finish real tracks."
+      text: "Two full weeks to move beyond ideas and actually complete music. The first phase is about exploration and writing, the second about refining and recording.\n\nOutcome: Leave with multiple finished tracks or a solid EP foundation.\n\n"
       price: "€2,690"
+      highlight: "Most Popular"
+      cta_text: "Dig in"
 
-    - title: "1-Month Residency"
-      intro: "A full creative residency with space to fully immerse."
-      text: "Designed for album projects, longer writing camps, production residencies and artists who want enough time to settle into a real working rhythm."
+    - title: "1-Month Artist Residency"
+      intro: "Full immersion for serious projects."
+      text: "A complete creative environment for artists working on albums, larger bodies of work or major transitions. Enough time to settle into a real rhythm, experiment and finish without pressure.\n\nOutcome: Leave with a full project or a major part of it completed."
       price: "€4,950"
+      cta_text: "Get comfi"
+
+achievements:
+  heading: "What You Can Expect"
+  items:
+    - "7 days → 1–3 finished tracks, clear direction"
+    - "14 days → EP-level progress"
+    - "1 month → album, major project progress"
 
 included:
-  heading: "What’s Included in Every Package"
-  text: "All Studio + Stay packages include the same core setup, whether you come for one week or one month."
+  heading: "What’s Included"
+  text: "Everything is designed to give you the space, focus and environment to create without distractions."
   items:
-    - "Guest apartment for up to 3 people"
-    - "Access to the soundproof, fully equipped studio"
-    - "Walkthrough and demo before independent use"
-    - "Self-use possible after onboarding"
-    - "Optional engineering assistance"
-    - "Idealy situated close to 7 beaches"
+    - "Private guest apartment for up to 3 people"
+    - "Access to a soundproof, fully equipped recording studio"
+    - "Onboarding session and full walkthrough"
+    - "Independent studio use after setup"
+    - "Optional production and engineering support"
+    - "Located close to multiple beaches for rest and inspiration"
     - "Use of bikes, snorkel gear and SUP"
-    - "Local recommendations from your host"
-    - "Airport pick up and drop off (30 minute drive from LPA airport)"
+    - "Local recommendations and guidance"
+    - "Airport pick-up and drop-off (30 minutes from LPA)"
 
 extra_guests:
   heading: "Extra Guests"
-  text: "The guest apartment is included for up to 3 people. Up to 3 additional guests can usually be accommodated in extra rooms, subject to availability."
+  text: "Each retreat includes accommodation for up to 3 people. Additional guests can often be accommodated depending on availability."
   price: "From €40 per person / night"
 
 engineering:
-  heading: "Optional Engineering Support"
-  text: "Guests can use the studio independently after the walkthrough, but engineering support can be added for recording sessions, setup help or production input."
+  heading: "Optional Production & Engineering"
+  text: "If you want additional support, production and engineering can be added to help you move faster and reach a more finished result."
   pricing:
     - "Half day (4h): €150"
     - "Full day (8h): €280"
     - "Multi-day support: custom quote"
-
 
 faq:
   heading: "FAQ"
@@ -158,4 +171,13 @@ cta:
   primary_cta:
     text: "Check availability"
     link: "/contact/"
+
+
+dividers:
+  - after: "packages"
+    src: "/images/gallery02-1200.webp"
+    height: "500px"
+    overlay: true
+    text: "Step out of your routine and into a focused creative space."
+
 ---

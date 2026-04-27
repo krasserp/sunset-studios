@@ -2,7 +2,27 @@
   {{ partial "hero.html" . }}
   {{ partial "intro.html" . }}
   {{ partial "section-blocks.html" . }}
+
+{{ range .Params.dividers }}
+  {{ if eq .after "section-blocks" }}
+    {{ partial "section-dividers.html" . }}
+  {{ end }}
+{{ end }}
   {{ partial "packages.html" . }}
+
+{{ range .Params.dividers }}
+  {{ if eq .after "packages" }}
+    {{ partial "section-dividers.html" . }}
+  {{ end }}
+{{ end }}
+
+{{ partial "achievements.html" . }}
+
+{{ range .Params.dividers }}
+  {{ if eq .after "achievements" }}
+    {{ partial "section-dividers.html" . }}
+  {{ end }}
+{{ end }}
   {{ partial "included.html" . }}
   {{ partial "extra-guests.html" . }}
   {{ partial "engineering.html" . }}

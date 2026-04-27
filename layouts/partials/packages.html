@@ -13,6 +13,11 @@
   {{ with .price }}<p class="card-price">{{ . }}</p>{{ end }}
   {{ with .intro }}<p class="card-intro">{{ . }}</p>{{ end }}
   {{ with .text }}<p>{{ . }}</p>{{ end }}
+{{ if or .cta_text .cta_link }}
+  <a href="{{ .cta_link | default "/contact" }}" class="button button-primary align-bottom">
+    {{ .cta_text | default "Book now" }}
+  </a>
+{{ end }}
 </article>
 
           {{ end }}

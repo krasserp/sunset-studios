@@ -402,6 +402,7 @@ h3 { font-size: 1.4rem; }
   background: var(--accent);
   color: white;
   border-color: transparent;
+  text-align: center;
 }
 
 .button-primary:hover {
@@ -768,4 +769,116 @@ h3 { font-size: 1.4rem; }
   margin: 0.2rem 0 0;
   color: rgba(0, 0, 0, 0.65);
   font-size: 0.95rem;
+}
+
+
+.achievements {
+  padding: 4rem 1.5rem;
+  background: #0f0f0f;
+  color: #fff;
+  text-align: center;
+}
+
+.achievements__heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.achievements__grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.achievement-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.achievement-card__text {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+
+
+.section-divider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.section-divider__image {
+  position: relative;
+  width: 100%;
+  height: var(--divider-height);
+  background-size: cover;
+  background-position: center;
+}
+
+.section-divider__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.section-divider__content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  max-width: 500px;
+}
+
+
+
+
+.content-section {
+  padding: 4rem 1.5rem;
+}
+
+.content-section__grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .content-section__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.content-section__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.content-section__text h2 {
+  margin-bottom: 1rem;
+}
+
+.content-section__text ul {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+
+.card-cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.card-cta:hover {
+  opacity: 0.85;
 }

@@ -1,0 +1,20 @@
+{{ $src := .src }}
+{{ $alt := .alt | default "Section divider image" }}
+{{ $height := .height | default "400px" }}
+{{ $overlay := .overlay | default false }}
+
+<section class="section-divider" style="--divider-height: {{ $height }};">
+  <div class="section-divider__image" style="background-image: url('{{ $src }}');">
+    
+    {{ if $overlay }}
+      <div class="section-divider__overlay"></div>
+    {{ end }}
+
+    {{ if .text }}
+      <div class="section-divider__content">
+        <p>{{ .text }}</p>
+      </div>
+    {{ end }}
+
+  </div>
+</section>
