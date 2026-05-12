@@ -20,7 +20,7 @@ intro:
 
 sections:
   - id: "studio"
-    image: "/images/sections/studio-drums.webp"
+    image: "/images/studio_004-800.webp"
     heading: "Your studio in the sun"
     text: "At the heart of Sunset Studios is a soundproof, fully equipped recording studio made for serious creative work without pressure or distractions. Whether you’re starting from scratch, finishing songs, cutting vocals, building production, or hosting an intensive writing trip, the space is set up to help ideas come through easily."
     bullets:
