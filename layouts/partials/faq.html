@@ -1,6 +1,7 @@
 <section id="faq" class="section">
   <div class="container narrow">
     <h2>{{ .Params.faq.heading }}</h2>
+
     <div class="faq-list">
       {{ range .Params.faq.items }}
       <details class="faq-item">
@@ -8,6 +9,28 @@
         <p>{{ .answer }}</p>
       </details>
       {{ end }}
+
+      <!-- Location FAQ -->
+      <details class="faq-item">
+        <summary>Where is Sunset Studios located?</summary>
+        <p>
+          Sunset Studios is located in Gran Canaria, Canary Islands, Spain —
+          surrounded by nature and close to the coast.
+        </p>
+
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps?q=27.762809,-15.667785&hl=en&z=14&output=embed"
+            width="100%"
+            height="350"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>

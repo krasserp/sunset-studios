@@ -882,3 +882,70 @@ h3 { font-size: 1.4rem; }
 .card-cta:hover {
   opacity: 0.85;
 }
+
+
+
+/* =========================================
+VERTICAL VIDEO GRID
+========================================= */
+
+.video-grid,
+.shorts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-card,
+.short-card {
+  display: flex;
+  justify-content: center;
+}
+
+.video-card iframe,
+.short-card iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 0;
+  border-radius: 20px;
+  background: #000;
+}
+
+.video-card iframe {
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover iframe {
+  transform: scale(1.02);
+}
+
+/* =========================================
+VERTICAL VIDEO GRID
+========================================= */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.video-card {
+  width: 100%;
+  max-width: 340px; /* KEY */
+}
+
+.video-card iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 0;
+  border-radius: 20px;
+  background: #000;
+  display: block;
+
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover iframe {
+  transform: scale(1.02);
+}

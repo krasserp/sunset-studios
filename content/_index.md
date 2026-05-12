@@ -92,7 +92,7 @@ packages_intro:
 
 packages:
   heading: "Choose Your Retreat"
-  intro: "Each retreat is built around one goal: helping you make real progress on your music."
+  intro: "Each option is built around one goal: helping you make real progress on your music."
   text: "The difference is not just time — it’s how far you want to take your project while you’re here."
   items:
     - title: "7-Day Creative Reset"

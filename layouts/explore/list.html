@@ -1,0 +1,135 @@
+{{ define "main" }}
+
+<section class="section explore-hero">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Params.description }}</p>
+  </div>
+</section>
+
+
+
+<!-- PLAYLIST -->
+
+{{ with .Params.youtube_playlist }}
+
+<section class="section video-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>Studio Videos</h2>
+    </div>
+
+    <div class="video-grid">
+
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/videoseries?list={{ . }}"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{{ end }}
+
+<!-- SHORTS -->
+
+{{ with .Params.shorts }}
+
+<section class="section shorts-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>Recording sessions</h2>
+    </div>
+
+    <div class="shorts-grid">
+
+      {{ range . }}
+
+      <div class="short-card">
+        <iframe
+          src="https://www.youtube.com/embed/{{ . }}"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      {{ end }}
+
+    </div>
+
+  </div>
+</section>
+
+{{ end }}
+
+<!-- NATURE -->
+
+<section class="section gallery-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>Gran Canaria</h2>
+    </div>
+
+    <div class="gallery-grid">
+
+      {{ range .Params.nature_gallery }}
+
+      <img
+        src="{{ .thumb }}"
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt="{{ .alt }}"
+        onclick="openLightbox(this)"
+        data-full="{{ .image }}"
+      >
+
+      {{ end }}
+
+    </div>
+  </div>
+</section>
+
+
+<!-- STUDIO GALLERY -->
+
+<section class="section gallery-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>The Studio</h2>
+    </div>
+
+    <div class="gallery-grid">
+
+      {{ range .Params.studio_gallery }}
+
+      <img
+        src="{{ .thumb }}"
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        alt="{{ .alt }}"
+        onclick="openLightbox(this)"
+        data-full="{{ .image }}"
+      >
+
+      {{ end }}
+
+    </div>
+  </div>
+</section>
+
+{{ partial "lightbox.html" . }}
+
+{{ end }}
