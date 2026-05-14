@@ -8,16 +8,23 @@
       {{ with .items }}
         <div class="card-grid">
           {{ range . }}
-<article class="card">
+<article class="card{{ with .highlight }} card-highlighted{{ end }}">
+
+  {{ with .highlight }}
+    <div class="card-badge">{{ . }}</div>
+  {{ end }}
+
   {{ with .title }}<h3>{{ . }}</h3>{{ end }}
   {{ with .price }}<p class="card-price">{{ . }}</p>{{ end }}
   {{ with .intro }}<p class="card-intro">{{ . }}</p>{{ end }}
-  {{ with .text }}<p>{{ . }}</p>{{ end }}
-{{ if or .cta_text .cta_link }}
-  <a href="{{ .cta_link | default "/contact" }}" class="button button-primary align-bottom">
-    {{ .cta_text | default "Book now" }}
-  </a>
-{{ end }}
+  {{ with .text }}<p>{{ . | safeHTML }}</p>{{ end }}
+
+  {{ if or .cta_text .cta_link }}
+    <a href="{{ .cta_link | default "/contact" }}" class="button button-primary align-bottom">
+      {{ .cta_text | default "Book now" }}
+    </a>
+  {{ end }}
+
 </article>
 
           {{ end }}

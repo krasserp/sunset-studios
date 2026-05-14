@@ -4,7 +4,7 @@ description: "A creative retreat in Gran Canaria for artists, songwriters and pr
 
 hero:
   headline: "Escape the noise. Make something real."
-  subheadline: "Sunset Studios is a creative retreat in Gran Canaria for artists, songwriters and producers who need space to focus, breathe and finish the work."
+  subheadline: "Sunset Studios is a creative retreat in Gran Canaria designed for artists, songwriters, and producers seeking space to focus, breathe, and complete meaningful work."
   text: "Write, record and reset in a fully equipped soundproof studio, with a guest apartment for up to 3 people, beaches nearby, and the kind of calm that busy cities rarely give you."
   primary_cta:
     text: "Book your stay"
@@ -16,28 +16,28 @@ hero:
 intro:
   eyebrow: "A studio stay built for flow"
   heading: "Some ideas need more than a few hours squeezed between everyday life."
-  text: "Sunset Studios is designed for writing sessions, recording trips and small creative getaways where the focus is simple — make good work, then go outside and clear your head. You can come solo, as a duo, or as a small team and move naturally between music and rest."
+  text: "Sunset Studios is designed for writing sessions, recording trips and small creative getaways where the focus is simple — make good work, then go outside and clear your head. Come solo, as a duo, or with a small team and move naturally between music and rest."
 
 sections:
   - id: "studio"
     image: "/images/studio_004-800.webp"
     heading: "Your studio in the sun"
-    text: "At the heart of Sunset Studios is a soundproof, fully equipped recording studio made for serious creative work without pressure or distractions. Whether you’re starting from scratch, finishing songs, cutting vocals, building production, or hosting an intensive writing trip, the space is set up to help ideas come through easily."
+    text: "At the heart of Sunset Studios is a soundproof, fully equipped recording studio designed for serious work without pressure or distractions. Whether you’re starting from scratch, finishing songs, recording vocals, building production, or hosting an intensive writing trip, the space is set up to keep ideas flowing easily ."
     bullets:
-      - "Fully equipped soundproof studio"
+      - "Fully equipped, soundproof studio"
       - "Ideal for writing sessions and recording"
-      - "Engineering assistance available if needed"
-      - "Independent use possible after a walkthrough and demo"
+      - "Engineering support available on request"
+      - "Independent studio use available after walkthrough"
       - "Calm setting away from city noise"
 
   - id: "stay"
     heading: "Stay where you create"
-    text: "Sunset Studios includes a guest apartment for up to 3 people, making it easy to turn a studio booking into a proper creative retreat. No commuting across a city. No lost momentum. No breaking the mood just when things are getting good."
+    text: "Sunset Studios includes a guest apartment for up to 3 people, making it easy to turn a studio booking into a proper creative retreat. No commuting across a city. No lost momentum. No breaking the flow just when things are getting good."
     image: "/images/gallery01-1200.webp"
     bullets:
       - "Guest apartment for up to 3 guests"
       - "Apartment with direct access to the studio"
-      - "Additional guest rooms can be available on request"
+      - "Additional accommodation available on request"
       - "Ideal for solo artists, writing pairs and small teams"
 
   - id: "location"
@@ -48,16 +48,16 @@ sections:
       - "Near 7 beaches"
       - "Bicycles available"
       - "Snorkel gear available"
-      - "SUP can be borrowed"
+      - "Paddleboard (SUP) available"
       - "A warm, calm setting for focused creative time"
 
   - id: "host"
     heading: "More than a studio booking"
-    text: "Your host knows Gran Canaria well and can recommend both the must-see highlights and the quieter, off-the-beaten-path spots that most visitors miss. That means less planning, less guessing, and more time spent enjoying the trip and staying in the right headspace."
+    text: "Your host knows Gran Canaria well and can recommend everything from local favourites to quieter spots most visitors never find. Less planning, less searching, and more time spent enjoying the trip and staying in the right headspace. "
 
   - id: "for-who"
     heading: "Made for artists who need space"
-    text: "Sunset Studios is for artists, songwriters and producers who want to step away from busy cities like London, Berlin, Paris, Rome and Stockholm and spend a few days in a warmer, slower environment where ideas can breathe."
+    text: "Sunset Studios is for artists, songwriters and producers who want to step away from busy cities and spend time in a warmer, slower environment where ideas can breathe."
     bullets:
       - "Artists who want to write and record away from daily noise"
       - "Songwriters looking for focused time and fresh energy"
@@ -92,27 +92,27 @@ packages_intro:
 
 packages:
   heading: "Choose Your Retreat"
-  intro: "Each option is built around one goal: helping you make real progress on your music."
-  text: "The difference is not just time — it’s how far you want to take your project while you’re here."
+  intro: "Each option is designed to help you settle in, focus properly, and move your music forward."
+  text: "The difference is not just time — it’s how far you want to take the project while you’re here"
   items:
     - title: "7-Day Creative Reset"
       intro: "Break routine and regain momentum."
-      text: "A focused week to step out of your everyday environment and reconnect with your creative flow. Ideal if you feel stuck or want to finally finish ideas that have been sitting unfinished.\n\nOutcome: Leave with 1–3 strong, finished pieces or a clear direction for your next release."
+      text: "A focused week to step out of your everyday environment and reconnect with your creative flow. Ideal if you feel stuck or want to finally finish ideas that have been sitting unfinished.\n\n<br/><b>Outcome:</b><br/> Leave with 1–3 strong finished pieces or a clear direction for your next release."
       price: "€1,490"
       cta_text: "Get started"
 
     - title: "14-Day Deep Work Retreat"
       intro: "Build and finish real tracks."
-      text: "Two full weeks to move beyond ideas and actually complete music. The first phase is about exploration and writing, the second about refining and recording.\n\nOutcome: Leave with multiple finished tracks or a solid EP foundation.\n\n"
+      text: "Two full weeks to move beyond ideas and complete music. The first phase focuses on exploration and writing, the second about refining and recording.\n\n<br/><br/><b>Outcome:</b><br/> Leave with multiple finished tracks or strong foundation for EP.\n\n"
       price: "€2,690"
       highlight: "Most Popular"
       cta_text: "Dig in"
 
     - title: "1-Month Artist Residency"
       intro: "Full immersion for serious projects."
-      text: "A complete creative environment for artists working on albums, larger bodies of work or major transitions. Enough time to settle into a real rhythm, experiment and finish without pressure.\n\nOutcome: Leave with a full project or a major part of it completed."
+      text: "A complete creative environment for artists working on albums, larger bodies of work, or major transitions. Enough time to settle into a rhythm, experiment, and finish without pressure.\n\n<br/><b>Outcome:</b><br/> Leave with a finished project or a substantial part of an album completed."
       price: "€4,950"
-      cta_text: "Get comfi"
+      cta_text: "Get comfy"
 
 achievements:
   heading: "What You Can Expect"
@@ -152,17 +152,17 @@ faq:
   heading: "FAQ"
   items:
     - question: "What is Sunset Studios?"
-      answer: "Sunset Studios is a creative retreat in Gran Canaria with a soundproof fully equipped studio and accommodation options for artists, songwriters and producers who want time and space to create."
+      answer: "Sunset Studios is a creative retreat in Gran Canaria with a fully equipped soundproof studio and accommodation for artists, songwriters, and producers who want time and space to focus and create."
     - question: "Is it more for recording or writing sessions?"
-      answer: "Both. The studio is ideal for writing sessions and recording."
+      answer: "Both. It’s ideal for writing and recording."
     - question: "How many people can stay?"
-      answer: "The guest apartment can host up to 3 people. Additional guest rooms may also be available."
+      answer: "The guest apartment can host up to three people. Additional accommodation may be available on request for up to 3 more guests."
     - question: "Can I rent the apartment and the studio together?"
-      answer: "Yes. The apartment is joint to the studio and the standard package is appartment + the studio. Local artists rent the studio on occassions seperately."
+      answer: "Yes. The apartment is connected to the studio, and the standard package includes both. Local artists may also rent the studio separately on occasion."
     - question: "Do I need to bring my own engineer?"
-      answer: "No. Engineering assistance can be provided if needed. You're welcome to bring your engineer if desired."
+      answer: "No. Engineering support is available if needed, and you’re also welcome to bring your own engineer."
     - question: "Can we use the studio on our own?"
-      answer: "Yes. After a proper walkthrough and demo, guests can use the equipment themselves."
+      answer: "Yes. After a walkthrough and brief introduction, you can use the studio independently. "
 
 cta:
   heading: "Ready to get out of the city and into the work?"

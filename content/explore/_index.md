@@ -1,6 +1,7 @@
 ---
 title: "Explore"
-description: "Studio impressions, recording sessions, videos and Gran Canaria atmosphere."
+description: "Studio moments, recording sessions, videos, and the atmosphere of Gran Canaria.
+"
 
 studio_gallery:
   - image: "/images/studio_001-1200.webp"
@@ -41,7 +42,13 @@ studio_gallery:
 
   - image: "/images/studio_010-1200.webp"
     thumb: "/images/studio_010-600.webp"
-    alt: "Studio 9"
+    alt: "Studio 10"
+  - image: "/images/studio_011-1200.webp"
+    thumb: "/images/studio_011-600.webp"
+    alt: "Studio 11"
+  - image: "/images/studio_012-1200.webp"
+    thumb: "/images/studio_012-600.webp"
+    alt: "Studio 12"
 
 nature_gallery:
   - image: "/images/gran-canaria_01-1200.webp"

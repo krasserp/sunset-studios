@@ -949,3 +949,42 @@ VERTICAL VIDEO GRID
 .video-card:hover iframe {
   transform: scale(1.02);
 }
+
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.card-highlighted {
+  border: 2px solid #f99201;
+  transform: translateY(-4px);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-badge {
+  position: absolute;
+  top: 20px;
+  right: -64px;
+  width: 220px;
+  text-align: center;
+  background: #f99201;
+  color: white;
+  padding: 0.5rem 0;
+  padding-left:1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  transform: rotate(45deg);
+  z-index: 10;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
