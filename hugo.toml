@@ -1,6 +1,7 @@
 baseURL = 'http://example.org/'
 languageCode = "en-gb"
 title = "Sunset Studios"
+noTimes = true
 
 [params]
 description = "Creative retreat in Gran Canaria for artists, songwriters and producers."

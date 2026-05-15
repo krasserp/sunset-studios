@@ -1,54 +1,92 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
-<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{- $title := cond .IsHome
+  "Sunset Studios – Creative Music Retreat in Gran Canaria"
+  (printf "%s · %s" .Title .Site.Title)
+-}}
 
-<title>Sunset Studios – Creative Music Retreat in Gran Canaria</title>
-<meta name="description" content="Escape the city and create at Sunset Studios. A focused, inspiring music retreat in Gran Canaria for artists, bands and producers.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://sunset-studios.one/">
+{{- $description := .Params.description | default "Escape the city and create at Sunset Studios — a focused music retreat in Gran Canaria for artists, bands and producers seeking inspiration, clarity and deep creative work." -}}
 
-<meta property="og:title" content="Sunset Studios – Creative Retreat for Musicians">
-<meta property="og:description" content="Record, write and reset in a focused studio environment in Gran Canaria. Built for artists who want to go deep.">
-<meta property="og:image" content="https://sunset-studios.one/images/hero1.webp">
-<meta property="og:url" content="https://sunset-studios.one/">
+{{- $image := "https://sunset-studios.one/images/hero1.webp" -}}
+{{- $url := .Permalink | default "https://sunset-studios.one/" -}}
+
+<title>{{ $title }}</title>
+
+<meta name="description" content="{{ $description }}">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{{ $url }}">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_GB">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunset Studios">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ $url }}">
+<meta property="og:image" content="{{ $image }}">
+<meta property="og:image:alt" content="Sunset Studios in Gran Canaria">
 
-
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sunset Studios – Music Retreat in Gran Canaria">
-<meta name="twitter:description" content="A space to focus, create and finish your music. Escape distractions and go deep.">
-<meta name="twitter:image" content="https://sunset-studios.one/images/hero1.webp">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $image }}">
 
+<!-- Mobile theme -->
+<meta name="theme-color" content="#0d0d0d">
+
+<!-- CSS -->
 {{ $styles := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+<link
+  rel="stylesheet"
+  href="{{ $styles.RelPermalink }}"
+  integrity="{{ $styles.Data.Integrity }}"
+>
 
-<link rel="preload" as="image" href="/images/hero1.webp" media="(min-width: 641px)">
-<link rel="preload" as="image" href="/images/hero1-m.webp" media="(max-width: 640px)">
+<!-- Hero image preload -->
+<link
+  rel="preload"
+  as="image"
+  href="/images/hero1.webp"
+  imagesrcset="/images/hero1-m.webp 640w, /images/hero1.webp 1600w"
+  imagesizes="100vw"
+  fetchpriority="high"
+>
 
-<link rel="preload" as="image" href="/images/hero2.webp" media="(min-width: 641px)">
-<link rel="preload" as="image" href="/images/hero2-m.webp" media="(max-width: 640px)">
+<!-- Optional font optimisation -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preload" as="image" href="/images/hero3.webp" media="(min-width: 641px)">
-<link rel="preload" as="image" href="/images/hero3-m.webp" media="(max-width: 640px)">
 
-<link rel="preload" as="image" href="/images/hero4.webp" media="(min-width: 641px)">
-<link rel="preload" as="image" href="/images/hero4-m.webp" media="(max-width: 640px)">
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KV9P8PLM');
+</script>
 
+
+<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "MusicRecordingStudio",
   "name": "Sunset Studios",
   "url": "https://sunset-studios.one",
-  "image": "https://sunset-studios.one/images/hero1.webp",
-  "description": "A creative music retreat in Gran Canaria offering recording, writing and production in a focused environment.",
+  "image": "{{ $image }}",
+  "description": "A creative music retreat and recording studio in Gran Canaria for artists, bands and producers seeking focus, inspiration and deep creative work.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Gran Canaria",
     "addressCountry": "ES"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Europe"
   }
 }
 </script>
+
 {{ hugo.Generator }}

@@ -4,6 +4,11 @@
     {{ partial "head.html" . }}
   </head>
   <body>
+
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV9P8PLM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
     {{ partial "header.html" . }}
     <main id="main">
       {{ block "main" . }}{{ end }}
