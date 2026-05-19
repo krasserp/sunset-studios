@@ -15,9 +15,13 @@
     </main>
     {{ partial "footer.html" . }}
 <script>
-  window.addEventListener("load", function () {
-    document.querySelector(".hero").classList.add("loaded");
-  });
+window.addEventListener("load", function () {
+  const hero = document.querySelector(".hero");
+
+  if (hero) {
+    hero.classList.add("loaded");
+  }
+});
 </script>
 
 <script>
