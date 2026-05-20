@@ -27,15 +27,50 @@ window.addEventListener("load", function () {
 <script>
 let currentIndex = 0;
 let images = [];
+let preloadedImages = [];
 
+/* INIT GALLERY */
 function initGallery() {
   images = Array.from(document.querySelectorAll(".gallery-grid img"));
 
   images.forEach((img, index) => {
     img.addEventListener("click", () => openLightbox(index));
   });
+
+  // preload full images AFTER initial page load
+  window.addEventListener("load", () => {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(preloadLightboxImages);
+    } else {
+      setTimeout(preloadLightboxImages, 1000);
+    }
+  });
 }
 
+/* PRELOAD ALL FULLSIZE IMAGES */
+function preloadLightboxImages() {
+  images.forEach((img) => {
+    const fullSrc = img.dataset.full || img.src;
+
+    const preloadImg = new Image();
+    preloadImg.src = fullSrc;
+
+    preloadedImages.push(preloadImg);
+  });
+}
+
+/* PRELOAD NEXT + PREVIOUS IMAGE */
+function preloadAdjacentImages() {
+  const next = (currentIndex + 1) % images.length;
+  const prev = (currentIndex - 1 + images.length) % images.length;
+
+  [next, prev].forEach((i) => {
+    const preloadImg = new Image();
+    preloadImg.src = images[i].dataset.full || images[i].src;
+  });
+}
+
+/* OPEN LIGHTBOX */
 function openLightbox(index) {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -46,25 +81,35 @@ function openLightbox(index) {
   lightboxImg.src = img.dataset.full || img.src;
 
   lightbox.classList.add("active");
+
+  preloadAdjacentImages();
 }
 
+/* CLOSE LIGHTBOX */
 function closeLightbox() {
   document.getElementById("lightbox").classList.remove("active");
 }
 
+/* NEXT IMAGE */
 function nextImage() {
   currentIndex = (currentIndex + 1) % images.length;
   updateImage();
 }
 
+/* PREVIOUS IMAGE */
 function prevImage() {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
   updateImage();
 }
 
+/* UPDATE CURRENT IMAGE */
 function updateImage() {
   const img = images[currentIndex];
-  document.getElementById("lightbox-img").src = img.dataset.full || img.src;
+
+  document.getElementById("lightbox-img").src =
+    img.dataset.full || img.src;
+
+  preloadAdjacentImages();
 }
 
 /* CLICK OUTSIDE TO CLOSE */
@@ -74,16 +119,18 @@ document.getElementById("lightbox").addEventListener("click", (e) => {
   }
 });
 
-/* KEYBOARD NAV */
+/* KEYBOARD NAVIGATION */
 document.addEventListener("keydown", (e) => {
-  if (!document.getElementById("lightbox").classList.contains("active")) return;
+  const lightbox = document.getElementById("lightbox");
+
+  if (!lightbox.classList.contains("active")) return;
 
   if (e.key === "ArrowRight") nextImage();
   if (e.key === "ArrowLeft") prevImage();
   if (e.key === "Escape") closeLightbox();
 });
 
-/* SWIPE SUPPORT */
+/* TOUCH SWIPE SUPPORT */
 let startX = 0;
 
 document.getElementById("lightbox").addEventListener("touchstart", (e) => {
@@ -91,16 +138,19 @@ document.getElementById("lightbox").addEventListener("touchstart", (e) => {
 });
 
 document.getElementById("lightbox").addEventListener("touchend", (e) => {
-  let endX = e.changedTouches[0].clientX;
-  let diff = startX - endX;
+  const endX = e.changedTouches[0].clientX;
+  const diff = startX - endX;
 
   if (Math.abs(diff) > 50) {
-    if (diff > 0) nextImage(); // swipe left
-    else prevImage(); // swipe right
+    if (diff > 0) {
+      nextImage(); // swipe left
+    } else {
+      prevImage(); // swipe right
+    }
   }
 });
 
-/* INIT */
+/* START */
 window.addEventListener("DOMContentLoaded", initGallery);
 </script>
   </body>
