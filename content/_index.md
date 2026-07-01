@@ -92,8 +92,8 @@ packages_intro:
 
 packages:
   heading: "Choose Your Retreat"
-  intro: "Each option is designed to help you settle in, focus properly, and move your music forward."
-  text: "The difference is not just time — it’s how far you want to take the project while you’re here"
+  intro: "Each retreat is designed to give you the time, space, and focus to move your music forward at a pace that suits your project."
+  text: "These retreats are our most common starting points and give you a good idea of what some artists choose."
   items:
     - title: "7-Day Creative Reset"
       intro: "Break routine and regain momentum."
@@ -105,7 +105,7 @@ packages:
       intro: "Build and finish real tracks."
       text: "Two full weeks to move beyond ideas and complete music. The first phase focuses on exploration and writing, the second about refining and recording.\n\n<br/><br/><b>Outcome:</b><br/> Leave with multiple finished tracks or strong foundation for EP.\n\n"
       price: "€2,690"
-      highlight: "Most Popular"
+      highlight: "Popular"
       cta_text: "Dig in"
 
     - title: "1-Month Artist Residency"
@@ -113,6 +113,19 @@ packages:
       text: "A complete creative environment for artists working on albums, larger bodies of work, or major transitions. Enough time to settle into a rhythm, experiment, and finish without pressure.\n\n<br/><b>Outcome:</b><br/> Leave with a finished project or a substantial part of an album completed."
       price: "€4,950"
       cta_text: "Get comfy"
+
+
+tailored:
+  heading: "Tailored to Your Project"
+
+  text: "No two artists or projects are the same. Whether you're starting from a blank page, finishing an album, refining existing recordings, or simply taking time away to rediscover your creative flow, we'll shape the residency according to your needs."
+
+  text2: "Tell us a little about your project, your preferred dates, and what you'd like to achieve during your stay. We'll get back to you with a personalised proposal and quote."
+
+  cta:
+    text: "Tell Us About Your Project"
+    link: "/contact/"
+
 
 achievements:
   heading: "What You Can Expect"

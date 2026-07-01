@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Sunset Studios</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Sunset Studios</description>
-    <generator>Hugo</generator>
-    <language>en-gb</language>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Contact</title>
-      <link>http://localhost:1313/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
-      <description>&lt;h2 id=&#34;get-in-touch&#34;&gt;Get in touch&lt;/h2&gt;&#xA;&lt;p&gt;To book your stay or check availability, get in touch by email or Instagram.&lt;/p&gt;&#xA;&lt;p&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;21&#34; height=&#34;20&#34; fill=&#34;none&#34;&#xA;stroke=&#34;currentColor&#34; stroke-width=&#34;1.8&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;&lt;path d=&#34;M4 6h16v12H4z&#34;/&gt;&#xA;&lt;path d=&#34;M4 7l8 6 8-6&#34;/&gt;&#xA;&lt;/svg&gt; &lt;a href=&#34;mailto:phil@sunset-studios.one&#34;&gt;phil@sunset-studios.one&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;20&#34; height=&#34;20&#34; fill=&#34;none&#34;&#xA;stroke=&#34;currentColor&#34; stroke-width=&#34;1.8&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;&lt;rect x=&#34;5&#34; y=&#34;5&#34; width=&#34;14&#34; height=&#34;14&#34; rx=&#34;4&#34; ry=&#34;4&#34;/&gt;&#xA;&lt;circle cx=&#34;12&#34; cy=&#34;12&#34; r=&#34;3.5&#34;/&gt;&#xA;&lt;circle cx=&#34;16.5&#34; cy=&#34;7.5&#34; r=&#34;1&#34;/&gt;&#xA;&lt;/svg&gt; &lt;a href=&#34;https://www.instagram.com/sunsetstudios.one/&#34;&gt;@sunsetstudios.one&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Sunset Studios</title>
+		<link>http://localhost:1313/</link>
+		<description>Recent content on Sunset Studios</description>
+		<generator>Hugo</generator>
+		<language>en-gb</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Privacy Policy</title>
+				<link>http://localhost:1313/privacy/</link>
+				<pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/privacy/</guid>
+				<description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;Last updated: June 2026&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;This Privacy &amp;amp; Cookie Policy applies to &lt;strong&gt;sunset-studios.com&lt;/strong&gt; and &lt;strong&gt;music.sunset-studios.com&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-data-controller&#34;&gt;1. Data Controller&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Sunset Studios&lt;/strong&gt;&#xA;Gran Canaria, Canary Islands, Spain&lt;/p&gt;&#xA;&lt;p&gt;Contact:&#xA;&lt;a href=&#34;mailto:support@sunset-studios.one&#34;&gt;support@sunset-studios.one&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-information-we-collect&#34;&gt;2. Information We Collect&lt;/h2&gt;&#xA;&lt;p&gt;Depending on how you use our websites, we may collect:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Name&lt;/li&gt;&#xA;&lt;li&gt;Email address&lt;/li&gt;&#xA;&lt;li&gt;Billing information&lt;/li&gt;&#xA;&lt;li&gt;Booking information&lt;/li&gt;&#xA;&lt;li&gt;Purchase history&lt;/li&gt;&#xA;&lt;li&gt;Messages sent through contact forms&lt;/li&gt;&#xA;&lt;li&gt;IP address&lt;/li&gt;&#xA;&lt;li&gt;Browser and device information&lt;/li&gt;&#xA;&lt;li&gt;Website usage information&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Payment card information is processed directly by Stripe and is not stored on our servers.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Terms &amp; Conditions</title>
+				<link>http://localhost:1313/terms/</link>
+				<pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/terms/</guid>
+				<description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;Last updated: June 2026&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;These Terms &amp;amp; Conditions govern the use of &lt;strong&gt;sunset-studios.com&lt;/strong&gt; and &lt;strong&gt;music.sunset-studios.com&lt;/strong&gt; (collectively referred to as the &amp;ldquo;Websites&amp;rdquo;) and the purchase of products or services offered through them.&lt;/p&gt;&#xA;&lt;p&gt;By accessing the Websites or purchasing any product or service, you agree to these Terms &amp;amp; Conditions.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-business-information&#34;&gt;1. Business Information&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Sunset Studios&lt;/strong&gt; is operated as a self-employed business (autónomo) based in Gran Canaria, Canary Islands, Spain.&lt;/p&gt;&#xA;&lt;p&gt;Contact:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;mailto:support@sunset-studios.one&#34;&gt;support@sunset-studios.one&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-services&#34;&gt;2. Services&lt;/h2&gt;&#xA;&lt;p&gt;Sunset Studios may offer:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Contact</title>
+				<link>http://localhost:1313/contact/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/contact/</guid>
+				<description>&lt;h2 id=&#34;get-in-touch&#34;&gt;Get in touch&lt;/h2&gt;&#xA;&lt;p&gt;To book your stay or check availability, get in touch by email or Instagram.&lt;/p&gt;&#xA;&lt;p&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;21&#34; height=&#34;20&#34; fill=&#34;none&#34;&#xA;stroke=&#34;currentColor&#34; stroke-width=&#34;1.8&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;&lt;path d=&#34;M4 6h16v12H4z&#34;/&gt;&#xA;&lt;path d=&#34;M4 7l8 6 8-6&#34;/&gt;&#xA;&lt;/svg&gt; &lt;a href=&#34;mailto:phil@sunset-studios.one&#34;&gt;phil@sunset-studios.one&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;20&#34; height=&#34;20&#34; fill=&#34;none&#34;&#xA;stroke=&#34;currentColor&#34; stroke-width=&#34;1.8&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;&lt;rect x=&#34;5&#34; y=&#34;5&#34; width=&#34;14&#34; height=&#34;14&#34; rx=&#34;4&#34; ry=&#34;4&#34;/&gt;&#xA;&lt;circle cx=&#34;12&#34; cy=&#34;12&#34; r=&#34;3.5&#34;/&gt;&#xA;&lt;circle cx=&#34;16.5&#34; cy=&#34;7.5&#34; r=&#34;1&#34;/&gt;&#xA;&lt;/svg&gt; &lt;a href=&#34;https://www.instagram.com/sunsetstudios.one/&#34;&gt;@sunsetstudios.one&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

@@ -1,0 +1,27 @@
+<section id="tailored" class="section section-alt">
+  <div class="container container-narrow">
+    {{ with .Params.tailored }}
+      {{ with .heading }}
+        <h2>{{ . }}</h2>
+      {{ end }}
+
+      {{ with .text }}
+        <p class="section-text">{{ . }}</p>
+      {{ end }}
+
+      {{ with .text2 }}
+        <p class="section-text">{{ . }}</p>
+      {{ end }}
+
+      {{ with .text3 }}
+        <p class="section-text">{{ . }}</p>
+      {{ end }}
+
+      {{ with .cta }}
+        <a href="{{ .link }}" class="button button-primary">
+          {{ .text }}
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

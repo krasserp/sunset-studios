@@ -10,6 +10,16 @@
 {{ end }}
   {{ partial "packages.html" . }}
 
+{{ with .Params.tailored }}
+
+{{ end }}
+
+{{ partial "tailored.html" . }}
+
+{{ with .Params.tailored }}
+
+{{ end }}
+
 {{ range .Params.dividers }}
   {{ if eq .after "packages" }}
     {{ partial "section-dividers.html" . }}

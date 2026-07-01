@@ -3,7 +3,7 @@
     {{ with .Params.packages }}
       {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
       {{ with .intro }}<p class="section-intro">{{ . }}</p>{{ end }}
-      {{ with .text }}<p class="section-text">{{ . }}</p>{{ end }}
+      {{ with .text }}<p class="section-text">{{ . | safeHTML }}</p>{{ end }}
 
       {{ with .items }}
         <div class="card-grid">
