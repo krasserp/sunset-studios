@@ -178,7 +178,7 @@ faq:
       answer: "Yes. After a walkthrough and brief introduction, you can use the studio independently. "
 
 cta:
-  heading: "Ready to get out of the city and into the work?"
+  heading: "Bring Your Ideas to Life — Book Your Creative Retreat"
   text: "Bring your songs, your laptop, your ideas, even the half-finished ones—and give them the time and space they deserve."
 
   primary_cta:
