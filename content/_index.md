@@ -3,7 +3,7 @@ title: "Sunset Studios"
 description: "A creative retreat in Gran Canaria for artists, songwriters and producers who want to write, record and reset in a warm, calm place."
 
 hero:
-  headline: "Escape the noise. Make something real."
+  headline: "Escape the noise. Create. Record. Reset."
   subheadline: "Sunset Studios is a creative retreat in Gran Canaria designed for artists, songwriters, and producers seeking space to focus, breathe, and complete meaningful work."
   text: "Write, record and reset in a fully equipped soundproof studio, with a guest apartment for up to 3 people, beaches nearby, and the kind of calm that busy cities rarely give you."
   primary_cta:
