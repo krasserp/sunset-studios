@@ -4,7 +4,7 @@ title = "Sunset Studios"
 noTimes = true
 
 [params]
-description = "Creative retreat in Gran Canaria for artists, songwriters and producers."
+description = "Music retreat in Gran Canaria for artists, songwriters and producers."
 
 [markup]
   [markup.goldmark]

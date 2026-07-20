@@ -1,0 +1,84 @@
+{{ define "main" }}
+  {{ with .Params.hero }}
+  <section class="hero studio-services-hero" style="--slides: 3;">
+    <div class="hero-bg">
+      <span class="slide slide-1" style="background-image: url('/images/studio_005-1200.webp');"></span>
+      <span class="slide slide-2" style="background-image: url('/images/studio_009-1200.webp');"></span>
+      <span class="slide slide-3" style="background-image: url('/images/studio_012-1200.webp');"></span>
+    </div>
+    <div class="container hero-grid hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow">{{ .eyebrow }}</p>
+        <h1>{{ .headline }}</h1>
+        <p class="hero-subheadline">{{ .subheadline }}</p>
+        <div class="button-row">
+          <a class="button button-primary" href="{{ .primary_cta.link }}">{{ .primary_cta.text }}</a>
+          <a class="button button-secondary" href="{{ .secondary_cta.link }}">{{ .secondary_cta.text }}</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-card">
+          {{ range .highlights }}<p>{{ . }}</p>{{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ partial "intro.html" . }}
+
+  {{ with .Params.services }}
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <h2>{{ .heading }}</h2>
+      <p class="section-intro">{{ .intro }}</p>
+      <div class="card-grid">
+        {{ range .items }}
+        <article class="card">
+          <h3>{{ .title }}</h3>
+          <p class="card-price">{{ .price }}</p>
+          <p class="card-intro">{{ .intro }}</p>
+          <p>{{ .text }}</p>
+          <ul class="feature-list">
+            {{ range .includes }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ partial "included.html" . }}
+
+  {{ with .Params.additional }}
+  <section class="section section-alt">
+    <div class="container section-grid">
+      <div class="section-heading"><h2>{{ .heading }}</h2></div>
+      <div class="section-content">
+        <p>{{ .text }}</p>
+        <ul class="feature-list">{{ range .items }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with .Params.extras }}
+  <section class="section">
+    <div class="container">
+      <div class="card-grid">
+        {{ range . }}
+        <article class="card">
+          <h3>{{ .heading }}</h3>
+          <p>{{ .text }}</p>
+          {{ if .link }}<a class="button button-secondary" href="{{ .link }}">{{ .link_text }}</a>{{ end }}
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ partial "faq.html" . }}
+  {{ partial "cta.html" . }}
+{{ end }}

@@ -4,13 +4,13 @@ description: "A creative retreat in Gran Canaria for artists, songwriters and pr
 
 hero:
   headline: "Escape the noise. Create. Record. Reset."
-  subheadline: "Sunset Studios is a creative retreat in Gran Canaria designed for artists, songwriters, and producers seeking space to focus, breathe, and complete meaningful work."
+  subheadline: "Sunset Studios is a creative music retreat in Gran Canaria designed for artists, songwriters, and producers seeking space to focus, breathe, and complete meaningful work."
   text: "Write, record and reset in a fully equipped soundproof studio, with a guest apartment for up to 3 people, beaches nearby, and the kind of calm that busy cities rarely give you."
   primary_cta:
-    text: "Book your stay"
-    link: "/contact/"
+    text: "Check availability"
+    link: "mailto:phil@sunset-studios.one?subject=Booking%20availability%20enquiry"
   secondary_cta:
-    text: "See packages"
+    text: "Explore Retreats"
     link: "/#packages"
 
 intro:
@@ -165,7 +165,7 @@ faq:
   heading: "FAQ"
   items:
     - question: "What is Sunset Studios?"
-      answer: "Sunset Studios is a creative retreat in Gran Canaria with a fully equipped soundproof studio and accommodation for artists, songwriters, and producers who want time and space to focus and create."
+      answer: "Sunset Studios is a creative music retreat in Gran Canaria with a fully equipped soundproof studio and accommodation for artists, songwriters, and producers who want time and space to focus and create."
     - question: "Is it more for recording or writing sessions?"
       answer: "Both. It’s ideal for writing and recording."
     - question: "How many people can stay?"

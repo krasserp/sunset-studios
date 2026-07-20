@@ -10,6 +10,7 @@
       </details>
       {{ end }}
 
+      {{ if ne .Params.faq.include_location false }}
       <!-- Location FAQ -->
       <details class="faq-item">
         <summary>Where is Sunset Studios located?</summary>
@@ -29,6 +30,7 @@
           </iframe>
         </div>
       </details>
+      {{ end }}
 
     </div>
   </div>
