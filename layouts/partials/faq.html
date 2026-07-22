@@ -6,7 +6,7 @@
       {{ range .Params.faq.items }}
       <details class="faq-item">
         <summary>{{ .question }}</summary>
-        <p>{{ .answer }}</p>
+        <p>{{ .answer | safeHTML }}</p>
       </details>
       {{ end }}
 

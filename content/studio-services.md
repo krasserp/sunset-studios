@@ -85,7 +85,7 @@ additional:
 
 extras:
   - heading: "Additional Equipment"
-    text: "Need another guitar or bass amplifier? Additional amplifiers are €5 per hour, per amplifier. Extra equipment is subject to availability, so mention what you need when enquiring."
+    text: "If you need any specific equipment, please let us know when enquiring. We’ll discuss your requirements in advance and do our best to accommodate your needs and prepare the right setup for your session."
   - heading: "Live Session Video"
     text: "Simple video recording can be added to rehearsals and recording sessions for social media, live performance videos or behind-the-scenes content. Video is quoted according to the number of cameras, editing and audio mixing required."
   - heading: "Regular & Multi-Day Bookings"
@@ -104,11 +104,11 @@ faq:
     - question: "Are instruments included?"
       answer: "The drum kit and Clavinova are included in the standard rehearsal setup. Guitar and bass players should bring their own instruments, but can also be hired on arrangement. Please bring your own cymbals, drumsticks and any personal drum hardware you require unless agreed otherwise in advance."
     - question: "How many people can use the studio?"
-      answer: "The studio comfortably accommodates bands and groups of up to six people. Before booking, we’ll discuss your lineup and arrange the space to make the setup comfortable for everyone."
+      answer: "The studio comfortably accommodates bands and groups of up to five people. Before booking, we’ll discuss your lineup and arrange the space to make the setup comfortable for everyone."
     - question: "Where is the studio?"
       answer: "Sunset Studios is in the south of Gran Canaria, close to Arguineguín and approximately 30 minutes from Gran Canaria Airport."
     - question: "Is accommodation available?"
-      answer: "Yes. If you want to stay where you create, the studio can be booked together with a private guest apartment for up to three people."
+      answer: "Yes. If you want to stay where you create, the studio can be booked together with a private guest apartment for up to three people. <u><a href='/#packages'>Retreat</a></u>"
 
 cta:
   heading: "Book a Studio Session"

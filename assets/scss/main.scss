@@ -94,12 +94,13 @@ img { max-width: 100%; display: block; }
   animation-play-state: running;
 }
 
-/* CROSSFADE ANIMATION (FIXED + SMOOTH) */
+/* Keep the outgoing image visible while the next one fades in so the
+   transition blends image-to-image instead of exposing the dark fallback. */
 @keyframes heroFade {
   0%   { opacity: 0; }
   8%   { opacity: 1; }
   25%  { opacity: 1; }
-  33%  { opacity: 0; }
+  42%  { opacity: 0; }
   100% { opacity: 0; }
 }
 

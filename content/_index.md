@@ -105,7 +105,7 @@ packages:
       intro: "Build and finish real tracks."
       text: "Two full weeks to move beyond ideas and complete music. The first phase focuses on exploration and writing, the second about refining and recording.\n\n<br/><br/><b>Outcome:</b><br/> Leave with multiple finished tracks or strong foundation for EP.\n\n"
       price: "€2,690"
-      highlight: "Popular"
+      highlight: ""
       cta_text: "Dig in"
 
     - title: "1-Month Artist Residency"
