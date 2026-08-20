@@ -4,7 +4,8 @@
       {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
 
       {{ with .items }}
-        <div class="card-grid">
+        <div class="testimonial-carousel" data-testimonial-carousel>
+          <div class="testimonial-track" data-testimonial-track tabindex="0" aria-label="Artist testimonials">
           {{ range . }}
             {{ $name := .name }}
             {{ $role := .role }}
@@ -17,7 +18,9 @@
 
               <div class="testimonial-person">
                 {{ with .image }}
-                  <img class="testimonial-image" src="{{ . }}" alt="{{ $name }}">
+                  <img class="testimonial-image" src="{{ . }}" alt="{{ $name }}" loading="lazy" width="56" height="56">
+                {{ else }}
+                  <span class="testimonial-image testimonial-initial" aria-hidden="true">{{ substr $name 0 1 }}</span>
                 {{ end }}
 
                 <div class="testimonial-meta">
@@ -38,8 +41,29 @@
               </div>
             </article>
           {{ end }}
+          </div>
+          <div class="testimonial-controls" aria-label="Testimonial carousel controls">
+            <button class="testimonial-control" type="button" data-testimonial-prev aria-label="Previous testimonials">←</button>
+            <button class="testimonial-control" type="button" data-testimonial-next aria-label="Next testimonials">→</button>
+          </div>
         </div>
       {{ end }}
     {{ end }}
   </div>
 </section>
+
+<script>
+document.querySelectorAll("[data-testimonial-carousel]").forEach((carousel) => {
+  const track = carousel.querySelector("[data-testimonial-track]");
+  const card = track.querySelector(".testimonial-card");
+  if (!card) return;
+
+  const scrollByCard = (direction) => {
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: "smooth" });
+  };
+
+  carousel.querySelector("[data-testimonial-prev]").addEventListener("click", () => scrollByCard(-1));
+  carousel.querySelector("[data-testimonial-next]").addEventListener("click", () => scrollByCard(1));
+});
+</script>

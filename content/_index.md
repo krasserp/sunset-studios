@@ -73,17 +73,35 @@ testimonials:
       image: "/images/testimonials/adri.webp"
       instagram: "https://www.instagram.com/adri.7m/"
 
+    - quote: "I had a great time. A fantastic location, great equipment, and an inspiring atmosphere."
+      image: "/images/testimonials/pats.webp"
+      name: "Pats Nichols"
+      role: "Artist"
+      instagram: "https://www.instagram.com/pats_nichols/"
+
     - quote: "Sunset Studios is a first-rate creative retreat: warm, affordable, and set in an incredible location. It immediately gives you the headspace to relax and create, and the studio offers what feels like endless sonic possibilities. It’s the kind of place that makes the work flow naturally, and makes it very hard to leave."
       name: "Barry Straight"
       role: "Songwriter/ Guitarrist/ Producer"
       image: "/images/testimonials/barry.webp"
       instagram: "https://www.instagram.com/splitwormsuk/"
 
+    - quote: "I loved the relaxed atmosphere and how quickly and directly we could work. Sunset Studios gave me both."
+      name: "Taio Boumort"
+      image: "/images/testimonials/taio.webp"
+      role: "Artist"
+      instagram: "https://www.instagram.com/taioboumort/"
+
+
     - quote: "A wonderful experience from start to finish. Supportive, inspiring, and creatively spot-on—the whole process felt effortless, and the results are something I’m truly proud of. An absolute honour."
       name: "Lol"
       role: "Songwriter/ Singer/ Guitarist"
       image: "/images/testimonials/lol.webp"
       instagram: "https://yesmen.bandcamp.com/"
+    - quote: "Fantastic."
+      name: "Diego Zapata"
+      image: "/images/testimonials/diego.webp"
+      role: "Artist"
+      instagram: "https://www.instagram.com/zapata.music/"
 
 packages_intro:
   title: "Creative Retreats at Sunset Studios"
