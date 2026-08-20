@@ -52,7 +52,7 @@ img { max-width: 100%; display: block; }
   z-index: 0;
   background-position: center;
   background-size: cover;
-  animation: hideHeroFallback 0s linear 1s forwards;
+  animation: hideHeroFallback 0s linear 1.5s forwards;
 }
 
 .home-hero .hero-bg::before { background-image: url('/images/hero1.webp'); }
@@ -108,9 +108,9 @@ img { max-width: 100%; display: block; }
    transition blends image-to-image instead of exposing the dark fallback. */
 @keyframes heroFade {
   0%   { opacity: 0; }
-  4%   { opacity: 1; }
+  7%   { opacity: 1; }
   25%  { opacity: 1; }
-  29%  { opacity: 0; }
+  32%  { opacity: 0; }
   100% { opacity: 0; }
 }
 
@@ -119,9 +119,9 @@ img { max-width: 100%; display: block; }
 
 @keyframes heroFadeThree {
   0%      { opacity: 0; }
-  5%      { opacity: 1; }
+  9%      { opacity: 1; }
   33.333% { opacity: 1; }
-  38.333% { opacity: 0; }
+  42.333% { opacity: 0; }
   100%    { opacity: 0; }
 }
 
