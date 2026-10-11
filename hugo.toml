@@ -5,6 +5,9 @@ noTimes = true
 
 [params]
 description = "Music retreat in Gran Canaria for artists, songwriters and producers."
+instagram = "https://www.instagram.com/sunsetstudios.one/"
+tiktok = "https://www.tiktok.com/@sunsetstudios.one"
+youtube = "https://www.youtube.com/@sunset-studios-gran-canaria/shorts"
 
 [markup]
   [markup.goldmark]

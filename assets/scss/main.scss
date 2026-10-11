@@ -517,6 +517,40 @@ h3 { font-size: 1.4rem; }
   padding: 2rem 0 3rem;
 }
 
+.footer-copyright-social,
+.footer-social {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-copyright-social { column-gap: 1.5rem; }
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  color: var(--text);
+  border-color: currentColor;
+}
+
+.footer-social svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+
 .footer-inner {
   display: flex;
   justify-content: space-between;
