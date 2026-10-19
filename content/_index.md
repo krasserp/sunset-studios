@@ -8,7 +8,7 @@ hero:
   text: "Write, record and reset in a fully equipped soundproof studio, with a guest apartment for up to 3 people, beaches nearby, and the kind of calm that busy cities rarely give you."
   primary_cta:
     text: "Check availability"
-    link: "mailto:phil@sunset-studios.one?subject=Booking%20availability%20enquiry"
+    link: "/contact/#availability-form"
   secondary_cta:
     text: "Explore Retreats"
     link: "/#packages"

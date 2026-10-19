@@ -1,139 +1,67 @@
 ---
-
 title: "Privacy Policy"
-date: 2026-06-22
+description: "How Sunset Studios handles enquiries, music purchases and website data across sunset-studios.one and music.sunset-studios.one."
 draft: false
-------------
+---
 
+*Last updated: 19 October 2026*
 
-*Last updated: June 2026*
+This notice covers **https://sunset-studios.one/**, our retreat and recording studio website, and **https://music.sunset-studios.one/**, our music shop. Sunset Studios is based in Gran Canaria, Spain.
 
-This Privacy & Cookie Policy applies to **sunset-studios.com** and **music.sunset-studios.com**.
+## Who handles your information
 
-## 1. Data Controller
+Sunset Studios is responsible for the information you provide when enquiring about our services or purchasing from our music shop. For privacy questions or requests, contact [phil@sunset-studios.one](mailto:phil@sunset-studios.one).
 
-**Sunset Studios**
-Gran Canaria, Canary Islands, Spain
+## Enquiries and bookings
 
-Contact:
-[support@sunset-studios.one](mailto:support@sunset-studios.one)
+Our availability form asks for your name, email address, preferred start and end dates, project type and number of people. You can also include an optional message. We use these details to reply, check availability and discuss your booking. The required fields help us assess your request; you can contact us by email instead of using the form. Please avoid including sensitive personal information in your message.
 
-## 2. Information We Collect
+Form submissions are sent to **Formspree**, which processes and stores enquiries and delivers them to us. Formspree may also process technical information such as your IP address and browser details for service operation and security. See [Formspree’s privacy policy](https://formspree.io/legal/privacy-policy/).
 
-Depending on how you use our websites, we may collect:
+If you email us directly, our email service processes your address and correspondence so that we can respond.
 
-* Name
-* Email address
-* Billing information
-* Booking information
-* Purchase history
-* Messages sent through contact forms
-* IP address
-* Browser and device information
-* Website usage information
+We process booking enquiries to take steps at your request before entering into a contract, and booking arrangements to perform that contract. For general correspondence and service security, we rely on our legitimate interests in responding to requests and operating the studio. We may also retain records where needed to meet legal obligations or handle legal claims.
 
-Payment card information is processed directly by Stripe and is not stored on our servers.
+## Music purchases and payments
 
-## 3. Purpose of Processing
+When you shop at **music.sunset-studios.one**, we process the contact details, billing information, items purchased, order history and payment status needed to fulfil your order, deliver digital music, provide purchase support and maintain required records.
 
-We process personal information to:
+Payments are processed through **Stripe**. Payment card details are handled by the payment provider; we do not store full card details on our servers. Stripe processes payment and technical information to complete transactions, help prevent fraud and meet its legal obligations. See [Stripe’s privacy policy](https://stripe.com/privacy).
 
-* Process payments and orders
-* Deliver digital products
-* Manage bookings and retreats
-* Respond to enquiries
-* Provide customer support
-* Improve website performance and security
-* Meet legal and accounting obligations
+We use order information to perform the purchase contract and retain relevant transaction records to meet legal and accounting obligations. We may also use relevant records to resolve payment disputes and protect against fraud, based on our legitimate interests in operating the shop securely.
 
-## 4. Legal Basis
+The shop may use cookies or similar storage to maintain a shopping cart or checkout session and support payment security. Payment providers may also use their own cookies or identifiers during checkout. Browser restrictions on these technologies may affect checkout functionality.
 
-Where required by the GDPR, we process personal data on one or more of the following bases:
+## Website measurement and cookies on the studio site
 
-* Performance of a contract
-* Compliance with legal obligations
-* Legitimate business interests
-* User consent where required
+If you accept analytics cookies, the studio website at **sunset-studios.one** loads **Google Tag Manager**, which manages measurement tags. With analytics enabled, after the form service accepts an enquiry, our form code sends a `form_submitted` event to Tag Manager with the form identifier, project type and number of people. This helps measure enquiries and, when connected to analytics, understand which channels bring visitors to the site.
 
-## 5. Payment Processing
+This event does not include your name, email address, message or preferred dates. Tags configured in Tag Manager may process other usage information, such as pages visited, referral information, device details and online identifiers, and may use cookies. The cookies and data collected depend on the tags enabled in the container.
 
-Payments are processed by Stripe.
+You can use your browser settings to block or delete cookies. On the studio site, use the cookie icon or **Cookie settings** in the footer to accept, reject or change optional analytics and embedded content preferences. Both are off until you choose. The settings panel opens automatically on your first visit or when your saved choice expires. You can reopen it at any time. Your choice is saved for up to 180 days in a necessary cookie named `sunset-cookie-consent-v1`, scoped to sunset-studios.one and its subdomains. This allows the music shop to use the same preferences once its consent controls are connected to this cookie. Withdrawing analytics consent reloads the page to stop loaded tags. Previously stored third-party cookies can be removed through your browser settings. For information about Google’s processing, see [Google’s privacy policy](https://policies.google.com/privacy).
 
-When making a payment, certain information is transferred directly to Stripe for payment processing and fraud prevention.
+## Maps, videos and external links
 
-Stripe processes personal data according to its own privacy policy.
+Some pages embed **Google Maps** or **YouTube** content. Embeds on the studio site load only after you enable embedded content in Cookie settings. When an embed loads, your browser connects to Google, which can receive technical information such as your IP address and may use cookies or other identifiers under [Google’s privacy policy](https://policies.google.com/privacy).
 
-## 6. Data Retention
+Links to Instagram, TikTok and other external websites take you to services with their own privacy policies.
 
-We retain information only for as long as necessary to:
+## Service providers and international processing
 
-* Provide services
-* Fulfil legal obligations
-* Maintain financial records
-* Resolve disputes
+Information may be handled by our website hosting and email providers, Formspree, Stripe, and Google where their services are used. These services support website delivery, enquiry handling, order fulfilment, payments, security and measurement.
 
-## 7. Cookies
+Providers may process information outside the European Economic Area. Formspree states that its infrastructure includes the United States. Their privacy policies explain their international processing practices; you can contact us with questions about providers handling your enquiry.
 
-The websites use cookies and similar technologies.
+## How long information is kept
 
-### Essential Cookies
+We keep enquiry correspondence for as long as needed to answer your request and manage any resulting booking. We keep order and transaction records as needed to fulfil purchases, provide support and meet applicable accounting and tax obligations. Relevant records may be kept longer where needed for legal obligations or disputes. Copies held in email and Formspree are also subject to the applicable account settings and provider retention practices. Contact us if you would like us to review or delete your enquiry records.
 
-Required for:
+## Your choices and rights
 
-* Shopping cart functionality
-* Checkout processes
-* Security and fraud prevention
-* Website operation
+Under applicable data protection law, you may request access to your personal data, correction, deletion, restriction of processing or a portable copy, and may object to processing based on legitimate interests. Where processing relies on consent, you may withdraw it without affecting earlier lawful processing.
 
-### Analytics Cookies
+Send requests to [phil@sunset-studios.one](mailto:phil@sunset-studios.one). We may need to verify your identity before providing information. You may also complain to Spain’s [Agencia Española de Protección de Datos (AEPD)](https://www.aepd.es/) or your local data protection authority.
 
-May be used to understand website usage and improve performance.
+## Changes to this notice
 
-Where legally required, analytics cookies will only be activated after user consent.
-
-### Managing Cookies
-
-Users may control cookies through browser settings.
-
-Disabling cookies may affect website functionality.
-
-## 8. Third-Party Services
-
-We may use third-party services including:
-
-* Stripe
-* Hosting providers
-* Analytics providers
-
-These providers may process data on our behalf.
-
-## 9. Your Rights
-
-Subject to applicable law, users may request:
-
-* Access to personal information
-* Correction of inaccurate information
-* Deletion of personal information
-* Restriction of processing
-* Objection to processing
-* Data portability
-
-Requests can be sent to:
-
-[support@sunset-studios.one](mailto:support@sunset-studios.one)
-
-## 10. Security
-
-We take reasonable technical and organizational measures to protect personal information from unauthorized access, disclosure or misuse.
-
-## 11. Changes
-
-This policy may be updated periodically.
-
-Continued use of the websites after publication of changes constitutes acceptance of the updated policy.
-
-## 12. Contact
-
-For privacy-related questions:
-
-[support@sunset-studios.one](mailto:support@sunset-studios.one)
+We will update this page when our website or data handling changes. The date above shows the latest revision.

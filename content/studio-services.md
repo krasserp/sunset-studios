@@ -16,7 +16,7 @@ hero:
   subheadline: "A comfortable, soundproof studio in the south of Gran Canaria for bands, solo artists and visiting musicians."
   primary_cta:
     text: "Check availability"
-    link: "mailto:phil@sunset-studios.one?subject=Studio%20booking%20enquiry"
+    link: "/contact/#availability-form"
   secondary_cta:
     text: "View services"
     link: "#services"
@@ -115,5 +115,5 @@ cta:
   text: "Send your preferred date and times, the number of musicians, your lineup and any equipment or engineering support you need. I’ll confirm availability and the total price."
   primary_cta:
     text: "Check availability"
-    link: "mailto:phil@sunset-studios.one?subject=Studio%20booking%20enquiry"
+    link: "/contact/#availability-form"
 ---

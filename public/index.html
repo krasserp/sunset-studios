@@ -31,8 +31,8 @@
 
 <link
   rel="stylesheet"
-  href="/scss/main.min.35731c4c70aac85dd1e5d3b0e6c1cfb7fba05e1d4fb664ce2a72676fe49aa191.css"
-  integrity="sha256-NXMcTHCqyF3R5dOw5sHPt/ugXh1PtmTOKnJnb&#43;SaoZE="
+  href="/scss/main.min.3c26d6bda8a468de8db1dd992ba26aa9264ebcad217754832d73485b946a81ec.css"
+  integrity="sha256-PCbWvaikaN6Nsd2ZK6JqqSZOvK0hd1SDLXNIW5Rqgew="
 >
 
 
@@ -45,19 +45,7 @@
   fetchpriority="high"
 >
 
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-
-<script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KV9P8PLM');
-</script>
-
+<script src="/js/consent.js" defer></script>
 
 
 <script type="application/ld+json">
@@ -80,14 +68,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
-<meta name="generator" content="Hugo 0.165.0">
+<meta name="generator" content="Hugo 0.168.0">
   </head>
   <body>
 
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV9P8PLM"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
+
     <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/"><img src="/images/Sunset-Studios-logo.png" alt="Sunset Studios"/></a>
@@ -124,7 +109,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </ul>
 
       <div class="button-row">
-        <a class="button button-primary" href="mailto:phil@sunset-studios.one?subject=Booking%20availability%20enquiry">
+        <a class="button button-primary" href="/contact/#availability-form">
           Check availability
         </a>
         <a class="button button-secondary" href="/#packages">
@@ -905,8 +890,9 @@ document.querySelectorAll("[data-testimonial-carousel]").forEach((carousel) => {
         </p>
 
         <div class="map-wrapper">
-          <iframe
-            src="https://www.google.com/maps?q=27.762809,-15.667785&hl=en&z=14&output=embed"
+          <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to load this content.</p>
+        <iframe title="Studio location"
+            data-consent-src="https://www.google.com/maps?q=27.762809,-15.667785&hl=en&z=14&output=embed"
             width="100%"
             height="350"
             style="border:0;"
@@ -969,9 +955,38 @@ document.querySelectorAll("[data-testimonial-carousel]").forEach((carousel) => {
         
       </p>
     </div>
-    <p>Sunset Studios Gran Canaria · Where artists, songwriters, and producers come to create </p>
+    <div class="footer-tagline">
+      <p>Sunset Studios Gran Canaria · Where artists, songwriters, and producers come to create</p>
+      <p class="footer-legal"><a href="/privacy/">Privacy policy</a> · <button type="button" class="cookie-settings-link" data-cookie-settings>Cookie settings</button></p>
+    </div>
   </div>
 </footer>
+
+    <button type="button" class="cookie-launcher" data-cookie-settings aria-controls="cookie-consent" aria-expanded="false" aria-label="Change cookie settings" title="Cookie settings" hidden>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <path d="M21 12a9 9 0 1 1-9-9 4 4 0 0 0 4 4 4 4 0 0 0 5 5Z" />
+    <circle cx="8" cy="9" r="1" fill="currentColor" stroke="none" />
+    <circle cx="7" cy="15" r="1" fill="currentColor" stroke="none" />
+    <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
+    <circle cx="14" cy="17" r="1" fill="currentColor" stroke="none" />
+  </svg>
+</button>
+<dialog id="cookie-consent" class="cookie-consent" aria-labelledby="cookie-title" hidden>
+  <button type="button" class="cookie-close" aria-label="Close cookie settings">×</button>
+  <h2 id="cookie-title">Your cookie choices</h2>
+  <p>Sunset Studios uses optional Google analytics tags to measure visits and enquiries, and Google Maps/YouTube embeds to show maps and videos. These services may use cookies and process device and usage data. Optional services stay off until you choose. <a href="/privacy/">Read our privacy policy</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" data-consent-choice="all">Accept all</button>
+    <button type="button" data-consent-choice="none">Reject optional</button>
+    <button type="button" id="cookie-customize" aria-expanded="false" aria-controls="cookie-preferences">Choose settings</button>
+  </div>
+  <div id="cookie-preferences" hidden>
+    <p>Necessary storage remembers your choice and is always enabled.</p>
+    <label><input type="checkbox" id="cookie-analytics"> Analytics — Google Tag Manager and measurement tags</label>
+    <label><input type="checkbox" id="cookie-embeds"> Embedded content — Google Maps and YouTube</label>
+    <button type="button" data-consent-choice="custom">Save choices</button>
+  </div>
+</dialog>
 
 <script>
 let currentIndex = 0;

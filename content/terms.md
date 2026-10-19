@@ -7,7 +7,7 @@ draft: false
 
 *Last updated: June 2026*
 
-These Terms & Conditions govern the use of **sunset-studios.com** and **music.sunset-studios.com** (collectively referred to as the "Websites") and the purchase of products or services offered through them.
+These Terms & Conditions govern the use of **sunset-studios.one** and **music.sunset-studios.one** (collectively referred to as the "Websites") and the purchase of products or services offered through them.
 
 By accessing the Websites or purchasing any product or service, you agree to these Terms & Conditions.
 
@@ -34,7 +34,7 @@ Additional terms may apply to specific services and bookings.
 
 ## 3. Digital Music Purchases
 
-Music and digital downloads purchased through music.sunset-studios.com are licensed for personal use only unless otherwise stated.
+Music and digital downloads purchased through music.sunset-studios.one are licensed for personal use only unless otherwise stated.
 
 Customers may:
 

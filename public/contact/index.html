@@ -31,8 +31,8 @@
 
 <link
   rel="stylesheet"
-  href="/scss/main.min.35731c4c70aac85dd1e5d3b0e6c1cfb7fba05e1d4fb664ce2a72676fe49aa191.css"
-  integrity="sha256-NXMcTHCqyF3R5dOw5sHPt/ugXh1PtmTOKnJnb&#43;SaoZE="
+  href="/scss/main.min.3c26d6bda8a468de8db1dd992ba26aa9264ebcad217754832d73485b946a81ec.css"
+  integrity="sha256-PCbWvaikaN6Nsd2ZK6JqqSZOvK0hd1SDLXNIW5Rqgew="
 >
 
 
@@ -45,19 +45,7 @@
   fetchpriority="high"
 >
 
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-
-<script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KV9P8PLM');
-</script>
-
+<script src="/js/consent.js" defer></script>
 
 
 <script type="application/ld+json">
@@ -80,14 +68,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
-<meta name="generator" content="Hugo 0.165.0">
+<meta name="generator" content="Hugo 0.168.0">
   </head>
   <body>
 
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV9P8PLM"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
+
     <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/"><img src="/images/Sunset-Studios-logo.png" alt="Sunset Studios"/></a>
@@ -106,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="container narrow">
     <h1>Contact</h1>
     <h2 id="get-in-touch">Get in touch</h2>
-<p>To book your stay or check availability, get in touch by email or Instagram.</p>
+<p>Tell us about your plans to check availability. You can also get in touch by email or Instagram.</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" fill="none"
 stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
 <path d="M4 6h16v12H4z"/>
@@ -119,8 +104,37 @@ stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin=
 <circle cx="16.5" cy="7.5" r="1"/>
 </svg> <a href="https://www.instagram.com/sunsetstudios.one/">@sunsetstudios.one</a></p>
 
+    
+    <form id="availability-form" class="contact-form" data-endpoint="https://formspree.io/f/mgaobvdp">
+      <h2>Check availability</h2>
+      <label for="contact-name">Name</label>
+      <input id="contact-name" name="name" autocomplete="name" maxlength="200" required>
+      <label for="contact-email">Email</label>
+      <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+      <label for="start-date">Start date</label>
+      <input id="start-date" name="start_date" type="date" required>
+      <label for="end-date">End date</label>
+      <input id="end-date" name="end_date" type="date" required>
+      <label for="project-type">Project type</label>
+      <select id="project-type" name="project_type" required>
+        <option value="">Choose a project type</option>
+        <option value="creative_retreat">Creative retreat</option>
+        <option value="recording">Recording</option>
+        <option value="rehearsal">Rehearsal</option>
+        <option value="other">Other</option>
+      </select>
+      <label for="people-count">Number of people</label>
+      <input id="people-count" name="people_count" type="number" min="1" step="1" required>
+      <label for="contact-message">Tell us about your project (optional)</label>
+      <textarea id="contact-message" name="message" rows="5" maxlength="5000"></textarea>
+      <p>Your enquiry is sent through Formspree to Sunset Studios. We’ll use the details you provide to reply and discuss your booking. Read our <a href="/privacy/">privacy policy</a>.</p>
+      <button class="btn btn-primary" type="submit" >Send enquiry</button>
+      <p id="form-status" role="status" aria-live="polite"></p>
+      <noscript><p>Please email phil@sunset-studios.one to check availability.</p></noscript>
+    </form>
   </div>
 </section>
+<script src="/js/contact.js" defer></script>
 
     </main>
     <footer class="site-footer">
@@ -156,9 +170,38 @@ stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin=
         
       </p>
     </div>
-    <p>Sunset Studios Gran Canaria · Where artists, songwriters, and producers come to create </p>
+    <div class="footer-tagline">
+      <p>Sunset Studios Gran Canaria · Where artists, songwriters, and producers come to create</p>
+      <p class="footer-legal"><a href="/privacy/">Privacy policy</a> · <button type="button" class="cookie-settings-link" data-cookie-settings>Cookie settings</button></p>
+    </div>
   </div>
 </footer>
+
+    <button type="button" class="cookie-launcher" data-cookie-settings aria-controls="cookie-consent" aria-expanded="false" aria-label="Change cookie settings" title="Cookie settings" hidden>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <path d="M21 12a9 9 0 1 1-9-9 4 4 0 0 0 4 4 4 4 0 0 0 5 5Z" />
+    <circle cx="8" cy="9" r="1" fill="currentColor" stroke="none" />
+    <circle cx="7" cy="15" r="1" fill="currentColor" stroke="none" />
+    <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
+    <circle cx="14" cy="17" r="1" fill="currentColor" stroke="none" />
+  </svg>
+</button>
+<dialog id="cookie-consent" class="cookie-consent" aria-labelledby="cookie-title" hidden>
+  <button type="button" class="cookie-close" aria-label="Close cookie settings">×</button>
+  <h2 id="cookie-title">Your cookie choices</h2>
+  <p>Sunset Studios uses optional Google analytics tags to measure visits and enquiries, and Google Maps/YouTube embeds to show maps and videos. These services may use cookies and process device and usage data. Optional services stay off until you choose. <a href="/privacy/">Read our privacy policy</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" data-consent-choice="all">Accept all</button>
+    <button type="button" data-consent-choice="none">Reject optional</button>
+    <button type="button" id="cookie-customize" aria-expanded="false" aria-controls="cookie-preferences">Choose settings</button>
+  </div>
+  <div id="cookie-preferences" hidden>
+    <p>Necessary storage remembers your choice and is always enabled.</p>
+    <label><input type="checkbox" id="cookie-analytics"> Analytics — Google Tag Manager and measurement tags</label>
+    <label><input type="checkbox" id="cookie-embeds"> Embedded content — Google Maps and YouTube</label>
+    <button type="button" data-consent-choice="custom">Save choices</button>
+  </div>
+</dialog>
 
 <script>
 let currentIndex = 0;

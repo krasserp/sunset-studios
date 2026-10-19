@@ -1,9 +1,11 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://sunset-studios.one/'
 languageCode = "en-gb"
 title = "Sunset Studios"
 noTimes = true
 
 [params]
+# HTTPS endpoint that accepts JSON and returns a successful status after accepting an enquiry.
+contactFormEndpoint = "https://formspree.io/f/mgaobvdp"
 description = "Music retreat in Gran Canaria for artists, songwriters and producers."
 instagram = "https://www.instagram.com/sunsetstudios.one/"
 tiktok = "https://www.tiktok.com/@sunsetstudios.one"

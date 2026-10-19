@@ -5,7 +5,7 @@ description: "Get in touch with Sunset Studios."
 
 ## Get in touch
 
-To book your stay or check availability, get in touch by email or Instagram.
+Tell us about your plans to check availability. You can also get in touch by email or Instagram.
 
 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" fill="none"
 stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">

@@ -23,8 +23,9 @@
     <div class="video-grid">
 
       <div class="video-card">
-        <iframe
-          src="https://www.youtube.com/embed/videoseries?list={{ . }}"
+        <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to load this content.</p>
+        <iframe title="Studio video"
+          data-consent-src="https://www.youtube.com/embed/videoseries?list={{ . }}"
           loading="lazy"
           allowfullscreen>
         </iframe>
@@ -53,8 +54,9 @@
       {{ range . }}
 
       <div class="short-card">
-        <iframe
-          src="https://www.youtube.com/embed/{{ . }}"
+        <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to load this content.</p>
+        <iframe title="Studio video"
+          data-consent-src="https://www.youtube.com/embed/{{ . }}"
           loading="lazy"
           allowfullscreen>
         </iframe>

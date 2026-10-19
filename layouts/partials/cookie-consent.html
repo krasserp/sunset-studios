@@ -1,0 +1,25 @@
+<button type="button" class="cookie-launcher" data-cookie-settings aria-controls="cookie-consent" aria-expanded="false" aria-label="Change cookie settings" title="Cookie settings" hidden>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <path d="M21 12a9 9 0 1 1-9-9 4 4 0 0 0 4 4 4 4 0 0 0 5 5Z" />
+    <circle cx="8" cy="9" r="1" fill="currentColor" stroke="none" />
+    <circle cx="7" cy="15" r="1" fill="currentColor" stroke="none" />
+    <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
+    <circle cx="14" cy="17" r="1" fill="currentColor" stroke="none" />
+  </svg>
+</button>
+<dialog id="cookie-consent" class="cookie-consent" aria-labelledby="cookie-title" hidden>
+  <button type="button" class="cookie-close" aria-label="Close cookie settings">×</button>
+  <h2 id="cookie-title">Your cookie choices</h2>
+  <p>Sunset Studios uses optional Google analytics tags to measure visits and enquiries, and Google Maps/YouTube embeds to show maps and videos. These services may use cookies and process device and usage data. Optional services stay off until you choose. <a href="/privacy/">Read our privacy policy</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" data-consent-choice="all">Accept all</button>
+    <button type="button" data-consent-choice="none">Reject optional</button>
+    <button type="button" id="cookie-customize" aria-expanded="false" aria-controls="cookie-preferences">Choose settings</button>
+  </div>
+  <div id="cookie-preferences" hidden>
+    <p>Necessary storage remembers your choice and is always enabled.</p>
+    <label><input type="checkbox" id="cookie-analytics"> Analytics — Google Tag Manager and measurement tags</label>
+    <label><input type="checkbox" id="cookie-embeds"> Embedded content — Google Maps and YouTube</label>
+    <button type="button" data-consent-choice="custom">Save choices</button>
+  </div>
+</dialog>
