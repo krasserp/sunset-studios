@@ -1,7 +1,11 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="{{ "/" | relURL }}"><img src="/images/Sunset-Studios-logo.png" alt="Sunset Studios"/></a>
-    <nav class="nav">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" hidden>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+      <span>Menu</span>
+    </button>
+    <nav class="nav" id="main-navigation" aria-label="Main navigation">
       <a href="/#packages">Retreat</a>
       <a href="/studio-services/">Studio</a>
       <a href="/explore/">Explore</a>
@@ -9,3 +13,4 @@
     </nav>
   </div>
 </header>
+<script src="{{ "js/navigation.js" | relURL }}" defer></script>
