@@ -3,31 +3,29 @@
   <div class="container narrow">
     <h1>{{ .Title }}</h1>
     {{ .Content }}
+    <p><strong>Residential retreats from €1,490 for 7 days</strong>, including accommodation and studio access for up to 3 people — <strong>under €500 per person for the full 7 days when three people share.</strong> <a href="/#packages">See packages</a>.</p>
+    {{ partial "whatsapp.html" . }}
+    <p>Prefer a form? Send your project details below.</p>
     {{ $endpoint := .Site.Params.contactFormEndpoint }}
     <form id="availability-form" class="contact-form" data-endpoint="{{ $endpoint }}">
       <h2>Check availability</h2>
-      <label for="contact-name">Name</label>
-      <input id="contact-name" name="name" autocomplete="name" maxlength="200" required>
+      <label for="project-dates">Preferred dates</label>
+      <input id="project-dates" name="dates" placeholder="e.g. 10–17 March 2027, or flexible in March" maxlength="200" required>
+      <label for="project-name">Band / project name</label>
+      <input id="project-name" name="project_name" maxlength="200" required>
+      <label for="project-type">What do you need?</label>
+      <select id="project-type" name="project_type" required>
+        <option value="">Choose your main focus</option>
+        <option value="tracking">Tracking / recording</option>
+        <option value="rehearsal">Rehearsal</option>
+        <option value="mixing">Mixing</option>
+        <option value="writing">Writing</option>
+        <option value="other">A combination / other</option>
+      </select>
       <label for="contact-email">Email</label>
       <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
-      <label for="start-date">Start date</label>
-      <input id="start-date" name="start_date" type="date" required>
-      <label for="end-date">End date</label>
-      <input id="end-date" name="end_date" type="date" required>
-      <label for="project-type">Project type</label>
-      <select id="project-type" name="project_type" required>
-        <option value="">Choose a project type</option>
-        <option value="creative_retreat">Creative retreat</option>
-        <option value="recording">Recording</option>
-        <option value="rehearsal">Rehearsal</option>
-        <option value="other">Other</option>
-      </select>
-      <label for="people-count">Number of people</label>
-      <input id="people-count" name="people_count" type="number" min="1" step="1" required>
-      <label for="contact-message">Tell us about your project (optional)</label>
-      <textarea id="contact-message" name="message" rows="5" maxlength="5000"></textarea>
       <p>Your enquiry is sent through Formspree to Sunset Studios. We’ll use the details you provide to reply and discuss your booking. Read our <a href="/privacy/">privacy policy</a>.</p>
-      <button class="btn btn-primary" type="submit" {{ if not $endpoint }}disabled{{ end }}>Send enquiry</button>
+      <button class="button button-primary" type="submit" {{ if not $endpoint }}disabled{{ end }}>Send enquiry</button>
       <p id="form-status" role="status" aria-live="polite">{{ if not $endpoint }}Online enquiries are not available yet. Please email phil@sunset-studios.one to check availability.{{ end }}</p>
       <noscript><p>Please email phil@sunset-studios.one to check availability.</p></noscript>
     </form>

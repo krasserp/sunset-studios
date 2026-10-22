@@ -1,0 +1,6 @@
+baseURL = 'https://staging.sunset-studios.one/'
+disableKinds = ['sitemap']
+
+[params]
+enableAnalytics = false
+allowIndexing = false

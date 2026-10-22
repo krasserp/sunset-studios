@@ -4,6 +4,10 @@ title = "Sunset Studios"
 noTimes = true
 
 [params]
+# GTM additionally requires an exact production hostname and visitor consent.
+enableAnalytics = true
+allowIndexing = true
+whatsapp = "https://wa.me/34828991139"
 # HTTPS endpoint that accepts JSON and returns a successful status after accepting an enquiry.
 contactFormEndpoint = "https://formspree.io/f/mgaobvdp"
 description = "Music retreat in Gran Canaria for artists, songwriters and producers."

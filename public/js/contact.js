@@ -3,19 +3,9 @@
   if (!form || !form.dataset.endpoint) return;
   const button = form.querySelector('button[type="submit"]');
   const status = document.getElementById('form-status');
-  const start = form.elements.start_date;
-  const end = form.elements.end_date;
-  const validateDates = () => {
-    end.min = start.value;
-    end.setCustomValidity(end.value && start.value && end.value < start.value
-      ? 'End date must be on or after the start date.' : '');
-  };
-  start.addEventListener('change', validateDates);
-  end.addEventListener('change', validateDates);
   let submitting = false;
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    validateDates();
     if (submitting || !form.reportValidity()) return;
     submitting = true;
     button.disabled = true;
@@ -40,8 +30,7 @@
     if (window.sunsetConsent?.analytics) window.dataLayer.push({
       event: 'form_submitted',
       form_id: 'availability-form',
-      project_type: fields.project_type,
-      people_count: Number(fields.people_count)
+      project_type: fields.project_type
     });
     form.reset();
     status.textContent = 'Thank you — your enquiry has been sent. We’ll reply by email.';

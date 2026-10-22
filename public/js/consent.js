@@ -1,5 +1,10 @@
 (() => {
-  const key = 'sunset-cookie-consent-v1';
+  const productionHost = ['sunset-studios.one', 'music.sunset-studios.one']
+    .includes(window.location.hostname);
+  const analyticsAllowed = productionHost && window.location.protocol === 'https:'
+    && document.getElementById('site-consent-script')?.dataset.analyticsEnabled === 'true';
+  // Staging must never read or overwrite the production consent choice.
+  const key = productionHost ? 'sunset-cookie-consent-v1' : 'sunset-preview-consent-v1';
   const lifetime = 180 * 24 * 60 * 60 * 1000;
   const panel = document.getElementById('cookie-consent');
   const preferences = document.getElementById('cookie-preferences');
@@ -7,8 +12,7 @@
   const embeds = document.getElementById('cookie-embeds');
   const customize = document.getElementById('cookie-customize');
   const launcher = document.querySelector('.cookie-launcher');
-  const sharedDomain = window.location.hostname === 'sunset-studios.one'
-    || window.location.hostname.endsWith('.sunset-studios.one');
+  const sharedDomain = productionHost;
   function valid(value) {
     return value && typeof value.analytics === 'boolean' && typeof value.embeds === 'boolean'
       && Number.isFinite(value.at) && value.at <= Date.now() && Date.now() - value.at < lifetime;
@@ -42,10 +46,10 @@
   let gtmLoaded = false;
   let previousFocus;
   function apply(choice) {
-    window.sunsetConsent = { analytics: choice.analytics, embeds: choice.embeds };
+    window.sunsetConsent = { analytics: analyticsAllowed && choice.analytics, embeds: choice.embeds };
     analytics.checked = choice.analytics;
     embeds.checked = choice.embeds;
-    if (choice.analytics && !gtmLoaded) {
+    if (analyticsAllowed && choice.analytics && !gtmLoaded) {
       gtmLoaded = true;
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
@@ -78,7 +82,6 @@
       panel.querySelector('button').focus();
     });
   });
-  panel.querySelector('.cookie-close').addEventListener('click', () => panel.close());
   panel.addEventListener('close', () => {
     panel.hidden = true;
     launcher.setAttribute('aria-expanded', 'false');

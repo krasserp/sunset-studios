@@ -117,6 +117,7 @@ packages:
       intro: "Break routine and regain momentum."
       text: "A focused week to step out of your everyday environment and reconnect with your creative flow. Ideal if you feel stuck or want to finally finish ideas that have been sitting unfinished.\n\n<br/><b>Outcome:</b><br/> Leave with 1–3 strong finished pieces or a clear direction for your next release."
       price: "€1,490"
+      price_note: "Under €500 per person for 7 days when three people share. Includes accommodation + studio access."
       cta_text: "Get started"
 
     - title: "14-Day Deep Work Retreat"

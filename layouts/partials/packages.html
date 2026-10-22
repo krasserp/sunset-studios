@@ -16,6 +16,7 @@
 
   {{ with .title }}<h3>{{ . }}</h3>{{ end }}
   {{ with .price }}<p class="card-price">{{ . }}</p>{{ end }}
+  {{ with .price_note }}<p class="card-price-note">{{ . }}</p>{{ end }}
   {{ with .intro }}<p class="card-intro">{{ . }}</p>{{ end }}
   {{ with .text }}<p>{{ . | safeHTML }}</p>{{ end }}
 

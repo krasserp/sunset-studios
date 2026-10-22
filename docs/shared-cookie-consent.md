@@ -8,7 +8,7 @@ The studio site stores `sunset-cookie-consent-v1` as a URL-encoded JSON cookie:
 
 `at` is the time of the visitor's choice in milliseconds. Reject malformed values, future timestamps and choices older than 180 days. Missing/expired consent means optional services stay off. The choice panel opens automatically on the first visit or after consent expires. With a valid saved choice, it opens only when requested.
 
-On HTTPS production hosts the cookie uses `Domain=sunset-studios.one; Path=/; SameSite=Lax; Secure; Max-Age=<remaining seconds>`. Both sites must use these same attributes when saving a choice. Local previews use a host-only cookie. Necessary checkout storage is separate from these optional choices.
+On HTTPS production hosts the cookie uses `Domain=sunset-studios.one; Path=/; SameSite=Lax; Secure; Max-Age=<remaining seconds>`. Both sites must use these same attributes when saving a choice. Only the two exact production hosts share this cookie. Staging and local previews use a separate host-only `sunset-preview-consent-v1` cookie. Necessary checkout storage is separate from these optional choices.
 
 The music shop code is not in this checkout. To complete integration there:
 

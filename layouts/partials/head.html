@@ -14,7 +14,13 @@
 <title>{{ $title }}</title>
 
 <meta name="description" content="{{ $description }}">
+{{- $productionHost := in (slice "sunset-studios.one" "music.sunset-studios.one") (urls.Parse .Site.BaseURL).Hostname -}}
+{{- $production := and $productionHost (ne hugo.Environment "staging") (not hugo.IsServer) -}}
+{{ if and $production .Site.Params.allowIndexing }}
 <meta name="robots" content="index,follow">
+{{ else }}
+<meta name="robots" content="noindex,nofollow">
+{{ end }}
 <link rel="canonical" href="{{ $url }}">
 
 <!-- Open Graph -->
@@ -54,7 +60,7 @@
   fetchpriority="high"
 >
 
-<script src="{{ "js/consent.js" | relURL }}" defer></script>
+<script id="site-consent-script" src="{{ "js/consent.js" | relURL }}" data-analytics-enabled="{{ if and $production .Site.Params.enableAnalytics }}true{{ else }}false{{ end }}" defer></script>
 
 <!-- Structured Data -->
 <script type="application/ld+json">

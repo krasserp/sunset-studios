@@ -439,7 +439,7 @@ h3 { font-size: 1.4rem; }
   background: rgba(255, 255, 255, 0.45);
 }
 
-.section { padding: 4.5rem 0; padding-bottom: 2.25rem;}
+.section { padding: 2.75rem 0; padding-bottom: 2.25rem;}
 .section-alt { background: rgba(255, 255, 255, 0.2); }
 
 .section-grid {
@@ -1175,16 +1175,16 @@ VERTICAL VIDEO GRID
   &::backdrop { background: rgba(0, 0, 0, 0.4); }
   .cookie-close {
     float: right;
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
     margin: -0.5rem -0.5rem 0.5rem 0.5rem;
-    padding: 0;
+    padding: 0.5rem;
     background: transparent;
     color: var(--text);
     border-color: transparent;
-    font-size: 1.5rem;
+    font-size: 0.85rem;
   }
 }
 body:has(.cookie-consent[open]) { overflow: hidden; }
@@ -1293,4 +1293,22 @@ body:has(.cookie-consent[open]) { overflow: hidden; }
     box-shadow: var(--shadow);
   }
   .nav-enhanced.nav-open .nav { display: grid; }
+}
+
+.button-whatsapp { background: #176b43; color: #fff; border: 1px solid #176b43; }
+.button-whatsapp:hover, .button-whatsapp:focus-visible { background: #105332; color: #fff; }
+.retreat-rates {
+  padding-block: 2.5rem;
+  .container { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+  h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 0.75rem; }
+  p { margin: 0.35rem 0; }
+  .rates-detail { max-width: 680px; }
+}
+.flight-guide {
+  padding-block: 3rem;
+  background: #171717;
+  color: #fff;
+  h2 { color: #fff; font-size: clamp(1.6rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+  p { margin: 0.5rem 0; color: #eee; }
+  a { color: #fff; text-decoration: underline; text-underline-offset: 0.2em; }
 }

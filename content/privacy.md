@@ -14,9 +14,11 @@ Sunset Studios is responsible for the information you provide when enquiring abo
 
 ## Enquiries and bookings
 
-Our availability form asks for your name, email address, preferred start and end dates, project type and number of people. You can also include an optional message. We use these details to reply, check availability and discuss your booking. The required fields help us assess your request; you can contact us by email instead of using the form. Please avoid including sensitive personal information in your message.
+Our availability form asks for your preferred dates, band or project name, main project need and email address. We use these details to reply, check availability and discuss your booking. The required fields help us assess your request; you can contact us by email instead of using the form. Please avoid including sensitive personal information in your message.
 
 Form submissions are sent to **Formspree**, which processes and stores enquiries and delivers them to us. Formspree may also process technical information such as your IP address and browser details for service operation and security. See [Formspree’s privacy policy](https://formspree.io/legal/privacy-policy/).
+
+If you choose WhatsApp, your phone number, profile information and messages are processed through WhatsApp to discuss your enquiry. You can use the form or email instead. See [WhatsApp’s privacy policy](https://www.whatsapp.com/legal/privacy-policy).
 
 If you email us directly, our email service processes your address and correspondence so that we can respond.
 
@@ -34,9 +36,9 @@ The shop may use cookies or similar storage to maintain a shopping cart or check
 
 ## Website measurement and cookies on the studio site
 
-If you accept analytics cookies, the studio website at **sunset-studios.one** loads **Google Tag Manager**, which manages measurement tags. With analytics enabled, after the form service accepts an enquiry, our form code sends a `form_submitted` event to Tag Manager with the form identifier, project type and number of people. This helps measure enquiries and, when connected to analytics, understand which channels bring visitors to the site.
+If you accept analytics cookies, the studio website at **sunset-studios.one** loads **Google Tag Manager**, which manages measurement tags. With analytics enabled, after the form service accepts an enquiry, our form code sends a `form_submitted` event to Tag Manager with the form identifier and project type. This helps measure enquiries and, when connected to analytics, understand which channels bring visitors to the site.
 
-This event does not include your name, email address, message or preferred dates. Tags configured in Tag Manager may process other usage information, such as pages visited, referral information, device details and online identifiers, and may use cookies. The cookies and data collected depend on the tags enabled in the container.
+This event does not include your project name, email address or preferred dates. Tags configured in Tag Manager may process other usage information, such as pages visited, referral information, device details and online identifiers, and may use cookies. The cookies and data collected depend on the tags enabled in the container.
 
 You can use your browser settings to block or delete cookies. On the studio site, use the cookie icon or **Cookie settings** in the footer to accept, reject or change optional analytics and embedded content preferences. Both are off until you choose. The settings panel opens automatically on your first visit or when your saved choice expires. You can reopen it at any time. Your choice is saved for up to 180 days in a necessary cookie named `sunset-cookie-consent-v1`, scoped to sunset-studios.one and its subdomains. This allows the music shop to use the same preferences once its consent controls are connected to this cookie. Withdrawing analytics consent reloads the page to stop loaded tags. Previously stored third-party cookies can be removed through your browser settings. For information about Google’s processing, see [Google’s privacy policy](https://policies.google.com/privacy).
 

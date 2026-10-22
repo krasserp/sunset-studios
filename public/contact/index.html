@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact · Sunset Studios</title>
 
 <meta name="description" content="Get in touch with Sunset Studios.">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="noindex,nofollow">
+
 <link rel="canonical" href="http://localhost:1313/contact/">
 
 
@@ -31,8 +32,8 @@
 
 <link
   rel="stylesheet"
-  href="/scss/main.min.89bf40dc1b43d7a85bc1b4ecbc4621feee8d80087401c6292500c8d2e557fd59.css"
-  integrity="sha256-ib9A3BtD16hbwbTsvEYh/u6NgAh0AcYpJQDI0uVX/Vk="
+  href="/scss/main.min.6049b83887db5e115f38c7af78f83a03efe4a4d8a11700cf45ce52a59f1ae107.css"
+  integrity="sha256-YEm4OIfbXhFfOMevePg6A&#43;/kpNihFwDPRc5SpZ8a4Qc="
 >
 
 
@@ -45,7 +46,7 @@
   fetchpriority="high"
 >
 
-<script src="/js/consent.js" defer></script>
+<script id="site-consent-script" src="/js/consent.js" data-analytics-enabled="false" defer></script>
 
 
 <script type="application/ld+json">
@@ -69,6 +70,7 @@
 </script>
 
 <meta name="generator" content="Hugo 0.168.0">
+
   </head>
   <body>
 
@@ -84,6 +86,7 @@
       <a href="/#packages">Retreat</a>
       <a href="/studio-services/">Studio</a>
       <a href="/explore/">Explore</a>
+      <a href="https://music.sunset-studios.one/">Music</a>
       <a href="/contact/">Contact</a>
     </nav>
   </div>
@@ -109,31 +112,30 @@ stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin=
 <circle cx="16.5" cy="7.5" r="1"/>
 </svg> <a href="https://www.instagram.com/sunsetstudios.one/">@sunsetstudios.one</a></p>
 
+    <p><strong>Residential retreats from €1,490 for 7 days</strong>, including accommodation and studio access for up to 3 people — <strong>under €500 per person for the full 7 days when three people share.</strong> <a href="/#packages">See packages</a>.</p>
+    <a class="button button-whatsapp" href="https://wa.me/34828991139" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (opens in a new tab)">Chat on WhatsApp</a>
+
+    <p>Prefer a form? Send your project details below.</p>
     
     <form id="availability-form" class="contact-form" data-endpoint="https://formspree.io/f/mgaobvdp">
       <h2>Check availability</h2>
-      <label for="contact-name">Name</label>
-      <input id="contact-name" name="name" autocomplete="name" maxlength="200" required>
+      <label for="project-dates">Preferred dates</label>
+      <input id="project-dates" name="dates" placeholder="e.g. 10–17 March 2027, or flexible in March" maxlength="200" required>
+      <label for="project-name">Band / project name</label>
+      <input id="project-name" name="project_name" maxlength="200" required>
+      <label for="project-type">What do you need?</label>
+      <select id="project-type" name="project_type" required>
+        <option value="">Choose your main focus</option>
+        <option value="tracking">Tracking / recording</option>
+        <option value="rehearsal">Rehearsal</option>
+        <option value="mixing">Mixing</option>
+        <option value="writing">Writing</option>
+        <option value="other">A combination / other</option>
+      </select>
       <label for="contact-email">Email</label>
       <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
-      <label for="start-date">Start date</label>
-      <input id="start-date" name="start_date" type="date" required>
-      <label for="end-date">End date</label>
-      <input id="end-date" name="end_date" type="date" required>
-      <label for="project-type">Project type</label>
-      <select id="project-type" name="project_type" required>
-        <option value="">Choose a project type</option>
-        <option value="creative_retreat">Creative retreat</option>
-        <option value="recording">Recording</option>
-        <option value="rehearsal">Rehearsal</option>
-        <option value="other">Other</option>
-      </select>
-      <label for="people-count">Number of people</label>
-      <input id="people-count" name="people_count" type="number" min="1" step="1" required>
-      <label for="contact-message">Tell us about your project (optional)</label>
-      <textarea id="contact-message" name="message" rows="5" maxlength="5000"></textarea>
       <p>Your enquiry is sent through Formspree to Sunset Studios. We’ll use the details you provide to reply and discuss your booking. Read our <a href="/privacy/">privacy policy</a>.</p>
-      <button class="btn btn-primary" type="submit" >Send enquiry</button>
+      <button class="button button-primary" type="submit" >Send enquiry</button>
       <p id="form-status" role="status" aria-live="polite"></p>
       <noscript><p>Please email phil@sunset-studios.one to check availability.</p></noscript>
     </form>
@@ -192,7 +194,7 @@ stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin=
   </svg>
 </button>
 <dialog id="cookie-consent" class="cookie-consent" aria-labelledby="cookie-title" hidden>
-  <button type="button" class="cookie-close" aria-label="Close cookie settings">×</button>
+  <button type="button" class="cookie-close" data-consent-choice="all">Accept all &amp; close <span aria-hidden="true">×</span></button>
   <h2 id="cookie-title">Your cookie choices</h2>
   <p>Sunset Studios uses optional Google analytics tags to measure visits and enquiries, and Google Maps/YouTube embeds to show maps and videos. These services may use cookies and process device and usage data. Optional services stay off until you choose. <a href="/privacy/">Read our privacy policy</a>.</p>
   <div class="cookie-actions">
