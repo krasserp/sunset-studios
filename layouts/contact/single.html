@@ -3,7 +3,6 @@
   <div class="container narrow">
     <h1>{{ .Title }}</h1>
     {{ .Content }}
-    <p><strong>Residential retreats from €1,490 for 7 days</strong>, including accommodation and studio access for up to 3 people — <strong>under €500 per person for the full 7 days when three people share.</strong> <a href="/#packages">See packages</a>.</p>
     {{ partial "whatsapp.html" . }}
     <p>Prefer a form? Send your project details below.</p>
     {{ $endpoint := .Site.Params.contactFormEndpoint }}
@@ -11,16 +10,15 @@
       <h2>Check availability</h2>
       <label for="project-dates">Preferred dates</label>
       <input id="project-dates" name="dates" placeholder="e.g. 10–17 March 2027, or flexible in March" maxlength="200" required>
+      <small>For recording or rehearsal sessions, please include your preferred times.</small>
       <label for="project-name">Band / project name</label>
       <input id="project-name" name="project_name" maxlength="200" required>
-      <label for="project-type">What do you need?</label>
+      <label for="project-type">Booking type</label>
       <select id="project-type" name="project_type" required>
-        <option value="">Choose your main focus</option>
-        <option value="tracking">Tracking / recording</option>
-        <option value="rehearsal">Rehearsal</option>
-        <option value="mixing">Mixing</option>
-        <option value="writing">Writing</option>
-        <option value="other">A combination / other</option>
+        <option value="">Choose a booking type</option>
+        <option value="retreat">Retreat booking</option>
+        <option value="recording">Recording booking</option>
+        <option value="rehearsal">Rehearsal booking</option>
       </select>
       <label for="contact-email">Email</label>
       <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
@@ -29,6 +27,27 @@
       <p id="form-status" role="status" aria-live="polite">{{ if not $endpoint }}Online enquiries are not available yet. Please email phil@sunset-studios.one to check availability.{{ end }}</p>
       <noscript><p>Please email phil@sunset-studios.one to check availability.</p></noscript>
     </form>
+    <section class="contact-rates" aria-labelledby="contact-rates-title">
+      <h2 id="contact-rates-title">Starting rates</h2>
+      <dl>
+        {{ with index .Site.Home.Params.packages.items 0 }}
+        <div>
+          <dt>Residential retreats</dt>
+          <dd>{{ .price }} for 7 days, including accommodation and studio access for up to 3 people. Under €500 per person when three people share. <a href="/#packages">See packages</a>.</dd>
+        </div>
+        {{ end }}
+        {{ with .Site.GetPage "/studio-services" }}
+          {{ range .Params.services.items }}
+            {{ if in (slice "Recording Sessions" "Rehearsal Sessions") .title }}
+        <div>
+          <dt>{{ .title }}</dt>
+          <dd>{{ .price }}. Minimum booking: 2 hours. <a href="/studio-services/#services">See studio services</a>.</dd>
+        </div>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </dl>
+    </section>
   </div>
 </section>
 <script src="{{ "js/contact.js" | relURL }}" defer></script>

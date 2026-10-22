@@ -14,7 +14,7 @@ Sunset Studios is responsible for the information you provide when enquiring abo
 
 ## Enquiries and bookings
 
-Our availability form asks for your preferred dates, band or project name, main project need and email address. We use these details to reply, check availability and discuss your booking. The required fields help us assess your request; you can contact us by email instead of using the form. Please avoid including sensitive personal information in your message.
+Our availability form asks for your preferred dates, band or project name, booking type (retreat, recording or rehearsal) and email address. We use these details to reply, check availability and discuss your booking. The required fields help us assess your request; you can contact us by email instead of using the form. Please avoid including sensitive personal information in your message.
 
 Form submissions are sent to **Formspree**, which processes and stores enquiries and delivers them to us. Formspree may also process technical information such as your IP address and browser details for service operation and security. See [Formspree’s privacy policy](https://formspree.io/legal/privacy-policy/).
 

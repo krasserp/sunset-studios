@@ -1312,3 +1312,14 @@ body:has(.cookie-consent[open]) { overflow: hidden; }
   p { margin: 0.5rem 0; color: #eee; }
   a { color: #fff; text-decoration: underline; text-underline-offset: 0.2em; }
 }
+
+.contact-rates {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  h2 { font-size: 1.5rem; }
+  dl { margin: 0; }
+  dl > div { padding-block: 0.85rem; }
+  dt { font-weight: 600; }
+  dd { margin: 0.35rem 0 0; color: var(--muted); }
+}
