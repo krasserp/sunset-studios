@@ -101,7 +101,7 @@ function updateImage() {
 }
 
 /* CLICK OUTSIDE TO CLOSE */
-document.getElementById("lightbox").addEventListener("click", (e) => {
+document.getElementById("lightbox")?.addEventListener("click", (e) => {
   if (e.target.id === "lightbox") {
     closeLightbox();
   }
@@ -111,7 +111,7 @@ document.getElementById("lightbox").addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   const lightbox = document.getElementById("lightbox");
 
-  if (!lightbox.classList.contains("active")) return;
+  if (!lightbox || !lightbox.classList.contains("active")) return;
 
   if (e.key === "ArrowRight") nextImage();
   if (e.key === "ArrowLeft") prevImage();
@@ -121,11 +121,11 @@ document.addEventListener("keydown", (e) => {
 /* TOUCH SWIPE SUPPORT */
 let startX = 0;
 
-document.getElementById("lightbox").addEventListener("touchstart", (e) => {
+document.getElementById("lightbox")?.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
 });
 
-document.getElementById("lightbox").addEventListener("touchend", (e) => {
+document.getElementById("lightbox")?.addEventListener("touchend", (e) => {
   const endX = e.changedTouches[0].clientX;
   const diff = startX - endX;
 

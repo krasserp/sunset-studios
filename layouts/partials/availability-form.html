@@ -1,0 +1,23 @@
+    {{ $endpoint := .page.Site.Params.contactFormEndpoint }}
+    <form id="availability-form" class="contact-form" data-endpoint="{{ $endpoint }}">
+      {{ with .source }}<input type="hidden" name="enquiry_source" value="{{ . }}">{{ end }}
+      <h2>{{ .heading | default "Check availability" }}</h2>
+      <label for="project-dates">Preferred dates</label>
+      <input id="project-dates" name="dates" placeholder="e.g. 10–17 March 2027, or flexible in March" maxlength="200" required>
+      <small>{{ .dateHelp | default "For recording or rehearsal sessions, please include your preferred times." }}</small>
+      <label for="project-name">Band / project name</label>
+      <input id="project-name" name="project_name" maxlength="200" required>
+      <label for="project-type">Booking type</label>
+      <select id="project-type" name="project_type" required>
+        <option value="">Choose a booking type</option>
+        <option value="retreat" {{ if eq .defaultBooking "retreat" }}selected{{ end }}>Retreat booking</option>
+        <option value="recording">Recording booking</option>
+        <option value="rehearsal">Rehearsal booking</option>
+      </select>
+      <label for="contact-email">Email</label>
+      <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+      <p>Your enquiry is sent through Formspree to Sunset Studios. We’ll use the details you provide to reply and discuss your booking. Read our <a href="/privacy/">privacy policy</a>.</p>
+      <button class="button button-primary" type="submit" {{ if not $endpoint }}disabled{{ end }}>Send enquiry</button>
+      <p id="form-status" role="status" aria-live="polite">{{ if not $endpoint }}Online enquiries are not available yet. Please email phil@sunset-studios.one to check availability.{{ end }}</p>
+      <noscript><p>Please email phil@sunset-studios.one to check availability.</p></noscript>
+    </form>

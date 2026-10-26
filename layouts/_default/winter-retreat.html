@@ -1,0 +1,139 @@
+{{ define "main" }}
+<div class="winter-page">
+  <section class="winter-hero" aria-labelledby="winter-title">
+    <video class="winter-hero-video" id="winter-hero-video" muted loop playsinline preload="none" poster="/images/hero1.webp" aria-hidden="true" tabindex="-1" data-video-src="/videos/winter-hero-desktop-intro.mp4" data-video-mobile-src="/videos/winter-hero-sunlight.mp4"></video>
+    <div class="container winter-hero-inner">
+      <div class="winter-hero-copy">
+        <p class="winter-kicker">Your winter. A different rhythm.</p>
+        <h1 id="winter-title">Escape winter.<br>Finish your music.</h1>
+        <p class="winter-lead">Trade the grey days for a week of writing, recording and breathing space at Sunset Studios.</p>
+        <p class="winter-duration">{{ .Params.offer.duration }}</p>
+        <ul class="winter-inclusions">
+          {{ range .Params.offer.includes }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        <p class="winter-price">{{ .Params.offer.price }} <span>total for up to 3 guests</span></p>
+        <p class="winter-share">Under €500 each when three people share.</p>
+        <a class="button button-primary" href="#availability-form">Check Winter Availability</a>
+      </div>
+    </div>
+    <button type="button" class="winter-motion" id="winter-motion" hidden>Pause background video</button>
+  </section>
+
+  <section class="section winter-studio" aria-labelledby="winter-studio-title">
+    <div class="container winter-split">
+      <div>
+        <p class="eyebrow">01 / Make space for the music</p>
+        <h2 id="winter-studio-title">Your project.<br>Your studio.</h2>
+        <p>A soundproof studio for the ideas you keep putting off. Bring the demos, the unfinished tracks or the songs you haven’t had time to write.</p>
+        <p>Work independently after a walkthrough, or arrange production and engineering support for your sessions.</p>
+        <img src="/images/studio_004-800.webp" alt="The recording space at Sunset Studios" width="800" height="600" loading="lazy">
+      </div>
+      <figure class="winter-tour">
+        <video controls muted playsinline preload="none" poster="/images/studio_001-800.webp" aria-label="Behind the scenes at Sunset Studios, silent video">
+          <source src="/videos/winter-studio-session.01.web.mp4" type="video/mp4">
+          <a href="/videos/winter-studio-session.01.web.mp4">Watch studio footage</a>
+        </video>
+        <figcaption>A look inside the studio. Silent footage from our sessions.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="winter-stay-title">
+    <div class="container winter-split">
+      <img class="winter-feature-image" src="/images/gallery01-1200.webp" srcset="/images/gallery01-600.webp 600w, /images/gallery01-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 50vw" alt="Private apartment with kitchen, dining space and doors opening to the garden" width="1200" height="675" loading="lazy">
+      <div>
+        <p class="eyebrow">02 / Stay where you create</p>
+        <h2 id="winter-stay-title">No commute.<br>No lost momentum.</h2>
+        <p>Your private apartment connects directly to the studio. Cook, rest, take a break outside, then get back to the music while the idea is still fresh.</p>
+        <ul class="feature-list">
+          <li>Private apartment for up to three guests</li>
+          <li>Kitchen and space to relax between sessions</li>
+          <li>Direct access to your studio</li>
+        </ul>
+        <details class="winter-tour-details">
+          <summary>Take a video tour of the apartment and studio</summary>
+          <video controls muted playsinline preload="none" poster="/images/gallery01-800.webp" aria-label="Apartment and studio walkthrough, silent video">
+            <source src="/videos/studio-apartment-tour.01.web.mp4" type="video/mp4">
+          </video>
+          <p class="winter-small">Silent walkthrough of the garden, apartment and studio.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "testimonials.html" .Site.Home }}
+
+  <section class="section winter-equipment" aria-labelledby="winter-equipment-title">
+    <div class="container winter-split">
+      <div>
+        <p class="winter-kicker">03 / Plug in. Get into it.</p>
+        <h2 id="winter-equipment-title">A studio ready<br>for your ideas.</h2>
+        <ul class="feature-list">
+          <li>Soundproof live room and control room</li>
+          <li>Studio microphones, preamps and recording equipment</li>
+          <li>Drum kit, guitar and bass amplifiers</li>
+          <li>Yamaha Clavinova digital piano</li>
+          <li>Vocal PA, microphones, stands and cables</li>
+        </ul>
+        <p>Tell us your lineup and equipment needs before you travel. If you want to bring your instruments, personal equipment and any preferred hardware.</p>
+        <p>Engineering is optional: €150 / half day or €280 / full day.</p>
+        <a class="winter-text-link" href="/studio-services/">Explore the studio setup</a>
+      </div>
+      <img class="winter-feature-image" src="/images/sections/studio-drums.webp" alt="Drum kit and recording setup at Sunset Studios" width="1200" height="800" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="winter-beaches-title">
+    <div class="container">
+      <div class="winter-section-heading">
+        <p class="eyebrow">04 / Step outside. Come back fresh.</p>
+        <h2 id="winter-beaches-title">Room to breathe<br>between takes.</h2>
+        <p>Near seven beaches, with bikes, snorkel gear and a paddleboard available. Take a break by the ocean, then bring a clearer head back to the session.</p>
+      </div>
+      <div class="winter-photo-pair">
+        <img src="/images/gran-canaria_03-800.webp" alt="A small beach beneath the volcanic cliffs of Gran Canaria" width="800" height="600" loading="lazy">
+        <img src="/images/sections/sunset.webp" alt="Evening light on the coast near Sunset Studios" width="1200" height="800" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="section winter-travel" aria-labelledby="winter-flights-title">
+    <div class="container">
+      <p class="winter-kicker">05 / Getting here is the easy part</p>
+      <h2 id="winter-flights-title">Direct flights from<br>major European cities.</h2>
+      <ul class="winter-cities" aria-label="Cities with direct routes to Gran Canaria">
+        {{ range .Params.flights }}<li>{{ . }}</li>{{ end }}
+      </ul>
+      <p>Fly to Gran Canaria Airport (LPA). We’ll pick you up — the studio is approximately 30 minutes away.</p>
+      <p class="winter-small">Routes and schedules vary by season. Check your travel dates with the airline. <a href="https://www.aena.es/en/gran-canaria/airlines-and-destinations/destinations-from-gran-canaria-airport.html" target="_blank" rel="noopener noreferrer">See Aena’s destination list</a>.</p>
+      <div class="button-row">
+        <a class="button button-primary" href="https://www.google.com/travel/flights/flights-to-las-palmas-de-gran-canaria.html" target="_blank" rel="noopener noreferrer">Find flights to LPA</a>
+        <a class="winter-text-link" href="#availability-form">Check Winter Availability</a>
+      </div>
+      <div class="winter-map">
+        <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to see the studio location.</p>
+        <iframe title="Sunset Studios location in southern Gran Canaria" data-consent-src="https://www.google.com/maps?q=27.762809,-15.667785&amp;hl=en&amp;z=11&amp;output=embed" width="100%" height="350" loading="lazy" referrerpolicy="no-referrer-when-downgrade" hidden></iframe>
+        <a class="winter-text-link" href="https://www.google.com/maps/search/?api=1&amp;query=27.762809%2C-15.667785" target="_blank" rel="noopener noreferrer">Open location in Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "faq.html" . }}
+
+  <section class="section section-alt winter-enquiry" aria-labelledby="winter-enquiry-title">
+    <div class="container winter-split">
+      <div>
+        <p class="eyebrow">Make this winter sound different</p>
+        <h2 id="winter-enquiry-title">A week for the music<br>you want to make.</h2>
+        <p>{{ .Params.offer.price }} total. Seven days, your apartment, your studio, and airport pickup for up to three guests.</p>
+        <p>Send your preferred winter dates. We’ll confirm availability and talk through your project before you book.</p>
+        {{ partial "whatsapp.html" . }}
+        <p class="winter-small">Prefer a quick chat? Message Phil on WhatsApp.</p>
+      </div>
+      {{ partial "availability-form.html" (dict "page" . "heading" "Check Winter Availability" "defaultBooking" "retreat" "source" "winter_music_retreat" "dateHelp" "A date range or flexible winter month is fine.") }}
+    </div>
+  </section>
+</div>
+<script src="{{ "js/contact.js" | relURL }}" defer></script>
+<script src="{{ "js/winter-retreat.js" | relURL }}" defer></script>
+{{ end }}

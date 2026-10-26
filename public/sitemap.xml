@@ -20,5 +20,7 @@
     <loc>http://localhost:1313/privacy/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/winter-music-retreat/</loc>
   </url>
 </urlset>
