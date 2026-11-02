@@ -1,0 +1,16 @@
+- name: Solo
+  audience: Artist / producer
+  per_person: €890
+  total: €890
+  note: Your own creative space
+- name: Duo
+  audience: Collaborators / co-writers
+  per_person: €600
+  total: €1,200
+  note: Save €290 each vs solo
+- name: Trio
+  audience: 3-piece band / creative team
+  per_person: ≈€497
+  total: €1,490
+  note: Save ≈€393 each vs solo
+  best_value: true

@@ -1,0 +1,10 @@
+<div class="retreat-pricing" role="group" aria-label="7-day retreat prices per person">
+  {{ range site.Data.retreat_pricing }}
+  <div class="retreat-price-card{{ if .best_value }} retreat-price-best{{ end }}">
+    <div class="retreat-price-heading"><strong>{{ .name }}</strong>{{ if .best_value }}<span class="retreat-price-badge">Best value</span>{{ end }}</div>
+    <p class="retreat-price-amount">{{ .per_person }}</p>
+    <p class="retreat-price-total">{{ .total }} total</p>
+    <p class="retreat-price-saving">{{ .note }}</p>
+  </div>
+  {{ end }}
+</div>

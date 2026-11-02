@@ -2,6 +2,8 @@
 
 Path: `/winter-music-retreat/` (Hugo adds the trailing slash). Content and FAQ live in `content/winter-music-retreat.md`; layout and scoped styles live in `layouts/_default/winter-retreat.html` and `assets/scss/main.scss`.
 
+The winter hero uses `layouts/partials/retreat-pricing.html`, with prices stored in `data/retreat_pricing.yaml`. Cards lead with the per-person 7-day price: solo €890, duo €600 (€1,200 total), trio approximately €497 (€1,490 total). Duo and trio show savings against the solo rate; trio is marked Best value. Every package includes private accommodation and 24/7 private studio access. The duration appears above the winter cards rather than repeating in each card. The homepage hero does not display the pricing cards.
+
 The landing page uses the existing Formspree endpoint and consent-gated `form_submitted` event. Its enquiry form preselects Retreat booking and sends `enquiry_source=winter_music_retreat` to Formspree. The general contact page uses the same form partial without a preselected booking type. No live enquiry was sent during validation.
 
 Local media in `static/videos/` are H.264 MP4 files with fast-start metadata. The page uses the following web versions (updated 26 October 2026):

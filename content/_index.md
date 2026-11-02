@@ -116,21 +116,23 @@ packages:
     - title: "7-Day Creative Reset"
       intro: "Break routine and regain momentum."
       text: "A focused week to step out of your everyday environment and reconnect with your creative flow. Ideal if you feel stuck or want to finally finish ideas that have been sitting unfinished.\n\n<br/><b>Outcome:</b><br/> Leave with 1–3 strong finished pieces or a clear direction for your next release."
-      price: "€1,490"
-      price_note: "Under €500 per person for 7 days when three people share. Includes accommodation + studio access."
+      price: "From €890"
+      price_note: "7-day totals: solo €890 · duo €1,200 (€600 each) · trio €1,490 (≈€497 each). Private accommodation + 24/7 private studio access included."
       cta_text: "Get started"
 
     - title: "14-Day Deep Work Retreat"
       intro: "Build and finish real tracks."
       text: "Two full weeks to move beyond ideas and complete music. The first phase focuses on exploration and writing, the second about refining and recording.\n\n<br/><br/><b>Outcome:</b><br/> Leave with multiple finished tracks or strong foundation for EP.\n\n"
-      price: "€2,690"
+      price: "From €1,607"
+      price_note: "14-day totals: solo €1,607 · duo €2,166 (€1,083 each) · trio €2,690 (≈€897 each). Private accommodation + 24/7 private studio access included."
       highlight: ""
       cta_text: "Dig in"
 
     - title: "1-Month Artist Residency"
       intro: "Full immersion for serious projects."
       text: "A complete creative environment for artists working on albums, larger bodies of work, or major transitions. Enough time to settle into a rhythm, experiment, and finish without pressure.\n\n<br/><b>Outcome:</b><br/> Leave with a finished project or a substantial part of an album completed."
-      price: "€4,950"
+      price: "From €2,957"
+      price_note: "1-month totals: solo €2,957 · duo €3,987 (€1,993.50 each) · trio €4,950 (€1,650 each). Private accommodation + 24/7 private studio access included."
       cta_text: "Get comfy"
 
 

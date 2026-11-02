@@ -11,8 +11,7 @@
         <ul class="winter-inclusions">
           {{ range .Params.offer.includes }}<li>{{ . }}</li>{{ end }}
         </ul>
-        <p class="winter-price">{{ .Params.offer.price }} <span>total for up to 3 guests</span></p>
-        <p class="winter-share">Under €500 each when three people share.</p>
+        {{ partial "retreat-pricing.html" . }}
         <a class="button button-primary" href="#availability-form">Check Winter Availability</a>
       </div>
     </div>
@@ -125,7 +124,7 @@
       <div>
         <p class="eyebrow">Make this winter sound different</p>
         <h2 id="winter-enquiry-title">A week for the music<br>you want to make.</h2>
-        <p>{{ .Params.offer.price }} total. Seven days, your apartment, your studio, and airport pickup for up to three guests.</p>
+        <p>Seven days: €890 solo, €1,200 for a duo or €1,490 for a trio. Your private apartment, 24/7 private studio access and airport pickup are included.</p>
         <p>Send your preferred winter dates. We’ll confirm availability and talk through your project before you book.</p>
         {{ partial "whatsapp.html" . }}
         <p class="winter-small">Prefer a quick chat? Message Phil on WhatsApp.</p>
