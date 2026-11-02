@@ -22,16 +22,17 @@ categories:
         quantity: 1
       - name: Various drum microphones
         quantity: 10
-      - name: sE Electronics microphone
-        quantity: 1
   - name: Amps & speakers
     items:
       - name: Harley Benton G212A-FR active cabinet
+        quantity: 1
       - name: Orange TH30
         quantity: 1
       - name: Brutus 2×12 cabinet
         quantity: 1
       - name: Quad Cortex
+        quantity: 1
+      - name: Valeton GP-50
         quantity: 1
       - name: Roland BC-30 Blues Cube
         quantity: 1
@@ -42,6 +43,7 @@ categories:
   - name: Audio interface & headphones
     items:
       - name: Behringer X Air XR18
+      - name: Tascam US-16x08
       - name: Swissonic Headamp 8
       - name: Vic Firth SIH2
         quantity: 4
@@ -55,17 +57,28 @@ categories:
         note: Live room
   - name: Bass guitars
     items:
-      - name: Fender Jazz Bass
       - name: Status Groove Bass
       - name: Gretsch Streamliner Jet Club
+      - name: Fender Jazz Bass
+        note: on request only
   - name: Guitars
     items:
       - name: Cort acoustic guitar
       - name: Fender Squier electric guitar
         note: Humbucker + single coil
       - name: Gretsch G5425 Jet Club
-        note: Black
       - name: Epiphone Baritone Custom
-  - name: MIDI keyboard
+      - name: Harley Benton DC-200LH BK Student Se
+        note: Left-handed
+  - name: Keys
     items:
       - name: AKAI Professional MPK Mini
+      - name: Yamaha Clavinova CVP-601
+  - name: Drums
+    items:
+      - name: Millenium Focus 22 Drum Set White
+        note: 22" x 16" Bass Drum 10" x 08" Tom 12" x 09" Tom 16" x 14" Standtom, PDP MX 14" snare drum
+      - name: Various cymbals
+        quantity: 10
+      - name: bongos
+      - name: cajon
