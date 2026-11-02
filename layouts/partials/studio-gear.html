@@ -1,0 +1,25 @@
+{{ $id := .id | default "studio-gear" }}
+{{ with site.Data.studio_gear }}
+<section id="{{ $id }}" class="section studio-gear" aria-labelledby="{{ $id }}-title">
+  <div class="container">
+    <h2 id="{{ $id }}-title">{{ .heading }}</h2>
+    <p class="section-intro">{{ .intro }}</p>
+    <div class="studio-gear-list">
+      {{ range .categories }}
+      <details class="studio-gear-category">
+        <summary>{{ .name }} <span class="studio-gear-count">{{ len .items }} items</span></summary>
+        <ul>
+          {{ range .items }}
+          <li>
+            <span>{{ .name }}{{ with .note }}<small>{{ . }}</small>{{ end }}</span>
+            {{ with .quantity }}<span class="studio-gear-quantity" aria-label="Quantity {{ . }}">×{{ . }}</span>{{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </details>
+      {{ end }}
+    </div>
+    <p class="studio-gear-note">{{ .note }}</p>
+  </div>
+</section>
+{{ end }}

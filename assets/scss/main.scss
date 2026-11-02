@@ -1501,3 +1501,17 @@ body:has(.cookie-consent[open]) { overflow: hidden; }
   .retreat-price-card { padding: 0.75rem 0.45rem; }
   .retreat-price-card .retreat-price-amount { font-size: 1.4rem; }
 }
+
+// Reusable studio inventory; native details work without JavaScript.
+.studio-gear {
+  .studio-gear-list { max-width: 900px; margin-top: 1.5rem; }
+  .studio-gear-category { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); margin-bottom: 0.65rem; }
+  summary { padding: 1.1rem; cursor: pointer; font-weight: 650; min-height: 44px; }
+  summary:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
+  .studio-gear-count { font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-left: 0.6rem; white-space: nowrap; }
+  ul { list-style: none; margin: 0; padding: 0 1.1rem 0.5rem; }
+  li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; border-top: 1px solid var(--line); }
+  small { display: block; color: var(--muted); margin-top: 0.2rem; }
+  .studio-gear-quantity { white-space: nowrap; font-weight: 600; }
+  .studio-gear-note { max-width: 65ch; margin-top: 1.25rem; color: var(--muted); }
+}

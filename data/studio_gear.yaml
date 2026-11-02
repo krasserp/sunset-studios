@@ -1,0 +1,71 @@
+heading: Studio gear
+intro: Explore the microphones, instruments and recording setup available for your sessions.
+note: Tell us what you need before you travel. More microphones and instruments are available on request.
+categories:
+  - name: Microphones
+    items:
+      - name: Shure SM7B
+        quantity: 1
+      - name: AKG C214
+        quantity: 1
+      - name: Shure SM58
+        quantity: 1
+      - name: Shure SM57
+        quantity: 1
+      - name: Sennheiser e609
+        quantity: 1
+      - name: Behringer B906
+        quantity: 1
+      - name: sE X1
+        quantity: 1
+      - name: t.bone SC450
+        quantity: 1
+      - name: Various drum microphones
+        quantity: 10
+      - name: sE Electronics microphone
+        quantity: 1
+  - name: Amps & speakers
+    items:
+      - name: Harley Benton G212A-FR active cabinet
+      - name: Orange TH30
+        quantity: 1
+      - name: Brutus 2×12 cabinet
+        quantity: 1
+      - name: Quad Cortex
+        quantity: 1
+      - name: Roland BC-30 Blues Cube
+        quantity: 1
+      - name: TC Electronic RebelHead 450
+        quantity: 1
+      - name: Phil Jones Bass Cab 67
+        quantity: 1
+  - name: Audio interface & headphones
+    items:
+      - name: Behringer X Air XR18
+      - name: Swissonic Headamp 8
+      - name: Vic Firth SIH2
+        quantity: 4
+  - name: Monitoring
+    items:
+      - name: Yamaha HS8
+        quantity: 2
+        note: Control room or live room
+      - name: Behringer Eurolive F1220A
+        quantity: 1
+        note: Live room
+  - name: Bass guitars
+    items:
+      - name: Fender Jazz Bass
+      - name: Status Groove Bass
+      - name: Gretsch Streamliner Jet Club
+  - name: Guitars
+    items:
+      - name: Cort acoustic guitar
+      - name: Fender Squier electric guitar
+        note: Humbucker + single coil
+      - name: Gretsch G5425 Jet Club
+        note: Black
+      - name: Epiphone Baritone Custom
+  - name: MIDI keyboard
+    items:
+      - name: AKAI Professional MPK Mini
