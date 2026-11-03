@@ -1,8 +1,8 @@
 {{ define "main" }}
 <div class="winter-page">
-  <section class="winter-hero" aria-labelledby="winter-title">
-    <video class="winter-hero-video" id="winter-hero-video" muted loop playsinline preload="none" poster="/images/hero1.webp" aria-hidden="true" tabindex="-1" data-video-src="/videos/winter-hero-desktop-intro.mp4" data-video-mobile-src="/videos/winter-hero-sunlight.mp4"></video>
-    <div class="container winter-hero-inner">
+  <section class="hero home-hero winter-hero" aria-labelledby="winter-title">
+    {{ partial "hero-slideshow.html" . }}
+    <div class="container hero-content winter-hero-inner">
       <div class="winter-hero-copy">
         <p class="winter-kicker">Your winter. A different rhythm.</p>
         <h1 id="winter-title">Escape winter.<br>Finish your music.</h1>
@@ -15,7 +15,6 @@
         <a class="button button-primary" href="#availability-form">Check Winter Availability</a>
       </div>
     </div>
-    <button type="button" class="winter-motion" id="winter-motion" hidden>Pause background video</button>
   </section>
 
   <section class="section winter-studio" aria-labelledby="winter-studio-title">
@@ -136,5 +135,4 @@
   </section>
 </div>
 <script src="{{ "js/contact.js" | relURL }}" defer></script>
-<script src="{{ "js/winter-retreat.js" | relURL }}" defer></script>
 {{ end }}

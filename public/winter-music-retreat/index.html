@@ -32,8 +32,8 @@
 
 <link
   rel="stylesheet"
-  href="/scss/main.min.e656aa72d8c6e96e281b6a84e631c0224848b09d507356db67cb7c1bf6d9240d.css"
-  integrity="sha256-5laqctjG6W4oG2qE5jHAIkhIsJ1Qc1bbZ8t8G/bZJA0="
+  href="/scss/main.min.ebb26655a05910c9efa9cc3f97d9dab1bc90dbbfdf1d8b529c3a691b28b56af4.css"
+  integrity="sha256-67JmVaBZEMnvqcw/l9nasbyQ27/fHYtSnDppGyi1avQ="
 >
 
 
@@ -96,9 +96,15 @@
     <main id="main">
       
 <div class="winter-page">
-  <section class="winter-hero" aria-labelledby="winter-title">
-    <video class="winter-hero-video" id="winter-hero-video" muted loop playsinline preload="none" poster="/images/hero1.webp" aria-hidden="true" tabindex="-1" data-video-src="/videos/winter-hero-desktop-intro.mp4" data-video-mobile-src="/videos/winter-hero-sunlight.mp4"></video>
-    <div class="container winter-hero-inner">
+  <section class="hero home-hero winter-hero" aria-labelledby="winter-title">
+      <div class="hero-bg" aria-hidden="true">
+    <span class="slide slide-1"></span>
+    <span class="slide slide-2"></span>
+    <span class="slide slide-3"></span>
+    <span class="slide slide-4"></span>
+  </div>
+
+    <div class="container hero-content winter-hero-inner">
       <div class="winter-hero-copy">
         <p class="winter-kicker">Your winter. A different rhythm.</p>
         <h1 id="winter-title">Escape winter.<br>Finish your music.</h1>
@@ -135,7 +141,6 @@
         <a class="button button-primary" href="#availability-form">Check Winter Availability</a>
       </div>
     </div>
-    <button type="button" class="winter-motion" id="winter-motion" hidden>Pause background video</button>
   </section>
 
   <section class="section winter-studio" aria-labelledby="winter-studio-title">
@@ -801,7 +806,6 @@ document.querySelectorAll("[data-testimonial-carousel]").forEach((carousel) => {
   </section>
 </div>
 <script src="/js/contact.js" defer></script>
-<script src="/js/winter-retreat.js" defer></script>
 
     </main>
     <footer class="site-footer">
