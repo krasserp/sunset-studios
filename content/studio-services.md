@@ -1,6 +1,7 @@
 ---
-title: "Rehearsal & Recording Studio"
-description: "Rehearsal room and recording studio hire in the south of Gran Canaria, with backline and engineering available."
+title: "Recording Studio in Gran Canaria"
+seo_title: "Recording Studio in Gran Canaria | Sunset Studios"
+description: "Sunset Studios offers professional recording, rehearsals, music production and mixing in southern Gran Canaria. Flexible sessions for artists and bands."
 date: 2026-07-20
 draft: false
 url: "/studio-services/"
@@ -12,7 +13,7 @@ menu:
 
 hero:
   eyebrow: "Studio hire in Gran Canaria"
-  headline: "Rehearse, record and develop your music"
+  headline: "Recording & Rehearsal Studio in Gran Canaria"
   subheadline: "A comfortable, soundproof studio in the south of Gran Canaria for bands, solo artists and visiting musicians."
   primary_cta:
     text: "Check availability"
@@ -58,7 +59,7 @@ services:
       intro: "Record vocals, drums, a full band or build a track instrument by instrument."
       text: "Recording sessions require a minimum booking of two hours. Booked time includes setup, soundcheck, recording, listening and file exports. Half-day or full-day bookings are recommended for bands and larger sessions."
       includes:
-        - "Hourly session: €40"
+        - "Hourly session: €40 | Minimum booking: 2 hours"
         - "Half day, up to 4 hours: €150"
         - "Full day, up to 8 hours: €280"
 
@@ -94,7 +95,7 @@ extras:
     link: "/#packages"
 
 faq:
-  heading: "FAQ"
+  heading: "FAQs"
   include_location: false
   items:
     - question: "Can we bring our own equipment?"
@@ -102,18 +103,21 @@ faq:
     - question: "Can we use the studio without an engineer?"
       answer: "For rehearsals, yes. Recording sessions normally include an engineer. Independent recording may be possible for experienced producers and engineers after a studio walkthrough."
     - question: "Are instruments included?"
-      answer: "The drum kit and Clavinova are included in the standard rehearsal setup. Guitar and bass players should bring their own instruments, but can also be hired on arrangement. Please bring your own cymbals, drumsticks and any personal drum hardware you require unless agreed otherwise in advance."
+      answer: "The drum kit and Clavinova are included in the standard rehearsal setup. Guitar and bass players should bring their own instruments, but can also be hired on arrangement. Note: Shell set and stands provided. Please bring your own cymbals, drumsticks, and any personal hardware required (unless agreed otherwise in advance)."
     - question: "How many people can use the studio?"
       answer: "The studio comfortably accommodates bands and groups of up to five people. Before booking, we’ll discuss your lineup and arrange the space to make the setup comfortable for everyone."
-    - question: "Where is the studio?"
-      answer: "Sunset Studios is in the south of Gran Canaria, close to Arguineguín and approximately 30 minutes from Gran Canaria Airport."
+    - question: "Where is Sunset Studios located?"
+      answer: "We're located in a quiet residential area just outside El Pajar, in the south of Gran Canaria, close to Arguineguín. <a href='/contact/#find-us-title'>Find us</a>."
     - question: "Is accommodation available?"
       answer: "Yes. If you want to stay where you create, the studio can be booked together with a private guest apartment for up to three people. <u><a href='/#packages'>Retreat</a></u>"
+    - question: "Is there parking?"
+      answer: "Yes, there is private parking available for 2 cars, as well as free street parking."
 
 cta:
   heading: "Book a Studio Session"
-  text: "Send your preferred date and times, the number of musicians, your lineup and any equipment or engineering support you need. I’ll confirm availability and the total price."
+  text: "Send your preferred date and times, the number of musicians, your lineup and any equipment or engineering support you need. We’ll confirm availability and the total price."
   primary_cta:
     text: "Check availability"
     link: "/contact/#availability-form"
+
 ---

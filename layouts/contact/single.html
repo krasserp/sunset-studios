@@ -6,27 +6,7 @@
     {{ partial "whatsapp.html" . }}
     <p>Prefer a form? Send your project details below.</p>
     {{ partial "availability-form.html" (dict "page" .) }}
-    <section class="contact-rates" aria-labelledby="contact-rates-title">
-      <h2 id="contact-rates-title">Starting rates</h2>
-      <dl>
-        {{ with index .Site.Home.Params.packages.items 0 }}
-        <div>
-          <dt>Residential retreats</dt>
-          <dd>{{ .price }} for 7 days, including accommodation and studio access for up to 3 people. Under €500 per person when three people share. <a href="/#packages">See packages</a>.</dd>
-        </div>
-        {{ end }}
-        {{ with .Site.GetPage "/studio-services" }}
-          {{ range .Params.services.items }}
-            {{ if in (slice "Recording Sessions" "Rehearsal Sessions") .title }}
-        <div>
-          <dt>{{ .title }}</dt>
-          <dd>{{ .price }}. Minimum booking: 2 hours. <a href="/studio-services/#services">See studio services</a>.</dd>
-        </div>
-            {{ end }}
-          {{ end }}
-        {{ end }}
-      </dl>
-    </section>
+    {{ partial "find-us.html" . }}
   </div>
 </section>
 <script src="{{ "js/contact.js" | relURL }}" defer></script>

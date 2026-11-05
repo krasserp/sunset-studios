@@ -6,6 +6,8 @@
   (printf "%s · %s" .Title .Site.Title)
 -}}
 
+{{- $title = .Params.seo_title | default $title -}}
+
 {{- $description := .Params.description | default "Escape the city and create at Sunset Studios — a focused music retreat in Gran Canaria for artists, bands and producers seeking inspiration, clarity and deep creative work." -}}
 
 {{- $image := "https://sunset-studios.one/images/hero1.webp" -}}

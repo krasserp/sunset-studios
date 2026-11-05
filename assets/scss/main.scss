@@ -1480,3 +1480,14 @@ body:has(.cookie-consent[open]) { overflow: hidden; }
   .studio-gear-quantity { white-space: nowrap; font-weight: 600; }
   .studio-gear-note { max-width: 65ch; margin-top: 1.25rem; color: var(--muted); }
 }
+
+
+#find-us {
+  margin-block: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  h2 { margin-top: 0; }
+  address { font-style: normal; line-height: 1.7; }
+  p:last-child { margin-bottom: 0; }
+}

@@ -81,7 +81,7 @@ testimonials:
 
     - quote: "Sunset Studios is a first-rate creative retreat: warm, affordable, and set in an incredible location. It immediately gives you the headspace to relax and create, and the studio offers what feels like endless sonic possibilities. It’s the kind of place that makes the work flow naturally, and makes it very hard to leave."
       name: "Barry Straight"
-      role: "Songwriter/ Guitarrist/ Producer"
+      role: "Songwriter/ Guitarist/ Producer"
       image: "/images/testimonials/barry.webp"
       instagram: "https://www.instagram.com/splitwormsuk/"
 
@@ -183,7 +183,7 @@ engineering:
     - "Multi-day support: custom quote"
 
 faq:
-  heading: "FAQ"
+  heading: "FAQs"
   items:
     - question: "What is Sunset Studios?"
       answer: "Sunset Studios is a creative music retreat in Gran Canaria with a fully equipped soundproof studio and accommodation for artists, songwriters, and producers who want time and space to focus and create."
@@ -197,6 +197,8 @@ faq:
       answer: "No. Engineering support is available if needed, and you’re also welcome to bring your own engineer."
     - question: "Can we use the studio on our own?"
       answer: "Yes. After a walkthrough and brief introduction, you can use the studio independently. "
+    - question: "Is there parking?"
+      answer: "Yes, there is private parking available for 2 cars, as well as free street parking."
 
 cta:
   heading: "Bring Your Ideas to Life — Book Your Creative Retreat"

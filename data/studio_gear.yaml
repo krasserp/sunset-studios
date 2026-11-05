@@ -51,10 +51,13 @@ categories:
     items:
       - name: Yamaha HS8
         quantity: 2
-        note: Control room or live room
+        note: Control room
       - name: Behringer Eurolive F1220A
         quantity: 1
         note: Live room
+      - name: LD Systems Dave 12 G3 PA
+        quantity: 1
+        note: Live room, on request only
   - name: Bass guitars
     items:
       - name: Status Groove Bass
@@ -80,5 +83,5 @@ categories:
         note: 22" x 16" Bass Drum 10" x 08" Tom 12" x 09" Tom 16" x 14" Standtom, PDP MX 14" snare drum
       - name: Various cymbals
         quantity: 10
-      - name: bongos
-      - name: cajon
+      - name: Bongos
+      - name: Cajon
