@@ -48,12 +48,18 @@ function setup(host, enabled = 'true', cookie = '', protocol = 'https:') {
 }
 
 for (const host of ['sunset-studios.one', 'music.sunset-studios.one']) {
-  test(`GTM on ${host} requires consent and the build flag`, () => {
+  test(`Measurement on ${host} requires consent and the build flag`, () => {
     const page = setup(host);
     assert.equal(page.requests.length, 0);
     page.accept();
     page.focus();
-    assert.equal(page.requests.length, 1);
+    assert.deepEqual(page.requests, [
+      'https://www.googletagmanager.com/gtm.js?id=GTM-KV9P8PLM',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    ]);
+    assert.deepEqual(Array.from(page.window.fbq.queue, args => Array.from(args)), [
+      ['init', '990608840778572'], ['track', 'PageView']
+    ]);
     assert.equal(page.window.sunsetConsent.analytics, true);
     assert.match(page.writes[0], /Domain=sunset-studios.one/);
     page.reject();

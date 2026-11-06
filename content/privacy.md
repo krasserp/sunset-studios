@@ -4,7 +4,7 @@ description: "How Sunset Studios handles enquiries, music purchases and website 
 draft: false
 ---
 
-*Last updated: 19 October 2026*
+*Last updated: 6 November 2026*
 
 This notice covers **https://sunset-studios.one/**, our retreat and recording studio website, and **https://music.sunset-studios.one/**, our music shop. Sunset Studios is based in Gran Canaria, Spain.
 
@@ -42,6 +42,8 @@ This event does not include your project name, email address or preferred dates.
 
 You can use your browser settings to block or delete cookies. On the studio site, use the cookie icon or **Cookie settings** in the footer to accept, reject or change optional analytics and embedded content preferences. Both are off until you choose. The settings panel opens automatically on your first visit or when your saved choice expires. You can reopen it at any time. Your choice is saved for up to 180 days in a necessary cookie named `sunset-cookie-consent-v1`, scoped to sunset-studios.one and its subdomains. This allows the music shop to use the same preferences once its consent controls are connected to this cookie. Withdrawing analytics consent reloads the page to stop loaded tags. Previously stored third-party cookies can be removed through your browser settings. For information about Google’s processing, see [Google’s privacy policy](https://policies.google.com/privacy).
 
+With the same analytics consent, the studio website also loads **Meta Pixel** (ID `990608840778572`) and sends a `PageView` event to measure visits and advertising performance. Meta may receive the page URL, browser and device information, IP address and cookie identifiers. The pixel stays off until you allow analytics and advertising in Cookie settings. See [Meta’s privacy policy](https://www.facebook.com/privacy/policy/).
+
 ## Maps, videos and external links
 
 Some pages embed **Google Maps** or **YouTube** content. Embeds on the studio site load only after you enable embedded content in Cookie settings. When an embed loads, your browser connects to Google, which can receive technical information such as your IP address and may use cookies or other identifiers under [Google’s privacy policy](https://policies.google.com/privacy).
@@ -50,7 +52,7 @@ Links to Instagram, TikTok and other external websites take you to services with
 
 ## Service providers and international processing
 
-Information may be handled by our website hosting and email providers, Formspree, Stripe, and Google where their services are used. These services support website delivery, enquiry handling, order fulfilment, payments, security and measurement.
+Information may be handled by our website hosting and email providers, Formspree, Stripe, Google, and Meta where their services are used. These services support website delivery, enquiry handling, order fulfilment, payments, security and measurement.
 
 Providers may process information outside the European Economic Area. Formspree states that its infrastructure includes the United States. Their privacy policies explain their international processing practices; you can contact us with questions about providers handling your enquiry.
 

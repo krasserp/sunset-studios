@@ -57,6 +57,24 @@
       script.async = true;
       script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KV9P8PLM';
       document.head.appendChild(script);
+      // Meta Pixel uses the same consent and production gates as measurement tags.
+      if (!window.fbq) {
+        const fbq = window.fbq = function () {
+          if (fbq.callMethod) fbq.callMethod.apply(fbq, arguments);
+          else fbq.queue.push(arguments);
+        };
+        if (!window._fbq) window._fbq = fbq;
+        fbq.push = fbq;
+        fbq.loaded = true;
+        fbq.version = '2.0';
+        fbq.queue = [];
+        const pixel = document.createElement('script');
+        pixel.async = true;
+        pixel.src = 'https://connect.facebook.net/en_US/fbevents.js';
+        document.head.appendChild(pixel);
+      }
+      window.fbq('init', '990608840778572');
+      window.fbq('track', 'PageView');
     }
     document.querySelectorAll('iframe[data-consent-src]').forEach(frame => {
       if (choice.embeds) frame.src = frame.dataset.consentSrc;
