@@ -19,3 +19,5 @@ Staging uses a separate host-only `sunset-preview-consent-v1` cookie, so tests d
 The music shop is a separate repository. Apply equivalent hostname/build checks there; this checkout cannot disable scripts installed by that shop.
 
 Run domain/consent regression checks with `node --test tests/consent.test.cjs`.
+
+The consent script lives in `assets/js/consent.js` and is fingerprinted by Hugo. Each build references its content hash and includes an integrity attribute, so script changes get a new URL automatically. Keep the script's `site-consent-script` ID and `data-analytics-enabled` attribute: the runtime uses them to enforce the build's analytics setting.

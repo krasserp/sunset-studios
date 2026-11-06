@@ -2,7 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
-const source = fs.readFileSync('static/js/consent.js', 'utf8');
+const source = fs.readFileSync('assets/js/consent.js', 'utf8');
 
 function setup(host, enabled = 'true', cookie = '', protocol = 'https:') {
   const element = () => ({
@@ -58,6 +58,7 @@ for (const host of ['sunset-studios.one', 'music.sunset-studios.one']) {
       'https://connect.facebook.net/en_US/fbevents.js'
     ]);
     assert.deepEqual(Array.from(page.window.fbq.queue, args => Array.from(args)), [
+      ['set', 'autoConfig', false, '990608840778572'],
       ['init', '990608840778572'], ['track', 'PageView']
     ]);
     assert.equal(page.window.sunsetConsent.analytics, true);

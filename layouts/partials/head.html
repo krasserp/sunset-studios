@@ -62,7 +62,15 @@
   fetchpriority="high"
 >
 
-<script id="site-consent-script" src="{{ "js/consent.js" | relURL }}" data-analytics-enabled="{{ if and $production .Site.Params.enableAnalytics }}true{{ else }}false{{ end }}" defer></script>
+{{ with resources.Get "js/consent.js" | fingerprint }}
+<script
+  id="site-consent-script"
+  src="{{ .RelPermalink }}"
+  integrity="{{ .Data.Integrity }}"
+  data-analytics-enabled="{{ if and $production $.Site.Params.enableAnalytics }}true{{ else }}false{{ end }}"
+  defer>
+</script>
+{{ end }}
 
 <!-- Structured Data -->
 <script type="application/ld+json">

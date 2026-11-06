@@ -73,6 +73,7 @@
         pixel.src = 'https://connect.facebook.net/en_US/fbevents.js';
         document.head.appendChild(pixel);
       }
+      window.fbq('set', 'autoConfig', false, '990608840778572');
       window.fbq('init', '990608840778572');
       window.fbq('track', 'PageView');
     }
