@@ -32,6 +32,8 @@
       form_id: 'availability-form',
       project_type: fields.project_type
     });
+    // Meta Pixel: track successful enquiry.
+    if (typeof window.sunsetTrackMeta === 'function') window.sunsetTrackMeta('lead');
     form.reset();
     status.textContent = 'Thank you — your enquiry has been sent. We’ll reply by email.';
     button.textContent = 'Enquiry sent';

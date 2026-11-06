@@ -9,5 +9,7 @@
     {{ partial "find-us.html" . }}
   </div>
 </section>
-<script src="{{ "js/contact.js" | relURL }}" defer></script>
+{{ with resources.Get "js/contact.js" | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{ end }}
 {{ end }}

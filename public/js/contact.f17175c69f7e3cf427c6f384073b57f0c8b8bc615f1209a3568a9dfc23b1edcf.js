@@ -32,6 +32,12 @@
       form_id: 'availability-form',
       project_type: fields.project_type
     });
+    // Meta Pixel: track successful enquiry.
+    if (window.sunsetConsent?.analytics && typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', {
+        content_name: 'Studio Enquiry'
+      });
+    }
     form.reset();
     status.textContent = 'Thank you — your enquiry has been sent. We’ll reply by email.';
     button.textContent = 'Enquiry sent';

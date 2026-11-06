@@ -12,7 +12,7 @@
           {{ range .Params.offer.includes }}<li>{{ . }}</li>{{ end }}
         </ul>
         {{ partial "retreat-pricing.html" . }}
-        <a class="button button-primary" href="#availability-form">Check Winter Availability</a>
+        <a class="button button-primary" href="#availability-form" data-meta-event="availability">Check Winter Availability</a>
       </div>
     </div>
   </section>
@@ -107,13 +107,13 @@
       <p>Fly to Gran Canaria Airport (LPA). We’ll pick you up — the studio is approximately 30 minutes away.</p>
       <p class="winter-small">Routes and schedules vary by season. Check your travel dates with the airline. <a href="https://www.aena.es/en/gran-canaria/airlines-and-destinations/destinations-from-gran-canaria-airport.html" target="_blank" rel="noopener noreferrer">See Aena’s destination list</a>.</p>
       <div class="button-row">
-        <a class="button button-primary" href="https://www.google.com/travel/flights/flights-to-las-palmas-de-gran-canaria.html" target="_blank" rel="noopener noreferrer">Find flights to LPA</a>
-        <a class="winter-text-link" href="#availability-form">Check Winter Availability</a>
+        <a class="button button-primary" href="https://www.google.com/travel/flights/flights-to-las-palmas-de-gran-canaria.html" data-meta-event="flights" target="_blank" rel="noopener noreferrer">Find flights to LPA</a>
+        <a class="winter-text-link" href="#availability-form" data-meta-event="availability">Check Winter Availability</a>
       </div>
       <div class="winter-map">
         <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to see the studio location.</p>
         <iframe title="Sunset Studios location in southern Gran Canaria" data-consent-src="https://www.google.com/maps?q=27.762809,-15.667785&amp;hl=en&amp;z=11&amp;output=embed" width="100%" height="350" loading="lazy" referrerpolicy="no-referrer-when-downgrade" hidden></iframe>
-        <a class="winter-text-link" href="https://www.google.com/maps/search/?api=1&amp;query=27.762809%2C-15.667785" target="_blank" rel="noopener noreferrer">Open location in Google Maps</a>
+        <a class="winter-text-link" href="https://www.google.com/maps/search/?api=1&amp;query=27.762809%2C-15.667785" data-meta-event="location" target="_blank" rel="noopener noreferrer">Open location in Google Maps</a>
       </div>
     </div>
   </section>
@@ -134,5 +134,7 @@
     </div>
   </section>
 </div>
-<script src="{{ "js/contact.js" | relURL }}" defer></script>
+{{ with resources.Get "js/contact.js" | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{ end }}
 {{ end }}

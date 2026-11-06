@@ -3,25 +3,34 @@
     .includes(window.location.hostname);
   const analyticsAllowed = productionHost && window.location.protocol === 'https:'
     && document.getElementById('site-consent-script')?.dataset.analyticsEnabled === 'true';
+  const marketingAllowed = productionHost && window.location.protocol === 'https:'
+    && document.getElementById('site-consent-script')?.dataset.marketingEnabled === 'true';
   // Staging must never read or overwrite the production consent choice.
   const key = productionHost ? 'sunset-cookie-consent-v1' : 'sunset-preview-consent-v1';
   const lifetime = 180 * 24 * 60 * 60 * 1000;
   const panel = document.getElementById('cookie-consent');
   const preferences = document.getElementById('cookie-preferences');
   const analytics = document.getElementById('cookie-analytics');
+  const marketing = document.getElementById('cookie-marketing');
   const embeds = document.getElementById('cookie-embeds');
   const customize = document.getElementById('cookie-customize');
   const launcher = document.querySelector('.cookie-launcher');
   const sharedDomain = productionHost;
   function valid(value) {
     return value && typeof value.analytics === 'boolean' && typeof value.embeds === 'boolean'
+      && (value.marketing === undefined || typeof value.marketing === 'boolean')
       && Number.isFinite(value.at) && value.at <= Date.now() && Date.now() - value.at < lifetime;
+  }
+  function normalize(value) {
+    // Older analytics choices never grant permission for marketing.
+    return { analytics: value.analytics, marketing: value.marketing === true,
+      embeds: value.embeds, at: value.at };
   }
   function readChoice() {
     try {
       const entry = document.cookie.split('; ').find(item => item.startsWith(key + '='));
       const value = entry && JSON.parse(decodeURIComponent(entry.slice(key.length + 1)));
-      return valid(value) ? value : undefined;
+      return valid(value) ? normalize(value) : undefined;
     } catch (_) { return undefined; }
   }
   function storeChoice(choice) {
@@ -38,18 +47,26 @@
   try {
     const previous = JSON.parse(localStorage.getItem(key));
     if (!saved && valid(previous)) {
-      saved = previous;
+      saved = normalize(previous);
       storeChoice(saved);
     }
     localStorage.removeItem(key);
   } catch (_) {}
   let gtmLoaded = false;
+  let metaLoaded = false;
+  const emptyChoice = { analytics: false, marketing: false, embeds: false };
   let previousFocus;
   function apply(choice) {
-    window.sunsetConsent = { analytics: analyticsAllowed && choice.analytics, embeds: choice.embeds };
+    const reload = (gtmLoaded && !choice.analytics) || (metaLoaded && !choice.marketing);
+    window.sunsetConsent = { analytics: analyticsAllowed && choice.analytics,
+      marketing: marketingAllowed && choice.marketing, embeds: choice.embeds };
     analytics.checked = choice.analytics;
+    marketing.checked = choice.marketing;
     embeds.checked = choice.embeds;
-    if (analyticsAllowed && choice.analytics && !gtmLoaded) {
+    if (metaLoaded && !choice.marketing && typeof window.fbq === 'function') {
+      try { window.fbq('consent', 'revoke'); } catch (_) { /* Reload also stops the pixel. */ }
+    }
+    if (!reload && analyticsAllowed && choice.analytics && !gtmLoaded) {
       gtmLoaded = true;
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
@@ -57,7 +74,9 @@
       script.async = true;
       script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KV9P8PLM';
       document.head.appendChild(script);
-      // Meta Pixel uses the same consent and production gates as measurement tags.
+    }
+    if (!reload && marketingAllowed && choice.marketing && !metaLoaded) {
+      metaLoaded = true;
       if (!window.fbq) {
         const fbq = window.fbq = function () {
           if (fbq.callMethod) fbq.callMethod.apply(fbq, arguments);
@@ -83,8 +102,9 @@
       frame.hidden = !choice.embeds;
     });
     document.querySelectorAll('.embed-consent-note').forEach(note => { note.hidden = choice.embeds; });
+    return reload;
   }
-  apply(saved || { analytics: false, embeds: false });
+  apply(saved || emptyChoice);
   // Ask on first visit or when the saved choice has expired.
   panel.hidden = Boolean(saved);
   if (!saved) panel.showModal();
@@ -109,12 +129,11 @@
   // Returning from the shop must honour choices changed on that subdomain.
   window.addEventListener('focus', () => {
     const latest = readChoice();
-    const choice = latest || { analytics: false, embeds: false };
-    if (gtmLoaded && !choice.analytics) {
+    const choice = latest || emptyChoice;
+    if (apply(choice)) {
       window.location.reload();
       return;
     }
-    apply(choice);
     launcher.setAttribute('aria-expanded', String(!panel.hidden));
   });
   customize.addEventListener('click', () => {
@@ -126,13 +145,13 @@
       const mode = button.dataset.consentChoice;
       const choice = {
         analytics: mode === 'all' || (mode === 'custom' && analytics.checked),
+        marketing: mode === 'all' || (mode === 'custom' && marketing.checked),
         embeds: mode === 'all' || (mode === 'custom' && embeds.checked),
         at: Date.now()
       };
       storeChoice(choice);
-      // Reload after withdrawal to stop any already-running container tags.
-      const reload = gtmLoaded && !choice.analytics;
-      apply(choice);
+      // Update effective consent immediately, then stop already-loaded trackers.
+      const reload = apply(choice);
       panel.close();
       if (reload) window.location.reload();
     });

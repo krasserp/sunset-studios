@@ -4,8 +4,9 @@ title = "Sunset Studios"
 noTimes = true
 
 [params]
-# GTM additionally requires an exact production hostname and visitor consent.
+# Optional trackers also require an exact production hostname and their own consent.
 enableAnalytics = true
+enableMarketing = true
 allowIndexing = true
 whatsapp = "https://wa.me/34828991139"
 # HTTPS endpoint that accepts JSON and returns a successful status after accepting an enquiry.

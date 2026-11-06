@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Explore on Sunset Studios</title>
-		<link>https://sunset-studios.one/explore/</link>
+		<link>http://localhost:1313/explore/</link>
 		<description>Recent content in Explore on Sunset Studios</description>
 		<generator>Hugo</generator>
 		<language>en-gb</language>
@@ -10,6 +10,6 @@
 		
 		
 		
-			<atom:link href="https://sunset-studios.one/explore/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/explore/index.xml" rel="self" type="application/rss+xml" />
 	</channel>
 </rss>

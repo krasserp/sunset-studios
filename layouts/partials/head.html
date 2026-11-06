@@ -68,8 +68,13 @@
   src="{{ .RelPermalink }}"
   integrity="{{ .Data.Integrity }}"
   data-analytics-enabled="{{ if and $production $.Site.Params.enableAnalytics }}true{{ else }}false{{ end }}"
+  data-marketing-enabled="{{ if and $production $.Site.Params.enableMarketing }}true{{ else }}false{{ end }}"
   defer>
 </script>
+{{ end }}
+
+{{ with resources.Get "js/meta-events.js" | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
 {{ end }}
 
 <!-- Structured Data -->

@@ -3,4 +3,5 @@ disableKinds = ['sitemap']
 
 [params]
 enableAnalytics = false
+enableMarketing = false
 allowIndexing = false
