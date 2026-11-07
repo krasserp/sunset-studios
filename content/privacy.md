@@ -4,7 +4,7 @@ description: "How Sunset Studios handles enquiries, music purchases and website 
 draft: false
 ---
 
-*Last updated: 6 November 2026*
+*Last updated: 7 November 2026*
 
 This notice covers **https://sunset-studios.one/**, our retreat and recording studio website, and **https://music.sunset-studios.one/**, our music shop. Sunset Studios is based in Gran Canaria, Spain.
 
@@ -46,6 +46,10 @@ If you allow **Marketing** cookies, the studio website loads **Meta Pixel** (ID 
 
 The event parameters contain only fixed labels such as `Studio Enquiry` and contact methods (`whatsapp` or `email`). We do not include your name, email address, phone number, enquiry message or travel dates in these event parameters. Meta may still receive technical information such as the page URL, IP address, browser and device details, and cookie identifiers. See [Meta’s privacy policy](https://www.facebook.com/privacy/policy/). Marketing consent is stored in its own `marketing` field alongside your other cookie preferences. Older choices that contain only Analytics and Embedded Content are treated as Marketing off.
 
+With **Analytics** consent, the studio website also loads **Microsoft Clarity** (project `za3re3nddc`) to understand visits through session recordings, heatmaps, clicks, scrolling and navigation, including on the Winter Music Retreat landing page. Microsoft processes usage and device information and may use analytics cookies such as `_clck` and `_clsk`. Clarity advertising storage is always denied, even if you enable Marketing.
+
+Our enquiry form and its contents are explicitly masked for Clarity, including names, email addresses, dates and any messages. We do not send personal form values through Clarity custom tags, events or identifiers. You can withdraw Analytics consent through **Cookie settings** at any time. We then send denied consent to Clarity, stop its runtime, clear its accessible first-party cookies and reload the page. Clarity stays off while Analytics is disabled. See [Microsoft’s Privacy Statement](https://www.microsoft.com/en-us/privacy/privacystatement).
+
 ## Maps, videos and external links
 
 Some pages embed **Google Maps** or **YouTube** content. Embeds on the studio site load only after you enable embedded content in Cookie settings. When an embed loads, your browser connects to Google, which can receive technical information such as your IP address and may use cookies or other identifiers under [Google’s privacy policy](https://policies.google.com/privacy).
@@ -54,7 +58,7 @@ Links to Instagram, TikTok and other external websites take you to services with
 
 ## Service providers and international processing
 
-Information may be handled by our website hosting and email providers, Formspree, Stripe, Google, and Meta where their services are used. These services support website delivery, enquiry handling, order fulfilment, payments, security and measurement.
+Information may be handled by our website hosting and email providers, Formspree, Stripe, Google, Meta, and Microsoft (Clarity) where their services are used. These services support website delivery, enquiry handling, order fulfilment, payments, security and measurement.
 
 Providers may process information outside the European Economic Area. Formspree states that its infrastructure includes the United States. Their privacy policies explain their international processing practices; you can contact us with questions about providers handling your enquiry.
 

@@ -13,9 +13,11 @@ On HTTPS production hosts the cookie uses `Domain=sunset-studios.one; Path=/; Sa
 The music shop code is not in this checkout. To complete integration there:
 
 - Read this cookie before loading optional analytics or embeds; disable any existing unconditional tracking snippets.
-- Apply `analytics`, `marketing` and `embeds` independently. Google measurement requires Analytics; Meta Pixel requires Marketing. Preserve all three fields when saving choices. Keep essential payment/cart behaviour independent of optional consent.
+- Apply `analytics`, `marketing` and `embeds` independently. Google measurement and Clarity require Analytics; Meta Pixel requires Marketing. Preserve all three fields when saving choices. Keep essential payment/cart behaviour independent of optional consent.
 - Reuse the banner choices and permanent Cookies button. Write the shared cookie when choices change, including rejection.
 - Check the cookie again when the page regains focus, including withdrawal from the other site. Update effective consent immediately and stop already-loaded Analytics or Marketing trackers with a reload when that category is withdrawn.
 - Test both directions between the production hosts. A cookie alone does not enforce tracking preferences on the other site.
 
 The studio script migrates its previous localStorage choice once and removes that old entry. The shared cookie wins if both are present. Migration preserves the original expiry and defaults Marketing to false. The cookie name remains unchanged so existing Analytics and Embedded Content preferences continue to work. The studio integration now implements the separate Marketing field; updating the music shop requires changes in that separate repository.
+
+Clarity uses the existing Analytics field without adding storage or changing expiry. Its advertising storage is always denied, independently of Marketing. The studio script stops Clarity, clears only its accessible `_clck` and `_clsk` first-party cookies, and reloads on Analytics withdrawal. Cookie cleanup preserves the shared consent cookie, necessary storage and other categories.

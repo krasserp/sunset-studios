@@ -8,6 +8,8 @@ const queue = page => Array.from(page.window.fbq.queue, args => Array.from(args)
 const cookieFor = choice => 'sunset-cookie-consent-v1=' + encodeURIComponent(JSON.stringify(choice));
 const gtm = 'https://www.googletagmanager.com/gtm.js?id=GTM-KV9P8PLM';
 const pixel = 'https://connect.facebook.net/en_US/fbevents.js';
+const clarity = 'https://www.clarity.ms/tag/za3re3nddc';
+const clarityQueue = page => plain(Array.from(page.window.clarity.q || [], args => Array.from(args)));
 
 function setup({ host = 'sunset-studios.one', analyticsEnabled = 'true', marketingEnabled = 'true',
   cookie = '', protocol = 'https:', previous = null } = {}) {
@@ -32,10 +34,26 @@ function setup({ host = 'sunset-studios.one', analyticsEnabled = 'true', marketi
     removeAttribute(name) { delete this[name]; } };
   const note = {};
   const requests = [], writes = [], handlers = {};
-  let reloads = 0;
+  const cookies = new Map();
+  function setCookies(value) {
+    cookies.clear();
+    for (const entry of value.split('; ')) {
+      const at = entry.indexOf('=');
+      if (at > 0) cookies.set(entry.slice(0, at), entry.slice(at + 1));
+    }
+  }
+  setCookies(cookie);
+  let reloads = 0, clarityAtLoad;
+
   const document = {
-    get cookie() { return cookie; },
-    set cookie(value) { writes.push(value); cookie = value.split(';')[0]; },
+    get cookie() { return Array.from(cookies, ([name, value]) => name + '=' + value).join('; '); },
+    set cookie(value) {
+      writes.push(value);
+      const entry = value.split(';')[0], at = entry.indexOf('=');
+      const name = entry.slice(0, at);
+      if (value.includes('Max-Age=0')) cookies.delete(name);
+      else cookies.set(name, entry.slice(at + 1));
+    },
     getElementById: id => ids[id],
     querySelector: () => launcher,
     querySelectorAll: selector => ({
@@ -43,7 +61,10 @@ function setup({ host = 'sunset-studios.one', analyticsEnabled = 'true', marketi
       'iframe[data-consent-src]': [frame], '.embed-consent-note': [note]
     })[selector] || [],
     createElement: () => ({}),
-    head: { appendChild(script) { requests.push(script.src); } }
+    head: { appendChild(script) {
+      requests.push(script.src);
+      if (script.src === clarity) clarityAtLoad = plain(Array.from(window.clarity.q, args => Array.from(args)));
+    } }
   };
   const window = {
     location: { hostname: host, protocol, reload() { reloads++; } },
@@ -59,7 +80,8 @@ function setup({ host = 'sunset-studios.one', analyticsEnabled = 'true', marketi
       for (const key of ['analytics', 'marketing', 'embeds']) ids['cookie-' + key].checked = !!choice[key];
       buttons.custom.handlers.click();
     },
-    focus: () => handlers.focus(), setCookie: value => { cookie = value; },
+    focus: () => handlers.focus(), setCookie: setCookies, cookies: () => document.cookie,
+    clarityAtLoad: () => clarityAtLoad,
     reloads: () => reloads
   };
 }
@@ -70,7 +92,7 @@ for (const host of ['sunset-studios.one', 'music.sunset-studios.one']) {
     assert.equal(page.requests.length, 0);
     assert.equal(page.window.fbq, undefined);
     page.accept(); page.focus(); page.accept();
-    assert.deepEqual(page.requests, [gtm, pixel]);
+    assert.deepEqual(page.requests, [gtm, clarity, pixel]);
     assert.deepEqual(queue(page), [
       ['set', 'autoConfig', false, '990608840778572'],
       ['init', '990608840778572'], ['track', 'PageView']
@@ -85,9 +107,9 @@ for (const host of ['sunset-studios.one', 'music.sunset-studios.one']) {
   });
 }
 
-test('analytics-only consent loads Google but never Meta', () => {
+test('analytics-only consent loads Google and Clarity but never Meta', () => {
   const page = setup(); page.save({ analytics: true }); page.focus();
-  assert.deepEqual(page.requests, [gtm]);
+  assert.deepEqual(page.requests, [gtm, clarity]);
   assert.equal(page.window.fbq, undefined);
   assert.equal(page.window.sunsetConsent.marketing, false);
 });
@@ -123,7 +145,7 @@ for (const storage of ['cookie', 'localStorage']) {
   test(`legacy ${storage} analytics consent does not authorize marketing`, () => {
     const legacy = { analytics: true, embeds: true, at: Date.now() - 1000 };
     const page = setup(storage === 'cookie' ? { cookie: cookieFor(legacy) } : { previous: legacy });
-    assert.deepEqual(page.requests, [gtm]);
+    assert.deepEqual(page.requests, [gtm, clarity]);
     assert.equal(page.window.fbq, undefined);
     assert.equal(page.window.sunsetConsent.marketing, false);
     assert.equal(page.frame.src, page.frame.dataset.consentSrc);
@@ -159,7 +181,7 @@ test('withdrawing marketing stops Meta immediately, reloads, and preserves analy
   assert.equal(page.window.sunsetConsent.analytics, true);
   assert.deepEqual(queue(page).at(-1), ['consent', 'revoke']);
   assert.equal(page.reloads(), 1);
-  assert.deepEqual(page.requests, [gtm, pixel]);
+  assert.deepEqual(page.requests, [gtm, clarity, pixel]);
 });
 
 test('focus honors marketing withdrawn on the other production host', () => {
@@ -192,7 +214,7 @@ for (const host of ['staging.sunset-studios.one', 'localhost', 'sunset-studios.o
 
 test('marketing and analytics build switches work independently', () => {
   const google = setup({ marketingEnabled: 'false' }); google.accept();
-  assert.deepEqual(google.requests, [gtm]);
+  assert.deepEqual(google.requests, [gtm, clarity]);
   assert.equal(google.window.sunsetConsent.marketing, false);
   const meta = setup({ analyticsEnabled: 'false' }); meta.accept();
   assert.deepEqual(meta.requests, [pixel]);
@@ -206,4 +228,100 @@ test('both trackers fail closed without build flags or HTTPS', () => {
     assert.equal(page.window.sunsetConsent.analytics, false);
     assert.equal(page.window.sunsetConsent.marketing, false);
   }
+});
+
+test('fresh and marketing-only visitors have no Clarity activity', () => {
+  const page = setup();
+  assert.equal(page.window.clarity, undefined);
+  assert.equal(page.cookies(), '');
+  page.save({ marketing: true });
+  assert.equal(page.window.clarity, undefined);
+  assert.equal(page.requests.filter(url => url.includes('clarity.ms')).length, 0);
+  assert.doesNotMatch(page.cookies(), /_clck|_clsk/);
+});
+
+test('Clarity queues Consent V2 before loading, once, with advertising always denied', () => {
+  const page = setup();
+  page.accept(); page.focus(); page.accept();
+  const consent = [['consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' }]];
+  assert.deepEqual(clarityQueue(page), consent);
+  assert.deepEqual(page.clarityAtLoad(), consent);
+  assert.equal(page.requests.filter(url => url === clarity).length, 1);
+});
+
+test('returning Analytics consent starts Clarity without renewing the stored choice', () => {
+  const original = { analytics: true, marketing: false, embeds: false, at: Date.now() - 30 * 86400000 };
+  const page = setup({ cookie: cookieFor(original) });
+  assert.deepEqual(page.requests, [gtm, clarity]);
+  assert.deepEqual(clarityQueue(page), [['consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' }]]);
+  assert.deepEqual(page.writes, []);
+  page.focus();
+  assert.deepEqual(page.writes, []);
+  assert.equal(page.requests.filter(url => url === clarity).length, 1);
+});
+
+for (const host of ['sunset-studios.one', 'music.sunset-studios.one']) {
+  test(`withdrawing Analytics stops Clarity, clears only its cookies, and keeps other choices on ${host}`, () => {
+    const page = setup({ host }); page.accept();
+    page.setCookie(page.cookies() + '; _clck=visitor; _clsk=session; _fbp=marketing-cookie; necessary_test=keep');
+    page.save({ analytics: false, marketing: true, embeds: true });
+    assert.deepEqual(clarityQueue(page), [
+      ['consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' }],
+      ['consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' }], ['stop']
+    ]);
+    assert.doesNotMatch(page.cookies(), /_clck|_clsk/);
+    assert.match(page.cookies(), /_fbp=marketing-cookie/);
+    assert.match(page.cookies(), /necessary_test=keep/);
+    assert.match(page.cookies(), /sunset-cookie-consent-v1=/);
+    assert.equal(page.window.sunsetConsent.marketing, true);
+    assert.equal(page.window.sunsetConsent.embeds, true);
+    assert.equal(page.window.sunsetConsent.analytics, false);
+    assert.equal(queue(page).length, 3); // No Meta revocation or duplicate PageView.
+    assert.equal(page.reloads(), 1);
+    const deletions = page.writes.filter(value => /^_cl(?:ck|sk)=/.test(value));
+    assert.ok(deletions.some(value => value.includes('; Domain=' + host)));
+    assert.ok(deletions.some(value => value.includes('; Domain=sunset-studios.one')));
+    assert.ok(deletions.some(value => !value.includes('; Domain=')));
+    assert.ok(deletions.every(value => value.includes('Max-Age=0')));
+  });
+}
+
+test('Analytics withdrawn in another tab stops Clarity when focus returns', () => {
+  const page = setup(); page.accept();
+  page.setCookie(cookieFor({ analytics: false, marketing: true, embeds: true, at: Date.now() }) + '; _clck=old; _clsk=old');
+  page.focus();
+  assert.equal(page.window.sunsetConsent.analytics, false);
+  assert.deepEqual(clarityQueue(page).slice(-2), [
+    ['consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' }], ['stop']
+  ]);
+  assert.doesNotMatch(page.cookies(), /_clck|_clsk/);
+  assert.equal(page.reloads(), 1);
+});
+
+test('stale Clarity cookies are removed without loading Clarity when Analytics is off', () => {
+  const page = setup({ cookie: cookieFor({ analytics: false, marketing: false, embeds: false, at: Date.now() })
+    + '; _clck=old; _clsk=old; necessary_test=keep' });
+  assert.deepEqual(page.requests, []);
+  assert.equal(page.window.clarity, undefined);
+  assert.doesNotMatch(page.cookies(), /_clck|_clsk/);
+  assert.match(page.cookies(), /necessary_test=keep/);
+  assert.match(page.cookies(), /sunset-cookie-consent-v1=/);
+});
+
+test('staging does not remove production Clarity cookies', () => {
+  const page = setup({ host: 'staging.sunset-studios.one', cookie: '_clck=production; _clsk=production' });
+  page.reject();
+  assert.match(page.cookies(), /_clck=production/);
+  assert.match(page.cookies(), /_clsk=production/);
+  assert.equal(page.window.clarity, undefined);
+  assert.ok(page.writes.every(value => value.startsWith('sunset-preview-consent-v1=')));
+});
+
+test('Clarity failures do not prevent cookie cleanup or withdrawal reload', () => {
+  const page = setup(); page.accept();
+  page.setCookie(page.cookies() + '; _clck=old; _clsk=old');
+  page.window.clarity = () => { throw new Error('Clarity unavailable'); };
+  assert.doesNotThrow(() => page.save({ marketing: true }));
+  assert.doesNotMatch(page.cookies(), /_clck|_clsk/);
+  assert.equal(page.reloads(), 1);
 });

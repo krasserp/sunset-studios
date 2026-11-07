@@ -1,5 +1,5 @@
     {{ $endpoint := .page.Site.Params.contactFormEndpoint }}
-    <form id="availability-form" class="contact-form" data-endpoint="{{ $endpoint }}">
+    <form id="availability-form" class="contact-form" data-endpoint="{{ $endpoint }}" data-clarity-mask="true">
       {{ with .source }}<input type="hidden" name="enquiry_source" value="{{ . }}">{{ end }}
       <h2>{{ .heading | default "Check availability" }}</h2>
       <label for="project-dates">Preferred dates</label>

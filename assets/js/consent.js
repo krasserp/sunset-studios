@@ -53,16 +53,36 @@
     localStorage.removeItem(key);
   } catch (_) {}
   let gtmLoaded = false;
+  let clarityLoaded = false;
   let metaLoaded = false;
   const emptyChoice = { analytics: false, marketing: false, embeds: false };
   let previousFocus;
+  function clearClarityCookies() {
+    if (!productionHost || !document.cookie.split('; ').some(entry => /^_cl(?:ck|sk)=/.test(entry))) return;
+    // Only expire Clarity's first-party cookies, at the host and shared domain.
+    const domains = new Set(['', window.location.hostname, 'sunset-studios.one']);
+    for (const name of ['_clck', '_clsk']) {
+      for (const domain of domains) {
+        document.cookie = name + '=; Path=/; Max-Age=0; SameSite=Lax'
+          + (domain ? '; Domain=' + domain : '')
+          + (window.location.protocol === 'https:' ? '; Secure' : '');
+      }
+    }
+  }
   function apply(choice) {
-    const reload = (gtmLoaded && !choice.analytics) || (metaLoaded && !choice.marketing);
+    const reload = ((gtmLoaded || clarityLoaded) && !choice.analytics) || (metaLoaded && !choice.marketing);
     window.sunsetConsent = { analytics: analyticsAllowed && choice.analytics,
       marketing: marketingAllowed && choice.marketing, embeds: choice.embeds };
     analytics.checked = choice.analytics;
     marketing.checked = choice.marketing;
     embeds.checked = choice.embeds;
+    if (clarityLoaded && !choice.analytics) {
+      try {
+        window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+      } catch (_) { /* Still stop and reload if a tracking script fails. */ }
+      try { window.clarity('stop'); } catch (_) { /* Reload also stops the runtime. */ }
+    }
+    if (!window.sunsetConsent.analytics) clearClarityCookies();
     if (metaLoaded && !choice.marketing && typeof window.fbq === 'function') {
       try { window.fbq('consent', 'revoke'); } catch (_) { /* Reload also stops the pixel. */ }
     }
@@ -73,6 +93,18 @@
       const script = document.createElement('script');
       script.async = true;
       script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KV9P8PLM';
+      document.head.appendChild(script);
+    }
+    if (!reload && analyticsAllowed && choice.analytics && !clarityLoaded) {
+      clarityLoaded = true;
+      window.clarity = window.clarity || function () {
+        (window.clarity.q = window.clarity.q || []).push(arguments);
+      };
+      // Queue consent before the remote script can execute; advertising stays off.
+      window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.clarity.ms/tag/za3re3nddc';
       document.head.appendChild(script);
     }
     if (!reload && marketingAllowed && choice.marketing && !metaLoaded) {
