@@ -27,11 +27,15 @@
     }
     // Only accepted enquiries count. Never send names, email, messages or dates to GTM.
     window.dataLayer = window.dataLayer || [];
-    if (window.sunsetConsent?.analytics) window.dataLayer.push({
-      event: 'form_submitted',
-      form_id: 'availability-form',
-      project_type: fields.project_type
-    });
+    if (window.sunsetConsent?.analytics) {
+      window.dataLayer.push({
+        event: 'form_submitted',
+        form_id: 'availability-form',
+        project_type: fields.project_type
+      });
+      // Use the existing Google tag's command queue, equivalent to gtag('event', ...).
+      (function () { window.dataLayer.push(arguments); })('event', 'conversion_event_submit_lead_form');
+    }
     // Meta Pixel: track successful enquiry.
     if (typeof window.sunsetTrackMeta === 'function') window.sunsetTrackMeta('lead');
     form.reset();
