@@ -33,8 +33,6 @@
         form_id: 'availability-form',
         project_type: fields.project_type
       });
-      // Use the existing Google tag's command queue, equivalent to gtag('event', ...).
-      (function () { window.dataLayer.push(arguments); })('event', 'conversion_event_submit_lead_form');
     }
     // Meta Pixel: track successful enquiry.
     if (typeof window.sunsetTrackMeta === 'function') window.sunsetTrackMeta('lead');

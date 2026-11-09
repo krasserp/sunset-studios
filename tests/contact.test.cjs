@@ -5,7 +5,6 @@ const vm = require('node:vm');
 const source = fs.readFileSync('assets/js/contact.js', 'utf8');
 const tracking = fs.readFileSync('assets/js/meta-events.js', 'utf8');
 const plain = value => JSON.parse(JSON.stringify(value));
-const conversion = page => Array.from(page.window.dataLayer?.[1] || []);
 
 function setup({ analytics = true, marketing = true, pixel = true, valid = true,
   response = async () => ({ ok: true }) } = {}) {
@@ -62,10 +61,8 @@ test('one accepted enquiry sends one Lead and preserves the Google event', async
   assert.deepEqual(plain(page.events), [
     ['track', 'Lead', { content_name: 'Studio Enquiry' }]
   ]);
-  assert.equal(page.window.dataLayer.length, 2);
-  assert.deepEqual(conversion(page), ['event', 'conversion_event_submit_lead_form']);
-  assert.equal(Object.prototype.toString.call(page.window.dataLayer[1]), '[object Arguments]');
-  assert.deepEqual(plain(page.window.dataLayer.slice(0, 1)), [{
+  assert.equal(page.window.dataLayer.length, 1);
+  assert.deepEqual(plain(page.window.dataLayer), [{
     event: 'form_submitted', form_id: 'availability-form', project_type: 'recording'
   }]);
   assert.equal(page.resets(), 1);
@@ -95,8 +92,7 @@ test('a successful retry produces one Lead after a failed attempt', async () => 
   await page.submit();
   assert.equal(page.requests.length, 2);
   assert.equal(page.events.length, 1);
-  assert.equal(page.window.dataLayer.length, 2);
-  assert.deepEqual(conversion(page), ['event', 'conversion_event_submit_lead_form']);
+  assert.equal(page.window.dataLayer.length, 1);
 });
 
 for (const consent of [false, undefined]) {
@@ -122,8 +118,7 @@ test('analytics-only consent sends the Google event without a Meta Lead', async 
   const page = setup({ analytics: true, marketing: false });
   await page.submit();
   assert.equal(page.events.length, 0);
-  assert.equal(page.window.dataLayer.length, 2);
-  assert.deepEqual(conversion(page), ['event', 'conversion_event_submit_lead_form']);
+  assert.equal(page.window.dataLayer.length, 1);
 });
 
 test('withdrawing marketing while a request is pending prevents Lead on success', async () => {
@@ -134,8 +129,7 @@ test('withdrawing marketing while a request is pending prevents Lead on success'
   accept({ ok: true });
   await pending;
   assert.equal(page.events.length, 0);
-  assert.equal(page.window.dataLayer.length, 2);
-  assert.deepEqual(conversion(page), ['event', 'conversion_event_submit_lead_form']);
+  assert.equal(page.window.dataLayer.length, 1);
   assert.equal(page.resets(), 1);
 });
 
@@ -143,8 +137,7 @@ test('a throwing Pixel does not hide a successful enquiry', async () => {
   const page = setup();
   page.window.fbq = () => { throw new Error('Pixel unavailable'); };
   await page.submit();
-  assert.equal(page.window.dataLayer.length, 2);
-  assert.deepEqual(conversion(page), ['event', 'conversion_event_submit_lead_form']);
+  assert.equal(page.window.dataLayer.length, 1);
   assert.equal(page.resets(), 1);
   assert.match(page.status.textContent, /Thank you/);
 });
@@ -152,8 +145,7 @@ test('a throwing Pixel does not hide a successful enquiry', async () => {
 test('missing Meta Pixel does not prevent Google tracking or submission confirmation', async () => {
   const page = setup({ pixel: false });
   await page.submit();
-  assert.equal(page.window.dataLayer.length, 2);
-  assert.deepEqual(conversion(page), ['event', 'conversion_event_submit_lead_form']);
+  assert.equal(page.window.dataLayer.length, 1);
   assert.equal(page.events.length, 0);
   assert.equal(page.resets(), 1);
   assert.match(page.status.textContent, /Thank you/);
@@ -182,12 +174,11 @@ test('withdrawing Analytics while pending prevents conversion and never replays 
   assert.equal(page.requests.length, 1);
 });
 
-test('a later accepted enquiry on a fresh page produces its own conversion', async () => {
+test('a later accepted enquiry on a fresh page produces its own form_submitted event', async () => {
   for (let enquiry = 0; enquiry < 2; enquiry++) {
     const page = setup();
     assert.equal(page.window.dataLayer, undefined);
     await page.submit();
-    assert.equal(page.window.dataLayer.length, 2);
-    assert.deepEqual(conversion(page), ['event', 'conversion_event_submit_lead_form']);
+    assert.equal(page.window.dataLayer.length, 1);
   }
 });
