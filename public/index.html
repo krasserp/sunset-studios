@@ -32,8 +32,8 @@
 
 <link
   rel="stylesheet"
-  href="/scss/main.min.0407b88e9d8a6d8618b6cf5846814516087c2efb676178967458bedd4a9e83db.css"
-  integrity="sha256-BAe4jp2KbYYYts9YRoFFFgh8LvtnYXiWdFi&#43;3Uqeg9s="
+  href="/scss/main.min.e3f448d48c0ff22ef9f2c0014959148464fcf1a3d63ec3d4c37955903fcb3ed2.css"
+  integrity="sha256-4/RI1IwP8i758sABSVkUhGT88aPWPsPUw3lVkD/LPtI="
 >
 
 
@@ -82,7 +82,7 @@
 }
 </script>
 
-<meta name="generator" content="Hugo 0.169.0">
+<meta name="generator" content="Hugo 0.170.1">
 
   </head>
   <body>
@@ -90,7 +90,7 @@
 
     <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/"><img src="/images/Sunset-Studios-logo.png" alt="Sunset Studios"/></a>
+    <a class="brand" href="/"><img src="/images/Sunset-Studios-logo.png" width="115" height="50" alt="Sunset Studios"/></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" hidden>
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
       <span>Menu</span>
@@ -104,7 +104,42 @@
     </nav>
   </div>
 </header>
-<script src="/js/navigation.js" defer></script>
+
+<script>(() => {
+  const header = document.querySelector('.site-header');
+  const toggle = header.querySelector('.nav-toggle');
+  const navigation = header.querySelector('.nav');
+  const mobile = window.matchMedia('(max-width: 640px)');
+  function setOpen(open) {
+    toggle.setAttribute('aria-expanded', String(open));
+    header.classList.toggle('nav-open', open);
+  }
+  header.classList.add('nav-enhanced');
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => {
+    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+  navigation.addEventListener('click', event => {
+    if (event.target.closest('a')) setOpen(false);
+  });
+  header.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (!header.contains(event.target)) setOpen(false);
+  });
+  header.addEventListener('focusout', event => {
+    if (!header.contains(event.relatedTarget)) setOpen(false);
+  });
+  mobile.addEventListener('change', () => {
+    if (navigation.contains(document.activeElement) && mobile.matches) toggle.focus();
+    setOpen(false);
+  });
+})();
+</script>
 
     <main id="main">
       
@@ -193,7 +228,7 @@
 
     
     <div class="section-image">
-      <img src="/images/studio_004-800.webp" alt="Your studio in the sun">
+      <img src="/images/studio_004-800.webp" alt="Your studio in the sun" width="800" height="450">
     </div>
     
 
@@ -227,7 +262,7 @@
 
     
     <div class="section-image">
-      <img src="/images/gallery01-1200.webp" alt="Stay where you create">
+      <img src="/images/gallery01-1200.webp" alt="Stay where you create" width="1200" height="675">
     </div>
     
 
@@ -263,7 +298,7 @@
 
     
     <div class="section-image">
-      <img src="/images/sections/sunset.webp" alt="Gran Canaria helps you hear differently">
+      <img src="/images/sections/sunset.webp" alt="Gran Canaria helps you hear differently" width="1200" height="540">
     </div>
     
 
@@ -788,100 +823,100 @@ document.querySelectorAll("[data-testimonial-carousel]").forEach((carousel) => {
     <h2>Gallery</h2>
 
     <div class="gallery-grid">
-
-      
-      <img
-        src="/images/gallery01-800.webp"
-        srcset="/images/gallery01-600.webp 600w, /images/gallery01-800.webp 800w, /images/gallery01-1200.webp 1200w"
-        sizes="(max-width: 640px) 50vw, 33vw"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        onclick="openLightbox(this)"
-        data-full="/images/gallery01-1200.webp"
-      >
-      
-      <img
-        src="/images/gallery02-800.webp"
-        srcset="/images/gallery02-600.webp 600w, /images/gallery02-800.webp 800w, /images/gallery02-1200.webp 1200w"
-        sizes="(max-width: 640px) 50vw, 33vw"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        onclick="openLightbox(this)"
-        data-full="/images/gallery02-1200.webp"
-      >
-            
-      <img
-        src="/images/gallery03-800.webp"
-        srcset="/images/gallery03-600.webp 600w, /images/gallery03-800.webp 800w, /images/gallery03-1200.webp 1200w"
-        sizes="(max-width: 640px) 50vw, 33vw"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        onclick="openLightbox(this)"
-        data-full="/images/gallery03-1200.webp"
-      >
-            
-      <img
-        src="/images/gallery04-800.webp"
-        srcset="/images/gallery04-600.webp 600w, /images/gallery04-800.webp 800w, /images/gallery04-1200.webp 1200w"
-        sizes="(max-width: 640px) 50vw, 33vw"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        onclick="openLightbox(this)"
-        data-full="/images/gallery04-1200.webp"
-      >
-            
-      <img
-        src="/images/gallery05-800.webp"
-        srcset="/images/gallery05-600.webp 600w, /images/gallery05-800.webp 800w, /images/gallery05-1200.webp 1200w"
-        sizes="(max-width: 640px) 50vw, 33vw"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        onclick="openLightbox(this)"
-        data-full="/images/gallery05-1200.webp"
-      >
-            
-      <img
-        src="/images/gallery06-800.webp"
-        srcset="/images/gallery06-600.webp 600w, /images/gallery06-800.webp 800w, /images/gallery06-1200.webp 1200w"
-        sizes="(max-width: 640px) 50vw, 33vw"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt=""
-        onclick="openLightbox(this)"
-        data-full="/images/gallery06-1200.webp"
-      >
-      
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge gallery image 01">
+        <img
+          src="/images/gallery01-800.webp"
+          srcset="/images/gallery01-600.webp 600w, /images/gallery01-800.webp 800w, /images/gallery01-1200.webp 1200w"
+          sizes="(max-width: 640px) 50vw, 33vw"
+          width="800"
+          height="450"
+          loading="lazy"
+          decoding="async"
+          alt=""
+          data-full="/images/gallery01-1200.webp"
+        >
+      </button>
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge gallery image 02">
+        <img
+          src="/images/gallery02-800.webp"
+          srcset="/images/gallery02-600.webp 600w, /images/gallery02-800.webp 800w, /images/gallery02-1200.webp 1200w"
+          sizes="(max-width: 640px) 50vw, 33vw"
+          width="800"
+          height="450"
+          loading="lazy"
+          decoding="async"
+          alt=""
+          data-full="/images/gallery02-1200.webp"
+        >
+      </button>
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge gallery image 03">
+        <img
+          src="/images/gallery03-800.webp"
+          srcset="/images/gallery03-600.webp 600w, /images/gallery03-800.webp 800w, /images/gallery03-1200.webp 1200w"
+          sizes="(max-width: 640px) 50vw, 33vw"
+          width="800"
+          height="1422"
+          loading="lazy"
+          decoding="async"
+          alt=""
+          data-full="/images/gallery03-1200.webp"
+        >
+      </button>
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge gallery image 04">
+        <img
+          src="/images/gallery04-800.webp"
+          srcset="/images/gallery04-600.webp 600w, /images/gallery04-800.webp 800w, /images/gallery04-1200.webp 1200w"
+          sizes="(max-width: 640px) 50vw, 33vw"
+          width="800"
+          height="1422"
+          loading="lazy"
+          decoding="async"
+          alt=""
+          data-full="/images/gallery04-1200.webp"
+        >
+      </button>
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge gallery image 05">
+        <img
+          src="/images/gallery05-800.webp"
+          srcset="/images/gallery05-600.webp 600w, /images/gallery05-800.webp 800w, /images/gallery05-1200.webp 1200w"
+          sizes="(max-width: 640px) 50vw, 33vw"
+          width="800"
+          height="450"
+          loading="lazy"
+          decoding="async"
+          alt=""
+          data-full="/images/gallery05-1200.webp"
+        >
+      </button>
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge gallery image 06">
+        <img
+          src="/images/gallery06-800.webp"
+          srcset="/images/gallery06-600.webp 600w, /images/gallery06-800.webp 800w, /images/gallery06-1200.webp 1200w"
+          sizes="(max-width: 640px) 50vw, 33vw"
+          width="800"
+          height="1157"
+          loading="lazy"
+          decoding="async"
+          alt=""
+          data-full="/images/gallery06-1200.webp"
+        >
+      </button>
 
     </div>
   </div>
 </section>
 
+<dialog id="lightbox" class="lightbox" aria-label="Image gallery">
+  <button type="button" class="lightbox-close" aria-label="Close gallery" autofocus>×</button>
+  <button type="button" class="lightbox-nav left" aria-label="Previous image">‹</button>
+  <img id="lightbox-img" alt="">
+  <button type="button" class="lightbox-nav right" aria-label="Next image">›</button>
+</dialog>
+
+<script src="/js/gallery.3b514936888e1ccb8c8bea5e0474947dca5802a9bf1d48f7714aca8d36bce428.js" integrity="sha256-O1FJNoiOHMuMi&#43;peBHSUfcpYAqm/HUj3cUrKjTa85Cg=" defer></script>
 
 
-<div id="lightbox" class="lightbox">
-  <button class="lightbox-nav left" onclick="prevImage()">‹</button>
 
-  <img id="lightbox-img" src="" alt="">
-
-  <button class="lightbox-nav right" onclick="nextImage()">›</button>
-</div>
   <section id="faq" class="section">
   <div class="container narrow">
     <h2>FAQs</h2>
@@ -933,15 +968,16 @@ document.querySelectorAll("[data-testimonial-carousel]").forEach((carousel) => {
           <a href="/contact/#find-us-title">Find us</a>.
         </p>
 
-        <div class="map-wrapper">
+        <div class="embed-slot map-slot">
           <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to load this content.</p>
-        <iframe title="Studio location"
+          <iframe title="Studio location"
             data-consent-src="https://www.google.com/maps?q=27.762809,-15.667785&hl=en&z=14&output=embed"
             width="100%"
             height="350"
             style="border:0;"
             allowfullscreen=""
             loading="lazy"
+            hidden
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
@@ -1035,134 +1071,5 @@ document.querySelectorAll("[data-testimonial-carousel]").forEach((carousel) => {
   </div>
 </dialog>
 
-<script>
-let currentIndex = 0;
-let images = [];
-let preloadedImages = [];
-
- 
-function initGallery() {
-  images = Array.from(document.querySelectorAll(".gallery-grid img"));
-
-  images.forEach((img, index) => {
-    img.addEventListener("click", () => openLightbox(index));
-  });
-
-  
-  window.addEventListener("load", () => {
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(preloadLightboxImages);
-    } else {
-      setTimeout(preloadLightboxImages, 1000);
-    }
-  });
-}
-
- 
-function preloadLightboxImages() {
-  images.forEach((img) => {
-    const fullSrc = img.dataset.full || img.src;
-
-    const preloadImg = new Image();
-    preloadImg.src = fullSrc;
-
-    preloadedImages.push(preloadImg);
-  });
-}
-
- 
-function preloadAdjacentImages() {
-  const next = (currentIndex + 1) % images.length;
-  const prev = (currentIndex - 1 + images.length) % images.length;
-
-  [next, prev].forEach((i) => {
-    const preloadImg = new Image();
-    preloadImg.src = images[i].dataset.full || images[i].src;
-  });
-}
-
- 
-function openLightbox(index) {
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-
-  currentIndex = index;
-
-  const img = images[index];
-  lightboxImg.src = img.dataset.full || img.src;
-
-  lightbox.classList.add("active");
-
-  preloadAdjacentImages();
-}
-
- 
-function closeLightbox() {
-  document.getElementById("lightbox").classList.remove("active");
-}
-
- 
-function nextImage() {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateImage();
-}
-
- 
-function prevImage() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateImage();
-}
-
- 
-function updateImage() {
-  const img = images[currentIndex];
-
-  document.getElementById("lightbox-img").src =
-    img.dataset.full || img.src;
-
-  preloadAdjacentImages();
-}
-
- 
-document.getElementById("lightbox")?.addEventListener("click", (e) => {
-  if (e.target.id === "lightbox") {
-    closeLightbox();
-  }
-});
-
- 
-document.addEventListener("keydown", (e) => {
-  const lightbox = document.getElementById("lightbox");
-
-  if (!lightbox || !lightbox.classList.contains("active")) return;
-
-  if (e.key === "ArrowRight") nextImage();
-  if (e.key === "ArrowLeft") prevImage();
-  if (e.key === "Escape") closeLightbox();
-});
-
- 
-let startX = 0;
-
-document.getElementById("lightbox")?.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
-
-document.getElementById("lightbox")?.addEventListener("touchend", (e) => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-
-  if (Math.abs(diff) > 50) {
-    if (diff > 0) {
-      nextImage(); 
-    } else {
-      prevImage(); 
-    }
-  }
-});
-
- 
-window.addEventListener("DOMContentLoaded", initGallery);
-</script>
   </body>
 </html>

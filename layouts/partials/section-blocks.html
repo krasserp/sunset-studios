@@ -20,7 +20,7 @@
 
     {{ if .image }}
     <div class="section-image">
-      <img src="{{ .image }}" alt="{{ .heading }}">
+      <img src="{{ .image }}" alt="{{ .heading }}"{{ if and .image_width .image_height }} width="{{ .image_width }}" height="{{ .image_height }}"{{ end }}>
     </div>
     {{ end }}
 

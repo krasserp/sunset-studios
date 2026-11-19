@@ -32,8 +32,8 @@
 
 <link
   rel="stylesheet"
-  href="/scss/main.min.0407b88e9d8a6d8618b6cf5846814516087c2efb676178967458bedd4a9e83db.css"
-  integrity="sha256-BAe4jp2KbYYYts9YRoFFFgh8LvtnYXiWdFi&#43;3Uqeg9s="
+  href="/scss/main.min.e3f448d48c0ff22ef9f2c0014959148464fcf1a3d63ec3d4c37955903fcb3ed2.css"
+  integrity="sha256-4/RI1IwP8i758sABSVkUhGT88aPWPsPUw3lVkD/LPtI="
 >
 
 
@@ -82,7 +82,7 @@
 }
 </script>
 
-<meta name="generator" content="Hugo 0.169.0">
+<meta name="generator" content="Hugo 0.170.1">
 
   </head>
   <body>
@@ -90,7 +90,7 @@
 
     <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/"><img src="/images/Sunset-Studios-logo.png" alt="Sunset Studios"/></a>
+    <a class="brand" href="/"><img src="/images/Sunset-Studios-logo.png" width="115" height="50" alt="Sunset Studios"/></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" hidden>
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
       <span>Menu</span>
@@ -104,7 +104,42 @@
     </nav>
   </div>
 </header>
-<script src="/js/navigation.js" defer></script>
+
+<script>(() => {
+  const header = document.querySelector('.site-header');
+  const toggle = header.querySelector('.nav-toggle');
+  const navigation = header.querySelector('.nav');
+  const mobile = window.matchMedia('(max-width: 640px)');
+  function setOpen(open) {
+    toggle.setAttribute('aria-expanded', String(open));
+    header.classList.toggle('nav-open', open);
+  }
+  header.classList.add('nav-enhanced');
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => {
+    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+  navigation.addEventListener('click', event => {
+    if (event.target.closest('a')) setOpen(false);
+  });
+  header.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (!header.contains(event.target)) setOpen(false);
+  });
+  header.addEventListener('focusout', event => {
+    if (!header.contains(event.relatedTarget)) setOpen(false);
+  });
+  mobile.addEventListener('change', () => {
+    if (navigation.contains(document.activeElement) && mobile.matches) toggle.focus();
+    setOpen(false);
+  });
+})();
+</script>
 
     <main id="main">
       
@@ -131,11 +166,12 @@
 
     <div class="video-grid">
 
-      <div class="video-card">
+      <div class="video-card embed-slot">
         <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to load this content.</p>
         <iframe title="Studio video"
           data-consent-src="https://www.youtube.com/embed/videoseries?list=PLo04G8Zjj_ir1uA6Kxz8f8x5ht7dsjQss"
           loading="lazy"
+          hidden
           allowfullscreen>
         </iframe>
       </div>
@@ -162,33 +198,36 @@
 
       
 
-      <div class="short-card">
+      <div class="short-card embed-slot">
         <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to load this content.</p>
         <iframe title="Studio video"
           data-consent-src="https://www.youtube.com/embed/ATdqjDP6aZw"
           loading="lazy"
+          hidden
           allowfullscreen>
         </iframe>
       </div>
 
       
 
-      <div class="short-card">
+      <div class="short-card embed-slot">
         <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to load this content.</p>
         <iframe title="Studio video"
           data-consent-src="https://www.youtube.com/embed/vxwfA2C-UR8"
           loading="lazy"
+          hidden
           allowfullscreen>
         </iframe>
       </div>
 
       
 
-      <div class="short-card">
+      <div class="short-card embed-slot">
         <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to load this content.</p>
         <iframe title="Studio video"
           data-consent-src="https://www.youtube.com/embed/dpv6oL7U4Vw"
           loading="lazy"
+          hidden
           allowfullscreen>
         </iframe>
       </div>
@@ -215,198 +254,213 @@
 
       
 
-      <img
-        src="/images/gran-canaria_01-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 01"
-        
-        data-full="/images/gran-canaria_01-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 01">
+        <img
+          src="/images/gran-canaria_01-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 01"
+          data-full="/images/gran-canaria_01-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_02-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 02"
-        
-        data-full="/images/gran-canaria_02-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 02">
+        <img
+          src="/images/gran-canaria_02-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 02"
+          data-full="/images/gran-canaria_02-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_03-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 03"
-        
-        data-full="/images/gran-canaria_03-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 03">
+        <img
+          src="/images/gran-canaria_03-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 03"
+          data-full="/images/gran-canaria_03-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_04-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 04"
-        
-        data-full="/images/gran-canaria_04-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 04">
+        <img
+          src="/images/gran-canaria_04-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 04"
+          data-full="/images/gran-canaria_04-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_05-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 05"
-        
-        data-full="/images/gran-canaria_05-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 05">
+        <img
+          src="/images/gran-canaria_05-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 05"
+          data-full="/images/gran-canaria_05-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_06-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 06"
-        
-        data-full="/images/gran-canaria_06-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 06">
+        <img
+          src="/images/gran-canaria_06-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 06"
+          data-full="/images/gran-canaria_06-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_07-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 07"
-        
-        data-full="/images/gran-canaria_07-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 07">
+        <img
+          src="/images/gran-canaria_07-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 07"
+          data-full="/images/gran-canaria_07-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_08-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 08"
-        
-        data-full="/images/gran-canaria_08-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 08">
+        <img
+          src="/images/gran-canaria_08-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 08"
+          data-full="/images/gran-canaria_08-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_09-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 09"
-        
-        data-full="/images/gran-canaria_09-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 09">
+        <img
+          src="/images/gran-canaria_09-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 09"
+          data-full="/images/gran-canaria_09-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_10-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 10"
-        
-        data-full="/images/gran-canaria_10-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 10">
+        <img
+          src="/images/gran-canaria_10-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 10"
+          data-full="/images/gran-canaria_10-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_11-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 11"
-        
-        data-full="/images/gran-canaria_11-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 11">
+        <img
+          src="/images/gran-canaria_11-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 11"
+          data-full="/images/gran-canaria_11-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_12-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 12"
-        
-        data-full="/images/gran-canaria_12-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 12">
+        <img
+          src="/images/gran-canaria_12-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 12"
+          data-full="/images/gran-canaria_12-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_13-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 13"
-        
-        data-full="/images/gran-canaria_13-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 13">
+        <img
+          src="/images/gran-canaria_13-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 13"
+          data-full="/images/gran-canaria_13-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_14-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 14"
-        
-        data-full="/images/gran-canaria_14-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 14">
+        <img
+          src="/images/gran-canaria_14-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 14"
+          data-full="/images/gran-canaria_14-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/gran-canaria_15-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Gran Canaria 15"
-        
-        data-full="/images/gran-canaria_15-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Gran Canaria 15">
+        <img
+          src="/images/gran-canaria_15-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Gran Canaria 15"
+          data-full="/images/gran-canaria_15-1200.webp"
+        >
+      </button>
 
       
 
@@ -428,159 +482,171 @@
 
       
 
-      <img
-        src="/images/studio_001-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 1"
-        
-        data-full="/images/studio_001-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 1">
+        <img
+          src="/images/studio_001-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 1"
+          data-full="/images/studio_001-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_002-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 2"
-        
-        data-full="/images/studio_002-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 2">
+        <img
+          src="/images/studio_002-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 2"
+          data-full="/images/studio_002-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_003-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 3"
-        
-        data-full="/images/studio_003-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 3">
+        <img
+          src="/images/studio_003-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 3"
+          data-full="/images/studio_003-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_004-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 4"
-        
-        data-full="/images/studio_004-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 4">
+        <img
+          src="/images/studio_004-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 4"
+          data-full="/images/studio_004-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_005-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 5"
-        
-        data-full="/images/studio_005-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 5">
+        <img
+          src="/images/studio_005-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 5"
+          data-full="/images/studio_005-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_006-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 6"
-        
-        data-full="/images/studio_006-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 6">
+        <img
+          src="/images/studio_006-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 6"
+          data-full="/images/studio_006-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_007-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 7"
-        
-        data-full="/images/studio_007-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 7">
+        <img
+          src="/images/studio_007-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 7"
+          data-full="/images/studio_007-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_008-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 8"
-        
-        data-full="/images/studio_008-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 8">
+        <img
+          src="/images/studio_008-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 8"
+          data-full="/images/studio_008-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_009-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 9"
-        
-        data-full="/images/studio_009-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 9">
+        <img
+          src="/images/studio_009-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 9"
+          data-full="/images/studio_009-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_010-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 10"
-        
-        data-full="/images/studio_010-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 10">
+        <img
+          src="/images/studio_010-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 10"
+          data-full="/images/studio_010-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_011-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 11"
-        
-        data-full="/images/studio_011-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 11">
+        <img
+          src="/images/studio_011-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 11"
+          data-full="/images/studio_011-1200.webp"
+        >
+      </button>
 
       
 
-      <img
-        src="/images/studio_012-600.webp"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="Studio 12"
-        
-        data-full="/images/studio_012-1200.webp"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image: Studio 12">
+        <img
+          src="/images/studio_012-600.webp"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="Studio 12"
+          data-full="/images/studio_012-1200.webp"
+        >
+      </button>
 
       
 
@@ -588,13 +654,16 @@
   </div>
 </section>
 
-<div id="lightbox" class="lightbox">
-  <button class="lightbox-nav left" onclick="prevImage()">‹</button>
+<dialog id="lightbox" class="lightbox" aria-label="Image gallery">
+  <button type="button" class="lightbox-close" aria-label="Close gallery" autofocus>×</button>
+  <button type="button" class="lightbox-nav left" aria-label="Previous image">‹</button>
+  <img id="lightbox-img" alt="">
+  <button type="button" class="lightbox-nav right" aria-label="Next image">›</button>
+</dialog>
 
-  <img id="lightbox-img" src="" alt="">
+<script src="/js/gallery.3b514936888e1ccb8c8bea5e0474947dca5802a9bf1d48f7714aca8d36bce428.js" integrity="sha256-O1FJNoiOHMuMi&#43;peBHSUfcpYAqm/HUj3cUrKjTa85Cg=" defer></script>
 
-  <button class="lightbox-nav right" onclick="nextImage()">›</button>
-</div>
+
 
 
     </main>
@@ -665,134 +734,5 @@
   </div>
 </dialog>
 
-<script>
-let currentIndex = 0;
-let images = [];
-let preloadedImages = [];
-
- 
-function initGallery() {
-  images = Array.from(document.querySelectorAll(".gallery-grid img"));
-
-  images.forEach((img, index) => {
-    img.addEventListener("click", () => openLightbox(index));
-  });
-
-  
-  window.addEventListener("load", () => {
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(preloadLightboxImages);
-    } else {
-      setTimeout(preloadLightboxImages, 1000);
-    }
-  });
-}
-
- 
-function preloadLightboxImages() {
-  images.forEach((img) => {
-    const fullSrc = img.dataset.full || img.src;
-
-    const preloadImg = new Image();
-    preloadImg.src = fullSrc;
-
-    preloadedImages.push(preloadImg);
-  });
-}
-
- 
-function preloadAdjacentImages() {
-  const next = (currentIndex + 1) % images.length;
-  const prev = (currentIndex - 1 + images.length) % images.length;
-
-  [next, prev].forEach((i) => {
-    const preloadImg = new Image();
-    preloadImg.src = images[i].dataset.full || images[i].src;
-  });
-}
-
- 
-function openLightbox(index) {
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-
-  currentIndex = index;
-
-  const img = images[index];
-  lightboxImg.src = img.dataset.full || img.src;
-
-  lightbox.classList.add("active");
-
-  preloadAdjacentImages();
-}
-
- 
-function closeLightbox() {
-  document.getElementById("lightbox").classList.remove("active");
-}
-
- 
-function nextImage() {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateImage();
-}
-
- 
-function prevImage() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateImage();
-}
-
- 
-function updateImage() {
-  const img = images[currentIndex];
-
-  document.getElementById("lightbox-img").src =
-    img.dataset.full || img.src;
-
-  preloadAdjacentImages();
-}
-
- 
-document.getElementById("lightbox")?.addEventListener("click", (e) => {
-  if (e.target.id === "lightbox") {
-    closeLightbox();
-  }
-});
-
- 
-document.addEventListener("keydown", (e) => {
-  const lightbox = document.getElementById("lightbox");
-
-  if (!lightbox || !lightbox.classList.contains("active")) return;
-
-  if (e.key === "ArrowRight") nextImage();
-  if (e.key === "ArrowLeft") prevImage();
-  if (e.key === "Escape") closeLightbox();
-});
-
- 
-let startX = 0;
-
-document.getElementById("lightbox")?.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
-
-document.getElementById("lightbox")?.addEventListener("touchend", (e) => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-
-  if (Math.abs(diff) > 50) {
-    if (diff > 0) {
-      nextImage(); 
-    } else {
-      prevImage(); 
-    }
-  }
-});
-
- 
-window.addEventListener("DOMContentLoaded", initGallery);
-</script>
   </body>
 </html>

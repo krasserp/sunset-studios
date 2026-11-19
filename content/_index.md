@@ -21,6 +21,8 @@ intro:
 sections:
   - id: "studio"
     image: "/images/studio_004-800.webp"
+    image_width: 800
+    image_height: 450
     heading: "Your studio in the sun"
     text: "At the heart of Sunset Studios is a soundproof, fully equipped recording studio designed for serious work without pressure or distractions. Whether you’re starting from scratch, finishing songs, recording vocals, building production, or hosting an intensive writing trip, the space is set up to keep ideas flowing easily ."
     bullets:
@@ -34,6 +36,8 @@ sections:
     heading: "Stay where you create"
     text: "Sunset Studios includes a guest apartment for up to 3 people, making it easy to turn a studio booking into a proper creative retreat. No commuting across a city. No lost momentum. No breaking the flow just when things are getting good."
     image: "/images/gallery01-1200.webp"
+    image_width: 1200
+    image_height: 675
     bullets:
       - "Guest apartment for up to 3 guests"
       - "Apartment with direct access to the studio"
@@ -43,6 +47,8 @@ sections:
   - id: "location"
     heading: "Gran Canaria helps you hear differently"
     image: "/images/sections/sunset.webp"
+    image_width: 1200
+    image_height: 540
     text: "There’s something about leaving the city that changes the work. Your head gets quieter. Your ideas get sharper. You stop rushing. Sunset Studios is based in Gran Canaria, close to 7 beaches, with easy ways to enjoy the island when you step out of the studio."
     bullets:
       - "Near 7 beaches"

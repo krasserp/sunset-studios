@@ -1,7 +1,9 @@
-<div id="lightbox" class="lightbox">
-  <button class="lightbox-nav left" onclick="prevImage()">‹</button>
-
-  <img id="lightbox-img" src="" alt="">
-
-  <button class="lightbox-nav right" onclick="nextImage()">›</button>
-</div>
+<dialog id="lightbox" class="lightbox" aria-label="Image gallery">
+  <button type="button" class="lightbox-close" aria-label="Close gallery" autofocus>×</button>
+  <button type="button" class="lightbox-nav left" aria-label="Previous image">‹</button>
+  <img id="lightbox-img" alt="">
+  <button type="button" class="lightbox-nav right" aria-label="Next image">›</button>
+</dialog>
+{{ with resources.Get "js/gallery.js" | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{ end }}

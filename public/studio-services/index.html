@@ -32,8 +32,8 @@
 
 <link
   rel="stylesheet"
-  href="/scss/main.min.0407b88e9d8a6d8618b6cf5846814516087c2efb676178967458bedd4a9e83db.css"
-  integrity="sha256-BAe4jp2KbYYYts9YRoFFFgh8LvtnYXiWdFi&#43;3Uqeg9s="
+  href="/scss/main.min.e3f448d48c0ff22ef9f2c0014959148464fcf1a3d63ec3d4c37955903fcb3ed2.css"
+  integrity="sha256-4/RI1IwP8i758sABSVkUhGT88aPWPsPUw3lVkD/LPtI="
 >
 
 
@@ -82,7 +82,7 @@
 }
 </script>
 
-<meta name="generator" content="Hugo 0.169.0">
+<meta name="generator" content="Hugo 0.170.1">
 
   </head>
   <body>
@@ -90,7 +90,7 @@
 
     <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/"><img src="/images/Sunset-Studios-logo.png" alt="Sunset Studios"/></a>
+    <a class="brand" href="/"><img src="/images/Sunset-Studios-logo.png" width="115" height="50" alt="Sunset Studios"/></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" hidden>
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
       <span>Menu</span>
@@ -104,7 +104,42 @@
     </nav>
   </div>
 </header>
-<script src="/js/navigation.js" defer></script>
+
+<script>(() => {
+  const header = document.querySelector('.site-header');
+  const toggle = header.querySelector('.nav-toggle');
+  const navigation = header.querySelector('.nav');
+  const mobile = window.matchMedia('(max-width: 640px)');
+  function setOpen(open) {
+    toggle.setAttribute('aria-expanded', String(open));
+    header.classList.toggle('nav-open', open);
+  }
+  header.classList.add('nav-enhanced');
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => {
+    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+  navigation.addEventListener('click', event => {
+    if (event.target.closest('a')) setOpen(false);
+  });
+  header.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (!header.contains(event.target)) setOpen(false);
+  });
+  header.addEventListener('focusout', event => {
+    if (!header.contains(event.relatedTarget)) setOpen(false);
+  });
+  mobile.addEventListener('change', () => {
+    if (navigation.contains(document.activeElement) && mobile.matches) toggle.focus();
+    setOpen(false);
+  });
+})();
+</script>
 
     <main id="main">
       
@@ -644,134 +679,5 @@
   </div>
 </dialog>
 
-<script>
-let currentIndex = 0;
-let images = [];
-let preloadedImages = [];
-
- 
-function initGallery() {
-  images = Array.from(document.querySelectorAll(".gallery-grid img"));
-
-  images.forEach((img, index) => {
-    img.addEventListener("click", () => openLightbox(index));
-  });
-
-  
-  window.addEventListener("load", () => {
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(preloadLightboxImages);
-    } else {
-      setTimeout(preloadLightboxImages, 1000);
-    }
-  });
-}
-
- 
-function preloadLightboxImages() {
-  images.forEach((img) => {
-    const fullSrc = img.dataset.full || img.src;
-
-    const preloadImg = new Image();
-    preloadImg.src = fullSrc;
-
-    preloadedImages.push(preloadImg);
-  });
-}
-
- 
-function preloadAdjacentImages() {
-  const next = (currentIndex + 1) % images.length;
-  const prev = (currentIndex - 1 + images.length) % images.length;
-
-  [next, prev].forEach((i) => {
-    const preloadImg = new Image();
-    preloadImg.src = images[i].dataset.full || images[i].src;
-  });
-}
-
- 
-function openLightbox(index) {
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-
-  currentIndex = index;
-
-  const img = images[index];
-  lightboxImg.src = img.dataset.full || img.src;
-
-  lightbox.classList.add("active");
-
-  preloadAdjacentImages();
-}
-
- 
-function closeLightbox() {
-  document.getElementById("lightbox").classList.remove("active");
-}
-
- 
-function nextImage() {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateImage();
-}
-
- 
-function prevImage() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateImage();
-}
-
- 
-function updateImage() {
-  const img = images[currentIndex];
-
-  document.getElementById("lightbox-img").src =
-    img.dataset.full || img.src;
-
-  preloadAdjacentImages();
-}
-
- 
-document.getElementById("lightbox")?.addEventListener("click", (e) => {
-  if (e.target.id === "lightbox") {
-    closeLightbox();
-  }
-});
-
- 
-document.addEventListener("keydown", (e) => {
-  const lightbox = document.getElementById("lightbox");
-
-  if (!lightbox || !lightbox.classList.contains("active")) return;
-
-  if (e.key === "ArrowRight") nextImage();
-  if (e.key === "ArrowLeft") prevImage();
-  if (e.key === "Escape") closeLightbox();
-});
-
- 
-let startX = 0;
-
-document.getElementById("lightbox")?.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
-
-document.getElementById("lightbox")?.addEventListener("touchend", (e) => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-
-  if (Math.abs(diff) > 50) {
-    if (diff > 0) {
-      nextImage(); 
-    } else {
-      prevImage(); 
-    }
-  }
-});
-
- 
-window.addEventListener("DOMContentLoaded", initGallery);
-</script>
   </body>
 </html>

@@ -22,11 +22,12 @@
 
     <div class="video-grid">
 
-      <div class="video-card">
+      <div class="video-card embed-slot">
         <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to load this content.</p>
         <iframe title="Studio video"
           data-consent-src="https://www.youtube.com/embed/videoseries?list={{ . }}"
           loading="lazy"
+          hidden
           allowfullscreen>
         </iframe>
       </div>
@@ -53,11 +54,12 @@
 
       {{ range . }}
 
-      <div class="short-card">
+      <div class="short-card embed-slot">
         <p class="embed-consent-note">Enable embedded content in <button type="button" data-cookie-settings>cookie settings</button> to load this content.</p>
         <iframe title="Studio video"
           data-consent-src="https://www.youtube.com/embed/{{ . }}"
           loading="lazy"
+          hidden
           allowfullscreen>
         </iframe>
       </div>
@@ -84,16 +86,17 @@
 
       {{ range .Params.nature_gallery }}
 
-      <img
-        src="{{ .thumb }}"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="{{ .alt }}"
-        
-        data-full="{{ .image }}"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image{{ with .alt }}: {{ . }}{{ end }}">
+        <img
+          src="{{ .thumb }}"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="{{ .alt }}"
+          data-full="{{ .image }}"
+        >
+      </button>
 
       {{ end }}
 
@@ -115,16 +118,17 @@
 
       {{ range .Params.studio_gallery }}
 
-      <img
-        src="{{ .thumb }}"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async"
-        alt="{{ .alt }}"
-        
-        data-full="{{ .image }}"
-      >
+      <button type="button" class="gallery-trigger" aria-haspopup="dialog" aria-label="Enlarge image{{ with .alt }}: {{ . }}{{ end }}">
+        <img
+          src="{{ .thumb }}"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          alt="{{ .alt }}"
+          data-full="{{ .image }}"
+        >
+      </button>
 
       {{ end }}
 
