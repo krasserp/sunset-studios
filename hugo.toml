@@ -2,6 +2,7 @@ baseURL = 'https://sunset-studios.one/'
 languageCode = "en-gb"
 title = "Sunset Studios"
 noTimes = true
+enableRobotsTXT = true
 
 [params]
 # Optional trackers also require an exact production hostname and their own consent.

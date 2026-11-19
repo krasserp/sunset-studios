@@ -49,7 +49,7 @@ img { max-width: 100%; display: block; }
   background-position: center;
 }
 
-.hero-bg::before {
+.studio-services-hero .hero-bg::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -59,7 +59,6 @@ img { max-width: 100%; display: block; }
   animation: hideHeroFallback 0s linear 1.5s forwards;
 }
 
-.home-hero .hero-bg::before { background-image: url('/images/hero1.webp'); }
 .studio-services-hero .hero-bg::before { background-image: url('/images/studio_005-1200.webp'); }
 
 @keyframes hideHeroFallback {
@@ -129,23 +128,30 @@ img { max-width: 100%; display: block; }
   100%    { opacity: 0; }
 }
 
-/* DESKTOP IMAGES */
-.slide-1 { background-image: url('/images/hero1.webp'); }
-.slide-2 { background-image: url('/images/hero2.webp'); }
-.slide-3 { background-image: url('/images/hero3.webp'); }
-.slide-4 { background-image: url('/images/hero4.webp'); }
+/* The first photo stays behind the other slides as they fade in and out. */
+[data-hero-slideshow] .slide-1 {
+  z-index: 0;
+  opacity: 1;
+  animation: none;
+}
 
-/* MOBILE IMAGES */
+[data-hero-slideshow]:not(.slideshow-ready) .slide {
+  animation: none;
+}
+
+[data-hero-slideshow] .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 640px) {
-  .home-hero .hero-bg::before { background-image: url('/images/hero1-m.webp'); }
-  .slide-1 { background-image: url('/images/hero1-m.webp'); }
-  .slide-2 { background-image: url('/images/hero2-m.webp'); }
-  .slide-3 { background-image: url('/images/hero3-m.webp'); }
-  .slide-4 { background-image: url('/images/hero4-m.webp'); }
+  .slide { background-position: center 30%; }
+  [data-hero-slideshow] .slide img { object-position: center 30%; }
+}
 
-  .slide {
-    background-position: center 30%;
-  }
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-slideshow] .slide:not(.slide-1) { animation: none; }
 }
 
 /* OVERLAY FOR READABILITY */
@@ -426,14 +432,14 @@ h3 { font-size: 1.4rem; }
 }
 
 .button-primary {
-  background: var(--accent);
+  background: var(--accent-dark);
   color: white;
   border-color: transparent;
   text-align: center;
 }
 
 .button-primary:hover {
-  background: var(--accent-dark);
+  background: #9b4524;
   transform: translateY(-1px);
 }
 

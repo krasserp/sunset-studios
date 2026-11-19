@@ -52,16 +52,6 @@
   integrity="{{ $styles.Data.Integrity }}"
 >
 
-<!-- Hero image preload -->
-<link
-  rel="preload"
-  as="image"
-  href="/images/hero1.webp"
-  imagesrcset="/images/hero1-m.webp 640w, /images/hero1.webp 1600w"
-  imagesizes="100vw"
-  fetchpriority="high"
->
-
 {{ with resources.Get "js/consent.js" | fingerprint }}
 <script
   id="site-consent-script"

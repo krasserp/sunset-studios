@@ -92,6 +92,7 @@
       window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
       const script = document.createElement('script');
       script.async = true;
+      script.fetchPriority = 'low';
       script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KV9P8PLM';
       document.head.appendChild(script);
     }
@@ -104,6 +105,7 @@
       window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
       const script = document.createElement('script');
       script.async = true;
+      script.fetchPriority = 'low';
       script.src = 'https://www.clarity.ms/tag/za3re3nddc';
       document.head.appendChild(script);
     }
@@ -121,6 +123,7 @@
         fbq.queue = [];
         const pixel = document.createElement('script');
         pixel.async = true;
+        pixel.fetchPriority = 'low';
         pixel.src = 'https://connect.facebook.net/en_US/fbevents.js';
         document.head.appendChild(pixel);
       }

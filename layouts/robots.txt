@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+{{ if and .Site.Params.allowIndexing (ne hugo.Environment "staging") (not hugo.IsServer) (in (slice "sunset-studios.one" "music.sunset-studios.one") (urls.Parse .Site.BaseURL).Hostname) -}}
+Sitemap: {{ "sitemap.xml" | absURL }}
+{{ end -}}
