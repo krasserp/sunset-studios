@@ -12,7 +12,7 @@ const clarity = 'https://www.clarity.ms/tag/za3re3nddc';
 const clarityQueue = page => plain(Array.from(page.window.clarity.q || [], args => Array.from(args)));
 
 function setup({ host = 'sunset-studios.one', analyticsEnabled = 'true', marketingEnabled = 'true',
-  cookie = '', protocol = 'https:', previous = null } = {}) {
+  cookie = '', protocol = 'https:', previous = null, deferClarity = false } = {}) {
   const element = () => ({
     handlers: {}, dataset: {},
     addEventListener(name, fn) { this.handlers[name] = fn; },
@@ -46,6 +46,7 @@ function setup({ host = 'sunset-studios.one', analyticsEnabled = 'true', marketi
   let reloads = 0, clarityAtLoad;
 
   const document = {
+    readyState: deferClarity ? 'interactive' : 'complete',
     get cookie() { return Array.from(cookies, ([name, value]) => name + '=' + value).join('; '); },
     set cookie(value) {
       writes.push(value);
@@ -70,6 +71,8 @@ function setup({ host = 'sunset-studios.one', analyticsEnabled = 'true', marketi
     location: { hostname: host, protocol, reload() { reloads++; } },
     addEventListener(name, fn) { handlers[name] = fn; }
   };
+  let idle;
+  if (deferClarity) window.requestIdleCallback = callback => { idle = callback; };
   vm.runInNewContext(source, {
     document, window, localStorage: { getItem: () => JSON.stringify(previous), removeItem() {} },
     Date, JSON, Boolean, String, Number, Math, encodeURIComponent, decodeURIComponent
@@ -80,6 +83,11 @@ function setup({ host = 'sunset-studios.one', analyticsEnabled = 'true', marketi
       for (const key of ['analytics', 'marketing', 'embeds']) ids['cookie-' + key].checked = !!choice[key];
       buttons.custom.handlers.click();
     },
+    finishLoading() {
+      document.readyState = 'complete';
+      handlers.load?.();
+    },
+    runIdle: () => idle?.(),
     focus: () => handlers.focus(), setCookie: setCookies, cookies: () => document.cookie,
     clarityAtLoad: () => clarityAtLoad,
     reloads: () => reloads
@@ -324,4 +332,22 @@ test('Clarity failures do not prevent cookie cleanup or withdrawal reload', () =
   assert.doesNotThrow(() => page.save({ marketing: true }));
   assert.doesNotMatch(page.cookies(), /_clck|_clsk/);
   assert.equal(page.reloads(), 1);
+});
+
+test('Clarity waits for load and idle, and checks consent again before loading', () => {
+  const page = setup({ deferClarity: true });
+  page.accept();
+  page.focus();
+  assert.deepEqual(page.requests, [gtm, pixel]);
+  page.finishLoading();
+  assert.deepEqual(page.requests, [gtm, pixel]);
+  page.runIdle();
+  assert.deepEqual(page.requests, [gtm, pixel, clarity]);
+
+  const revoked = setup({ deferClarity: true });
+  revoked.accept();
+  revoked.finishLoading();
+  revoked.reject();
+  revoked.runIdle();
+  assert.deepEqual(revoked.requests, [gtm, pixel]);
 });

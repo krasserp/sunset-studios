@@ -1,11 +1,14 @@
 <div class="hero-bg" data-hero-slideshow aria-hidden="true">
   <picture class="slide slide-1">
+    <source media="(max-width: 640px)" type="image/avif" srcset="{{ "images/hero1-m-800.avif" | relURL }}">
     <source media="(max-width: 640px)" srcset="{{ "images/hero1-m-800.webp" | relURL }}">
+    <source type="image/avif" srcset="{{ "images/hero1-1600.avif" | relURL }}">
     <img src="{{ "images/hero1-1600.webp" | relURL }}" alt="" fetchpriority="high" width="1600" height="900">
   </picture>
   <template>
     {{ range seq 2 4 }}
     <picture class="slide slide-{{ . }}">
+      <source media="(max-width: 640px)" type="image/avif" srcset="{{ printf "images/hero%d-m-800.avif" . | relURL }}">
       <source media="(max-width: 640px)" srcset="{{ printf "images/hero%d-m.webp" . | relURL }}">
       <img src="{{ printf "images/hero%d.webp" . | relURL }}" alt="" fetchpriority="low">
     </picture>

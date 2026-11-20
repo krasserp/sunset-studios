@@ -54,6 +54,7 @@
   } catch (_) {}
   let gtmLoaded = false;
   let clarityLoaded = false;
+  let clarityScheduled = false;
   let metaLoaded = false;
   const emptyChoice = { analytics: false, marketing: false, embeds: false };
   let previousFocus;
@@ -69,6 +70,38 @@
       }
     }
   }
+  function scheduleClarity() {
+    if (clarityScheduled || clarityLoaded) return;
+    clarityScheduled = true;
+
+    function loadClarity() {
+      clarityScheduled = false;
+      if (!window.sunsetConsent.analytics) return;
+      clarityLoaded = true;
+      window.clarity = window.clarity || function () {
+        (window.clarity.q = window.clarity.q || []).push(arguments);
+      };
+      // Queue consent before the remote script can execute; advertising stays off.
+      window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
+      const script = document.createElement('script');
+      script.async = true;
+      script.fetchPriority = 'low';
+      script.src = 'https://www.clarity.ms/tag/za3re3nddc';
+      document.head.appendChild(script);
+    }
+
+    function afterLoad() {
+      if (typeof window.requestIdleCallback === 'function') {
+        window.requestIdleCallback(loadClarity, { timeout: 1500 });
+      } else {
+        loadClarity();
+      }
+    }
+
+    if (document.readyState === 'complete') afterLoad();
+    else window.addEventListener('load', afterLoad, { once: true });
+  }
+
   function apply(choice) {
     const reload = ((gtmLoaded || clarityLoaded) && !choice.analytics) || (metaLoaded && !choice.marketing);
     window.sunsetConsent = { analytics: analyticsAllowed && choice.analytics,
@@ -96,19 +129,7 @@
       script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KV9P8PLM';
       document.head.appendChild(script);
     }
-    if (!reload && analyticsAllowed && choice.analytics && !clarityLoaded) {
-      clarityLoaded = true;
-      window.clarity = window.clarity || function () {
-        (window.clarity.q = window.clarity.q || []).push(arguments);
-      };
-      // Queue consent before the remote script can execute; advertising stays off.
-      window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
-      const script = document.createElement('script');
-      script.async = true;
-      script.fetchPriority = 'low';
-      script.src = 'https://www.clarity.ms/tag/za3re3nddc';
-      document.head.appendChild(script);
-    }
+    if (!reload && window.sunsetConsent.analytics) scheduleClarity();
     if (!reload && marketingAllowed && choice.marketing && !metaLoaded) {
       metaLoaded = true;
       if (!window.fbq) {

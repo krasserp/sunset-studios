@@ -8,6 +8,9 @@
     if (reducedMotion.matches) return;
 
     await firstImage.decode().catch(() => {});
+    if (document.readyState !== 'complete') {
+      await new Promise(resolve => window.addEventListener('load', resolve, { once: true }));
+    }
     // Let the first slide paint before asking the browser for the rest.
     await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     if (reducedMotion.matches) return;

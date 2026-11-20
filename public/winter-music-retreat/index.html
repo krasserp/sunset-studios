@@ -32,25 +32,15 @@
 
 <link
   rel="stylesheet"
-  href="/scss/main.min.e3f448d48c0ff22ef9f2c0014959148464fcf1a3d63ec3d4c37955903fcb3ed2.css"
-  integrity="sha256-4/RI1IwP8i758sABSVkUhGT88aPWPsPUw3lVkD/LPtI="
->
-
-
-<link
-  rel="preload"
-  as="image"
-  href="/images/hero1.webp"
-  imagesrcset="/images/hero1-m.webp 640w, /images/hero1.webp 1600w"
-  imagesizes="100vw"
-  fetchpriority="high"
+  href="/scss/main.min.5e4a2900736dcff8571084e975bae47f6491b8809c5a0b9cdb56544e80119f1b.css"
+  integrity="sha256-XkopAHNtz/hXEITpdbrkf2SRuICcWguc21ZUToARnxs="
 >
 
 
 <script
   id="site-consent-script"
-  src="/js/consent.e44dcece9c5f43ac74a1dc040ca3b8172e64b3d56e20177031d50ec8aa313c62.js"
-  integrity="sha256-5E3OzpxfQ6x0odwEDKO4Fy5ks9VuIBdwMdUOyKoxPGI="
+  src="/js/consent.b4e446ebe46b382983431383897e50c26f2635007d806e180b7fe67295957374.js"
+  integrity="sha256-tORG6&#43;RrOCmDQxODiX5Qwm8mNQB9gG4YC3/mcpWVc3Q="
   data-analytics-enabled="false"
   data-marketing-enabled="false"
   defer>
@@ -145,12 +135,38 @@
       
 <div class="winter-page">
   <section class="hero home-hero winter-hero" aria-labelledby="winter-title">
-      <div class="hero-bg" aria-hidden="true">
-    <span class="slide slide-1"></span>
-    <span class="slide slide-2"></span>
-    <span class="slide slide-3"></span>
-    <span class="slide slide-4"></span>
-  </div>
+    <div class="hero-bg" data-hero-slideshow aria-hidden="true">
+  <picture class="slide slide-1">
+    <source media="(max-width: 640px)" type="image/avif" srcset="/images/hero1-m-800.avif">
+    <source media="(max-width: 640px)" srcset="/images/hero1-m-800.webp">
+    <source type="image/avif" srcset="/images/hero1-1600.avif">
+    <img src="/images/hero1-1600.webp" alt="" fetchpriority="high" width="1600" height="900">
+  </picture>
+  <template>
+    
+    <picture class="slide slide-2">
+      <source media="(max-width: 640px)" type="image/avif" srcset="/images/hero2-m-800.avif">
+      <source media="(max-width: 640px)" srcset="/images/hero2-m.webp">
+      <img src="/images/hero2.webp" alt="" fetchpriority="low">
+    </picture>
+    
+    <picture class="slide slide-3">
+      <source media="(max-width: 640px)" type="image/avif" srcset="/images/hero3-m-800.avif">
+      <source media="(max-width: 640px)" srcset="/images/hero3-m.webp">
+      <img src="/images/hero3.webp" alt="" fetchpriority="low">
+    </picture>
+    
+    <picture class="slide slide-4">
+      <source media="(max-width: 640px)" type="image/avif" srcset="/images/hero4-m-800.avif">
+      <source media="(max-width: 640px)" srcset="/images/hero4-m.webp">
+      <img src="/images/hero4.webp" alt="" fetchpriority="low">
+    </picture>
+    
+  </template>
+</div>
+
+<script src="/js/hero-slideshow.8d71d91ae114c542e53c44a0258a498a3dd66bd2d0789a5ddcc9e593a5452787.js" integrity="sha256-jXHZGuEUxULlPESgJYpJij3Wa9LQeJpd3Mnlk6VFJ4c=" defer></script>
+
 
     <div class="container hero-content winter-hero-inner">
       <div class="winter-hero-copy">
@@ -198,10 +214,10 @@
         <h2 id="winter-studio-title">Your project.<br>Your studio.</h2>
         <p>A soundproof studio for the ideas you keep putting off. Bring the demos, the unfinished tracks or the songs you haven’t had time to write.</p>
         <p>Work independently after a walkthrough, or arrange production and engineering support for your sessions.</p>
-        <img src="/images/studio_004-800.webp" alt="The recording space at Sunset Studios" width="800" height="450" loading="lazy">
+        <img src="/images/studio_004-800.webp" srcset="/images/studio_004-400.webp 400w, /images/studio_004-800.webp 800w" sizes="(max-width: 760px) calc(100vw - 2rem), 50vw" alt="The recording space at Sunset Studios" width="800" height="450" loading="lazy">
       </div>
       <figure class="winter-tour">
-        <video width="540" height="960" controls muted playsinline preload="none" poster="/images/studio_001-800.webp" aria-label="Behind the scenes at Sunset Studios, silent video">
+        <video width="540" height="960" controls muted playsinline preload="none" poster="/images/studio_001-400.webp" aria-label="Behind the scenes at Sunset Studios, silent video">
           <source src="/videos/winter-studio-session.01.web.mp4" type="video/mp4">
           <a href="/videos/winter-studio-session.01.web.mp4">Watch studio footage</a>
         </video>
@@ -224,7 +240,7 @@
         </ul>
         <details class="winter-tour-details">
           <summary>Take a video tour of the apartment and studio</summary>
-          <video width="540" height="960" controls muted playsinline preload="none" poster="/images/gallery01-800.webp" aria-label="Apartment and studio walkthrough, silent video">
+          <video width="540" height="960" controls muted playsinline preload="none" poster="/images/gallery01-400.webp" aria-label="Apartment and studio walkthrough, silent video">
             <source src="/videos/studio-apartment-tour.01.web.mp4" type="video/mp4">
           </video>
           <p class="winter-small">Silent walkthrough of the garden, apartment and studio.</p>
